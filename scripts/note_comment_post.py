@@ -15,7 +15,7 @@ note コメント自動化（オーナー決裁 2026-06-17）の第3部品＝**�
   - 初回は --headed 推奨           … note の投稿UIはセレクター追従が要るため目視
 
 入力: docs/drafts/note_comments/YYYY-MM-DD.json （配列）
-  各要素: {url, author, title, comment, like(bool), approved(bool)}
+  各要素: {url, author, title, comment, like(bool), approved(bool), reply_to(任意=返信先コメント本文の一部)}
   ※ approved:true のものだけ投稿対象（オーナー最終承認ゲート）。
 
 使い方:
@@ -103,7 +103,21 @@ def _post_one(page, entry: dict[str, Any], own: bool) -> dict[str, Any]:
         page.mouse.wheel(0, 2200)
         page.wait_for_timeout(900)
 
-    ta = page.locator(COMMENT_TEXTAREA).first
+    # reply_to があれば「特定コメントへのスレッド返信」（自分の記事での返信用・2026-09-13）。
+    # 該当コメント本文の一部（reply_to）でコメントブロックを特定 → その「返信」ボタン →
+    # ブロック内に開く textarea / 送信ボタンを使う（ルート投稿欄とは別物）。
+    scope = page
+    reply_to = (entry.get("reply_to") or "").strip()
+    if reply_to:
+        block = page.get_by_text(reply_to, exact=False).first.locator(
+            "xpath=ancestor::div[contains(@class,'min-w-0')][1]"
+        )
+        block.wait_for(state="visible", timeout=20000)
+        block.locator("button[aria-label='返信']").first.click()
+        page.wait_for_timeout(1500)
+        scope = block
+
+    ta = scope.locator(COMMENT_TEXTAREA).last if reply_to else page.locator(COMMENT_TEXTAREA).first
     ta.wait_for(state="visible", timeout=20000)
     ta.click()
     ta.fill(comment)  # fill は改行（\n）を保持し、Enter誤送信もしない
@@ -111,7 +125,7 @@ def _post_one(page, entry: dict[str, Any], own: bool) -> dict[str, Any]:
 
     # 送信ボタン（入力後に出現・テキスト無しの aria-label='送信' アイコンボタン）。
     # note UI 変更時は要追従＝初回 --headed 推奨。
-    submit = page.locator(
+    submit = scope.locator(
         "button[aria-label='送信'], button:has-text('コメントする'), button:has-text('投稿する')"
     ).first
     submit.wait_for(state="visible", timeout=10000)

@@ -24,7 +24,7 @@ related: [[this_week]] [[phase1_sprint]] [[roadmap]] [[project_pending_decisions
 - [x] T110 **Threads ドラフト 9/16〜9/30 の8本を目視承認 ✅（オーナー「全部OK」2026-09-13・approved:true 反映済）**（`docs/drafts/threads/2026-09-*.md` の `approved: true`）｜ 0.2 ｜ user ｜ T108
 - [ ] T111 **連載 05 NVC を note 公開（9/18）**。※台帳上 6/17 公開と記録されていたが 9/13 監査で**未公開と判明**（status を ceo_approved に訂正済）。07 モンテは 6/19 公開済（URL nebe3fdd73488・台帳訂正済） ｜ 0.2 ｜ user ｜ T108
 - [x] T113 **全サイト横断の反応集計 `scripts/insights_all.py` 新設**（オーナー要望 2026-09-13「コメント状況や、いいねなどサイトごとに集計する仕組み」）＝note＋Threads（コメント/返信本文・未返信フラグ込み）＋IG手入力枠→`docs/insights/dashboard.md`（表示専用）＋`history.jsonl`（推移）。初回集計: note PV226/スキ34/コメ7（未返信1）・Threads views1178/like5/返信2/フォロワー0 ｜ main ｜ 完了
-- [ ] T114 **note 未返信コメント返信**（6/29 @maison_axis・汐見記事「待つと放っておくは違う」）。文案=main→オーナーOK→投稿 ｜ 0.1 ｜ main+user ｜ dashboard
+- [x] T114 **note 未返信コメント返信 ✅（2026-09-13・オーナーOK→スレッド返信投稿・API で is_creator_replied=true 確認）**。`note_comment_post.py` に `reply_to`（特定コメントへのスレッド返信）対応を追加（返信ボタン=ブロック内 `button[aria-label='返信']`・返信欄はブロック内 textarea.last・送信は入力後に有効化） ｜ main+user ｜ 完了
 - [ ] T112 **Meta 長期トークン月次 refresh**（次回 2026-10-25 目安・`meta_token_refresh.py --commit`→GitHub Secret も更新依頼） ｜ 0.1 ｜ main ｜ 運用
 - [x] 2026-09-13 新マシン（WSL2 Ubuntu 26.04）へ環境再構築完了＝Obsidian＋Dataview/Omnisearch/2hop＋Noto CJK／agentmemory systemd 常駐＋Claude Code プラグイン／Python .venv＋Playwright／Threads トークン再発行／note セッション再取得（`capture_note_session.py` の誤検知修正＋Google ログイン対応）。旧 `.env`・旧記憶は復元不能→再蓄積。詳細 memory `project-env-2026-09` ｜ main ｜ 完了
 
