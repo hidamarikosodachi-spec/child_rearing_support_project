@@ -18,8 +18,8 @@ related: [[backlog]] [[ceo_self_management_v0]] [[posting_schedule]]
 | 日付 | あなたがやること（一文） | 所要 | 状態 |
 |---|---|---|---|
 | **9/13(土)** | ✅ 新マシン環境復旧（Obsidian/agentmemory/Python/Threads トークン/note セッション） | — | ✅ |
-| **9/14(日)まで** | **GitHub Secret `META_ACCESS_TOKEN` を新トークンに更新**（Settings → Secrets → Actions）。これが無いと Threads 無人投稿が復活しない | 2分 | ⬜ |
-| **9/15(月)まで** | **Threads ドラフト 8本（9/16〜9/30）を目視 → `approved: true`**（`docs/drafts/threads/2026-09-*.md`・Obsidian で開いて1行変える）。承認後 `git push` は私がやる | 10分 | ⬜ |
+| **9/13(土)** | GitHub Secret `META_ACCESS_TOKEN` 更新 | 2分 | ✅ |
+| **9/13(土)** | Threads ドラフト 8本 承認（「全部OK」→ approved:true・push 済） | 10分 | ✅ |
 | **9/18(木)** | **連載 05 NVC を note 手動公開**（`docs/note/articles/05_series04_nvc.md`・サムネ `assets/thumbnails/05_series04_nvc.png`・タグ9個）。※6月に公開済と記録されていたが**実は未公開**だった | 10分 | ⬜ |
 | **随時** | IG カルーセル②③（6/20・6/25 分）を6月に投稿したかを一言 | 10秒 | ⬜ |
 | **9/20(土)** | 週次レビュー：私がまとめた「今週/来週/要判断」に一言回答 | 10分 | 毎週 |

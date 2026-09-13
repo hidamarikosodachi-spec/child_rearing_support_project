@@ -20,8 +20,8 @@ related: [[this_week]] [[phase1_sprint]] [[roadmap]] [[project_pending_decisions
 ## Now（今セッション）
 
 - [ ] T108 **再開スプリント（CEO決裁 2026-09-13・2ヶ月半の停止からの再点火・4週間）**: 方針＝「在庫で再点火し、オーナー手作業を週30分以下に絞って止まらない形にする」。①Threads 新ドラフト8本（9/16〜9/30 隔日・痛み6＋物語2・`approved:false`）生成済→オーナー承認→無人投稿再開 ②note 在庫4本を週1公開（9/18 05NVC→9/25 08→10/2 09→10/9 10・オーナー10分/週）③IG 2週間凍結→9/28週から週1再開判断 ④有料記事 paid01 は据え置き・W2-3で装填(T053)＋導線(T101)→発射判定 ⑤T107 コメント接触は凍結維持。**週バジェット 7.5h→3h に改定**（6月設計は持続せずと判定）。実測=note 226PV／Threads 11本 views約1,180・フォロワー0・能動反応2 ｜ main+user ｜ CEO決裁2026-09-13
-- [ ] T109 **GitHub Secret `META_ACCESS_TOKEN` 更新**（9/13 再発行・ローカル `.env` は更新済・有効期限 2026-11-11 頃）。未更新だと Threads 無人投稿が失敗する ｜ 0.1 ｜ user ｜ T108
-- [ ] T110 **Threads ドラフト 9/16〜9/30 の8本を目視承認**（`docs/drafts/threads/2026-09-*.md` の `approved: true`）｜ 0.2 ｜ user ｜ T108
+- [x] T109 **GitHub Secret `META_ACCESS_TOKEN` 更新 ✅（オーナー 2026-09-13 完了・実証は 9/16 初回無人投稿で）**（9/13 再発行・ローカル `.env` は更新済・有効期限 2026-11-11 頃）。未更新だと Threads 無人投稿が失敗する ｜ 0.1 ｜ user ｜ T108
+- [x] T110 **Threads ドラフト 9/16〜9/30 の8本を目視承認 ✅（オーナー「全部OK」2026-09-13・approved:true 反映済）**（`docs/drafts/threads/2026-09-*.md` の `approved: true`）｜ 0.2 ｜ user ｜ T108
 - [ ] T111 **連載 05 NVC を note 公開（9/18）**。※台帳上 6/17 公開と記録されていたが 9/13 監査で**未公開と判明**（status を ceo_approved に訂正済）。07 モンテは 6/19 公開済（URL nebe3fdd73488・台帳訂正済） ｜ 0.2 ｜ user ｜ T108
 - [ ] T112 **Meta 長期トークン月次 refresh**（次回 2026-10-25 目安・`meta_token_refresh.py --commit`→GitHub Secret も更新依頼） ｜ 0.1 ｜ main ｜ 運用
 - [x] 2026-09-13 新マシン（WSL2 Ubuntu 26.04）へ環境再構築完了＝Obsidian＋Dataview/Omnisearch/2hop＋Noto CJK／agentmemory systemd 常駐＋Claude Code プラグイン／Python .venv＋Playwright／Threads トークン再発行／note セッション再取得（`capture_note_session.py` の誤検知修正＋Google ログイン対応）。旧 `.env`・旧記憶は復元不能→再蓄積。詳細 memory `project-env-2026-09` ｜ main ｜ 完了
