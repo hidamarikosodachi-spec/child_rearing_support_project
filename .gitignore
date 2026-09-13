@@ -2,6 +2,7 @@
 .env
 .env.local
 .env.*.local
+.env.bak
 
 # ブラウザログインセッション（note storage_state 等・機密・コミット禁止）
 .auth/

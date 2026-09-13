@@ -2,6 +2,7 @@
 tags: [infrastructure, agentmemory, setup]
 status: active
 date: 2026-05-14
+updated: 2026-09-13
 related: [[VAULT_GUIDE]] [[knowledge_architecture]]
 ---
 
@@ -22,16 +23,30 @@ related: [[VAULT_GUIDE]] [[knowledge_architecture]]
 
 ---
 
+## 現行環境（2026-09-13 新マシン移行時に再構築）
+
+- OS: **Ubuntu 26.04 on WSL2**（GLIBC 2.43）→ 下記の 20.04 制約は**解消済み**。iii-engine v0.11.2 が**ネイティブ完全動作**（Standalone MCP モード不要）。
+- サーバー: **systemd ユーザーサービス `agentmemory`** で常駐（`~/.config/systemd/user/agentmemory.service`・WSL 再起動後も自動起動）。
+  - 確認: `systemctl --user status agentmemory` / `curl -s http://localhost:3111/agentmemory/health`
+  - ログ: `journalctl --user -u agentmemory -n 50`
+  - 再起動: `systemctl --user restart agentmemory`
+- データ: `~/.local/share/agentmemory`（`AGENTMEMORY_DATA_DIR`・DB本体は `data/state_store.db`。サービスの WorkingDirectory もここ＝**リポジトリ直下に `data/` を作らせない**）。設定: `~/.agentmemory/.env`（`EMBEDDING_PROVIDER=local`＝無料ローカル埋め込み・LLM キー無し）。
+- Claude Code 側: `claude plugin marketplace add rohitg00/agentmemory` → `claude plugin install agentmemory@agentmemory --scope user` 済み（フック＋スキル＋MCP ツール）。
+- Viewer: http://localhost:3113
+- ⚠️ 旧マシン（`/home/fugashiojiri/...`）のメモリ DB は未移行。旧データが取り出せれば `~/.local/share/agentmemory` へコピー、または旧 `~/.claude/projects/*.jsonl` を `npx -y @agentmemory/agentmemory@latest import-jsonl` で取り込む。
+
+---
+
 ## 前提環境
 
 | 項目 | 必要 | 現状 |
 |---|---|---|
-| Node.js | ≥20 | ✅ v24.14.1 |
-| npm | あれば | ✅ 11.11.0 |
+| Node.js | ≥20 | ✅ v24.21.0（nvm） |
+| npm | あれば | ✅ 同梱 |
 | ローカル埋め込みモデル | `all-MiniLM-L6-v2`（自動 DL、無料） | 初回起動時に取得 |
 | LLM プロバイダ | **不要**（デフォルトでは LLM 呼び出しなし） | - |
 
-### ⚠️ Ubuntu 20.04 + WSL の制約（2026-05-14 検証済）
+### ⚠️ Ubuntu 20.04 + WSL の制約（2026-05-14 検証済・**2026-09-13 以降は Ubuntu 26.04 のため非該当**）
 
 iii-engine v0.11.2 のバイナリは **GLIBC 2.32 以上** が必要。Ubuntu 20.04 の GLIBC は 2.31 のため、**直接バイナリは動かない**。
 
@@ -59,7 +74,7 @@ iii-engine v0.11.2 のバイナリは **GLIBC 2.32 以上** が必要。Ubuntu 2
 **専用のターミナルを1つ確保** して、以下を実行：
 
 ```bash
-cd /home/fugashiojiri/child_rearing_support_project
+cd ~/child_rearing_support_project
 npx @agentmemory/agentmemory mcp
 ```
 

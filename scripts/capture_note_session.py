@@ -32,12 +32,17 @@ def _note_cookies(context):
 
 
 def _looks_logged_in(context):
-    """note.com の認証系 cookie（httpOnly のセッション cookie）があればログイン済みとみなす。"""
-    for c in _note_cookies(context):
-        name = c.get("name", "").lower()
-        if c.get("httpOnly") and ("session" in name or name.startswith("_note")):
-            return True
-    return False
+    """note の API が認証を通すか実際に叩いて判定する。
+
+    cookie 名だけの判定は不可（未ログインでも `_note_session_v5` 等の httpOnly
+    cookie が置かれるため、2026-09-13 に誤検知→未ログイン state 保存の事故あり）。
+    """
+    try:
+        r = context.request.get("https://note.com/api/v1/stats/pv?filter=all&page=1&sort=pv", timeout=15000)
+        body = r.json()
+    except Exception:  # noqa: BLE001  ネットワーク断・JSON でない等
+        return False
+    return r.ok and "data" in body and body.get("error", {}).get("code") != "auth"
 
 
 def _save(context) -> None:
@@ -57,8 +62,19 @@ def main() -> None:
 
     AUTH_PATH.parent.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        context = browser.new_context()
+        # Google ログイン（note は Google 連携）は自動操作ブラウザを弾くので、
+        # 自動化の目印（navigator.webdriver / --enable-automation）を外して起動する。
+        browser = p.chromium.launch(
+            headless=False,
+            args=["--disable-blink-features=AutomationControlled"],
+            ignore_default_args=["--enable-automation"],
+        )
+        context = browser.new_context(
+            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"),
+            locale="ja-JP",
+        )
+        context.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
         page = context.new_page()
         page.goto(START_URL)
 
