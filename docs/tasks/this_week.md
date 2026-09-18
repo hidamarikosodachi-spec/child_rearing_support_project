@@ -20,7 +20,7 @@ related: [[backlog]] [[ceo_self_management_v0]] [[posting_schedule]]
 | **9/13(土)** | ✅ 新マシン環境復旧（Obsidian/agentmemory/Python/Threads トークン/note セッション） | — | ✅ |
 | **9/13(土)** | GitHub Secret `META_ACCESS_TOKEN` 更新 | 2分 | ✅ |
 | **9/13(土)** | Threads ドラフト 8本 承認（「全部OK」→ approved:true・push 済） | 10分 | ✅ |
-| **9/18(木)** | **連載 05 NVC を note 手動公開**（`docs/note/articles/05_series04_nvc.md`・サムネ `assets/thumbnails/05_series04_nvc.png`・タグ9個）。※6月に公開済と記録されていたが**実は未公開**だった | 10分 | ⬜ |
+| **9/18(木)→9/19** | **連載 05 NVC を note 公開＝残りは「投稿する」ボタンのみ**（下書き `https://editor.note.com/notes/n14b031f094b9/edit/` に本文・見出し画像は設定済。「公開に進む」→ハッシュタグ9個（子育て/育児/子育ての悩み/育児の悩み/育児ママ/育児パパ/叱り方/イヤイヤ期/声かけ）→「投稿する」） | 3分 | ⬜ |
 | **9/13(土)** | IG 実績確認＝カルーセル①＋絵本リールの2本まで投稿済・②③は未投稿（→IG再開時の在庫に回す） | 10秒 | ✅ |
 | **9/13(土)** | note 未返信コメント（@maison_axis・汐見記事）にスレッド返信 ✅ | 3分 | ✅ |
 | **9/20(土)** | 週次レビュー：私がまとめた「今週/来週/要判断」に一言回答 | 10分 | 毎週 |
