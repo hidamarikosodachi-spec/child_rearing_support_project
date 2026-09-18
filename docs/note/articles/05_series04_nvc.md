@@ -6,7 +6,9 @@ article_no: 5
 series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 4
 category: series
-status: ceo_approved
+status: published
+published: 2026-09-19
+published_url: https://note.com/hidamari_sodachi/n/n14b031f094b9
 ceo_review_required: false
 ceo_reviewed: 2026-06-02
 # 2026-09-13 CEO監査: note側に存在せず＝未公開と判明（6/17の published 記録は誤り）。再開スプリントで 9/18 公開予定
