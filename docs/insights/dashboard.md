@@ -1,25 +1,25 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-09-13
+updated: 2026-09-18
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-09-13 23:50 JST／初回集計（前回比なし）。
+> 集計 2026-09-18 23:40 JST／前回比は 2026-09-13 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 226 | 34 | 7 | — | **0** | — |
-| Threads | views 1178 | 5 | 2 | 2 | — | 0 |
+| note | PV 229（+3） | 34（+0） | 8（+1） | — | **0** | — |
+| Threads | views 1178（+0） | 5（+0） | 2（+0） | 2（+0） | — | 0（+0） |
 | Instagram | ⚪ 未接続（オーナー手動投稿・数字は manual_instagram.json に手入力） | | | | | |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **226**（目標下限まで残り 154）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **229**（目標下限まで残り 151）
 
 ## note 記事別
 
@@ -30,7 +30,7 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 39 | 6 | 0 | 0 | [つくる前に、声を聞かせてください — アンケートのお願い](https://note.com/hidamari_sodachi/n/n0e6db37bd948) |
 | 23 | 2 | 1 | 0 | [「甘やかしすぎ」と言われた日に — 過保護と過干渉のあいだ](https://note.com/hidamari_sodachi/n/ncce6a2e0fc40) |
 | 20 | 3 | 1 | 0 | [「ちゃんと叱らないと」と言われたとき — ほめる・叱るのその先へ](https://note.com/hidamari_sodachi/n/n9a114e4ed4cd) |
-| 15 | 1 | 1 | 0 | [「早くしなさい」ばかり言っている気がして — 待つことと、放っておくこ…](https://note.com/hidamari_sodachi/n/nb3b6456a1085) |
+| 18 | 1 | 1 | 0 | [「早くしなさい」ばかり言っている気がして — 待つことと、放っておくこ…](https://note.com/hidamari_sodachi/n/nb3b6456a1085) |
 | 3 | 2 | 0 | 0 | [「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
 
 ## Threads 投稿別
@@ -61,3 +61,10 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
   > ひだまりこそだちさん、こんばんは。 「過保護はあってよい。問題なのは過干渉のほう」 この言葉に救われる親御さんは多いだろうなと思いました。 特に「子が求めているかどうか」というシンプルな線引きが分かりやすくて印象的でした。 子どもの自立を…
 - **note** 2026-06-13 @maison_axis（とも｜教育のプロ、家ではバタバタ母） → 「「ちゃんと叱らないと」と言われたとき — ほめ…」
   > ひだまりこそだちさん、おはようございます☀️ 「課題の分離」を放任と履き違えない、という部分がとても印象に残りました。 子どもを信じて待つことと、突き放すことは全然違いますよね。 「あなたを信じてる。困ったら相談してね」 その距離感は、子…
+
+## 推移（history.jsonl）
+
+| 集計日 | note PV | note スキ | note コメ | Threads views | Threads 能動 | フォロワー |
+|---|---|---|---|---|---|---|
+| 2026-09-13 | 226 | 34 | 7 | 1178 | 2 | 0 |
+| 2026-09-18 | 229 | 34 | 8 | 1178 | 2 | 0 |

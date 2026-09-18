@@ -2,7 +2,7 @@
 tags: [tasks, weekly, operations]
 status: active
 week: 2026-09-14 〜 2026-09-20
-updated: 2026-09-13
+updated: 2026-09-18
 updated_by: メインClaude（CEO）
 related: [[backlog]] [[ceo_self_management_v0]] [[posting_schedule]]
 ---
@@ -44,7 +44,7 @@ SORT text ASC
 
 | 週 | Threads（無人） | note（オーナー10分/週） | IG | 私の仕込み |
 |---|---|---|---|---|
-| W1 9/14- | 9/16・18・20 | 9/18 **05 NVC** | 凍結 | 台帳整備・導線設計(T101)着手 |
+| W1 9/14- | ~~9/16~~・18・20（9/16 は飛ばず→10/2 振替） | 9/18 **05 NVC** | 凍結 | 台帳整備・導線設計(T101)着手 |
 | W2 9/21- | 9/22・24・26 | 9/25 **08 ピクラー** | 凍結 | paid01 入稿整形(T053) |
 | W3 9/28- | 9/28・30 ＋次バッチ | 10/2 **09 倉橋** | 週1再開判断（在庫=カルーセル②③・画像済） | 有料記事 発射判定をオーナーへ／Threads 次バッチ生成 |
 | W4 10/5- | 次バッチ | 10/9 **10 成長MS** | 週1 | 在庫尽きる→新規執筆の再開判断（週次レビュー） |
@@ -71,7 +71,7 @@ SORT text ASC
 
 ## 週末レビュー（9/20・CEO が翌週版=9/21-27 を再生成）
 
-- [ ] Threads 無人投稿は 9/16・18・20 に正常に飛んだか（`posted_log/threads.jsonl`・[[dashboard]]）
+- [ ] Threads 無人投稿は 9/16・18・20 に正常に飛んだか（`posted_log/threads.jsonl`・[[dashboard]]）→ **9/16 ✗（飛ばず・10/2 へ振替）／9/18 ✅（12h で views 104）／9/20 要確認**
 - [ ] `insights_all.py` を回して [[dashboard]] の前回比を確認（note PV / Threads views / コメント・未返信）
 - [ ] 05 NVC は公開できたか／10分で済んだか（負担感は？）
 - [ ] IG 再開時期（9/28 週・週1）でよいか
