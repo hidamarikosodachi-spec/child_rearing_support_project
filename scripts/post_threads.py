@@ -83,13 +83,16 @@ def build_post_text(draft: Draft) -> str:
     return body
 
 
-def post_to_threads(text: str, *, access_token: str, user_id: str) -> dict[str, Any]:
+def post_to_threads(
+    text: str, *, access_token: str, user_id: str, reply_to_id: str | None = None
+) -> dict[str, Any]:
     """Meta Threads API で実投稿する（2段階）。
 
     Args:
         text: 投稿本文。
         access_token: 長期アクセストークン。
         user_id: Threads ユーザー ID。
+        reply_to_id: 指定すると、その投稿への返信として投稿する（自己返信でリンク導線を置く用途）。
 
     Returns:
         ``{"container_id": ..., "post_id": ...}`` を含む辞書。
@@ -103,6 +106,8 @@ def post_to_threads(text: str, *, access_token: str, user_id: str) -> dict[str, 
         "text": text,
         "access_token": access_token,
     }
+    if reply_to_id:
+        params["reply_to_id"] = reply_to_id
     logger.info("メディアコンテナ作成: POST %s", create_url)
     r = requests.post(create_url, data=params, timeout=30)
     logger.info("create status=%s body=%s", r.status_code, r.text)
@@ -207,6 +212,9 @@ def main(date: str, commit: bool) -> None:
             click.echo(f"\n--- [{i}/{len(drafts)}] {d.path.name} ---")
             click.echo(text)
             click.echo(f"({len(text)}文字)")
+            reply_text = (d.frontmatter.get("reply") or "").strip()
+            if reply_text:
+                click.echo(f"--- 1返信目（リンク導線） ---\n{reply_text}")
         print_dry_run_notice()
         return
 
@@ -233,16 +241,29 @@ def main(date: str, commit: bool) -> None:
         )
         try:
             result = post_to_threads(text, access_token=access_token, user_id=user_id)
-            log_post(
-                "threads",
-                {
-                    "date": date,
-                    "draft_path": str(d.path.relative_to(PROJECT_ROOT)),
-                    "post_id": result["post_id"],
-                    "container_id": result["container_id"],
-                    "text_len": len(text),
-                },
-            )
+            entry: dict[str, Any] = {
+                "date": date,
+                "draft_path": str(d.path.relative_to(PROJECT_ROOT)),
+                "post_id": result["post_id"],
+                "container_id": result["container_id"],
+                "text_len": len(text),
+            }
+            # 導線（T101）: front-matter `reply:` があれば 1返信目に note 記事リンクを置く。
+            # 本文にリンクを入れるとリーチが落ちる通説への対処。返信失敗は本投稿の成功を妨げない。
+            reply_text = (d.frontmatter.get("reply") or "").strip()
+            if reply_text:
+                try:
+                    time.sleep(3.0)
+                    rep = post_to_threads(
+                        reply_text, access_token=access_token, user_id=user_id,
+                        reply_to_id=result["post_id"],
+                    )
+                    entry["reply_post_id"] = rep["post_id"]
+                    click.echo(f"[OK] 返信リンク -> reply_post_id={rep['post_id']}")
+                except Exception as exc:  # noqa: BLE001
+                    logger.exception("返信リンク投稿失敗: %s", d.path)
+                    click.echo(f"[WARN] 返信リンク失敗（本投稿は成功）: {exc}", err=True)
+            log_post("threads", entry)
             success += 1
             click.echo(f"[OK] {d.path.name} -> post_id={result['post_id']}")
         except Exception as exc:  # noqa: BLE001

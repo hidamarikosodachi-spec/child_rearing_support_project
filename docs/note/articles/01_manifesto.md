@@ -4,7 +4,9 @@ slug: 01_manifesto
 type: note_article
 article_no: 1
 category: manifesto
-status: ceo_approved
+status: published
+published: 2026-05-27
+published_url: https://note.com/hidamari_sodachi/n/nafa8104b6f1f
 ceo_review_required: false
 ceo_reviewed: 2026-06-02
 created: 2026-05-15
