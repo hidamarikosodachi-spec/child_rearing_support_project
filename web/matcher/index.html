@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>わが家のこそだちタイプ診断 | ひだまりこそだち</title>
+<meta name="description" content="18問・約3分。子育ての「型」ではなく、いまのわが家の傾向を8つの風景にしてお返しします。正解も順位もありません。">
+<meta property="og:title" content="わが家のこそだちタイプ診断">
+<meta property="og:description" content="18問・約3分。いまのわが家の傾向を、8つの風景に。正解も順位もありません。">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <img src="logo.svg" alt="">
+    <span class="name">ひだまりこそだち</span>
+  </header>
+
+  <!-- 開始 -->
+  <section id="intro">
+    <h1>わが家のこそだちタイプ診断</h1>
+    <p class="lead">18問・約3分。子育ての「正解」を決めるものではありません。いまのわが家の傾向を、8つの風景にしてお返しします。</p>
+    <div class="card">
+      <p style="margin-bottom:8px"><b>3つの見方で見ています</b></p>
+      <p class="note">
+        <b>主導権</b>：導く ⇔ 委ねる<br>
+        <b>構造性</b>：整える ⇔ 流れる<br>
+        <b>応答性</b>：寄り添う ⇔ 見守る<br>
+        どちらの極にも、子の育ちを支える道があります。順位はつけません。
+      </p>
+    </div>
+    <button class="btn" id="start">はじめる</button>
+    <p class="note" style="margin-top:14px">回答は匿名で集計に使わせていただきます（お名前・メールアドレスは取得しません）。
+      くわしくは<a href="../privacy/">プライバシーについて</a>。</p>
+  </section>
+
+  <!-- 設問 -->
+  <section id="quiz" hidden>
+    <div class="progress"><i id="bar"></i></div>
+    <div class="step" id="step"></div>
+    <div class="q" id="qtext"></div>
+    <div class="ab" id="abtext"></div>
+    <div class="opts" id="opts"></div>
+    <div class="row">
+      <button class="btn sub" id="back">もどる</button>
+    </div>
+  </section>
+
+  <!-- 自由記述 -->
+  <section id="free" hidden>
+    <div class="progress"><i style="width:100%"></i></div>
+    <h2>最後に、ひとつだけ</h2>
+    <p>いま、子育てでいちばん気になっていることを、よかったら一言だけ教えてください。<br>
+      <span class="note">書かなくても結果は出ます。いただいた言葉は、これから書く記事のために読ませてもらいます。</span></p>
+    <textarea id="worry" maxlength="200" placeholder="（任意・200字まで）"></textarea>
+    <div class="row">
+      <button class="btn" id="toresult">結果を見る</button>
+    </div>
+  </section>
+
+  <!-- 結果 -->
+  <section id="result" hidden>
+    <p class="step">あなたのこそだちタイプ</p>
+    <div class="typename" id="tname"></div>
+    <span class="axes" id="taxes"></span>
+    <p class="lead" id="tlead" style="margin-top:14px"></p>
+    <div id="tneutral"></div>
+    <div class="bars" id="bars"></div>
+    <div class="card"><p class="note" id="disclaimer"></p></div>
+    <p id="tintro"></p>
+    <h2>強み</h2><p id="tstrength"></p>
+    <h2>つまずきやすいところ</h2><p id="tstumble"></p>
+    <h2>明日、ひとつだけ試すなら</h2><p id="ttomorrow"></p>
+    <h2>となりに置いてみる考え方</h2><div id="ttheories"></div>
+    <h2>この結果を残す・伝える</h2>
+    <div class="share" id="share"></div>
+    <div class="card" style="margin-top:22px">
+      <p><b>連載「となりの考え方」</b></p>
+      <p class="note">子育ての考え方を、親のことばに。理論を「正解」としてではなく、となりに並べて読む連載です。</p>
+      <a class="btn sub" href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note で連載を読む</a>
+    </div>
+    <div class="row"><button class="btn sub" id="again">もう一度やってみる</button></div>
+  </section>
+
+  <footer>
+    <p>ひだまりこそだち — 子育ての考え方を、親のことばに。<br>
+      <a href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note</a> ・
+      <a href="../privacy/">プライバシーについて</a></p>
+    <p style="margin-top:10px">この診断は、教育・発達に関する複数の理論をもとにした読みものです。医療・心理の診断ではありません。
+      気がかりが強いときは、地域の子育て支援センターや小児科にご相談ください。</p>
+  </footer>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

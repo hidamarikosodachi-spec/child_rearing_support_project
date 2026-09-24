@@ -1,0 +1,74 @@
+/* ひだまりこそだち 診断サイト — ブランド配色は scripts/note_thumbnail.py と共通 */
+:root{
+  --bg:#fef3c7; --sun:#fbbf24; --accent:#c2410c; --sub:#b45309;
+  --title:#3a2b1a; --muted:#6b5b4a; --card:#fffdf7; --line:#e7dcc6;
+  --radius:14px; --maxw:680px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+  background:var(--bg); color:var(--title); line-height:1.85;
+  font-size:16px; padding:0 16px env(safe-area-inset-bottom,0px);
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:28px 0 64px}
+header.site{display:flex; align-items:center; gap:10px; padding:20px 0 8px}
+header.site img{width:40px;height:40px}
+header.site .name{font-weight:700;color:var(--sub);letter-spacing:.06em}
+h1{font-size:1.6rem; line-height:1.5; margin:18px 0 10px; letter-spacing:.01em}
+h2{font-size:1.15rem; margin:28px 0 10px; color:var(--accent)}
+p{margin:0 0 14px}
+.lead{color:var(--muted)}
+.card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:20px; margin:16px 0}
+.note{font-size:.85rem; color:var(--muted); line-height:1.8}
+.btn{
+  display:inline-block; width:100%; padding:16px 18px; border:0; border-radius:var(--radius);
+  background:var(--accent); color:#fff; font-size:1rem; font-weight:700; font-family:inherit;
+  cursor:pointer; text-align:center; text-decoration:none; line-height:1.5;
+}
+.btn.sub{background:transparent; color:var(--sub); border:1px solid var(--line); font-weight:400}
+.btn:disabled{opacity:.35; cursor:default}
+.progress{height:6px; background:#f5e6bf; border-radius:99px; overflow:hidden; margin:6px 0 4px}
+.progress i{display:block; height:100%; background:var(--sun); transition:width .25s}
+.step{font-size:.8rem; color:var(--muted); letter-spacing:.06em}
+.q{font-size:1.1rem; font-weight:700; line-height:1.7; margin:14px 0 18px}
+.opts{display:flex; flex-direction:column; gap:8px; margin:10px 0 0}
+.opt{
+  display:flex; gap:10px; align-items:flex-start; width:100%; text-align:left;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:13px 15px; font:inherit; color:inherit; cursor:pointer; line-height:1.6;
+}
+.opt:hover{border-color:var(--sun)}
+.opt[aria-pressed="true"]{border-color:var(--accent); background:#fff7e8; box-shadow:0 0 0 1px var(--accent) inset}
+.opt .k{color:var(--sub); font-weight:700; min-width:1.6em}
+.ab{font-size:.95rem; color:var(--muted); margin:2px 0 12px; padding-left:2px}
+.ab b{color:var(--title); font-weight:700}
+.row{display:flex; gap:10px; margin-top:18px}
+.row .btn{flex:1}
+.typename{font-size:2rem; font-weight:700; letter-spacing:.06em; margin:4px 0}
+.axes{display:inline-block; font-size:.85rem; color:var(--sub); border:1px solid var(--line);
+  border-radius:99px; padding:3px 12px; background:var(--card)}
+.bars{margin:18px 0}
+.bar{margin:12px 0}
+.bar .lab{display:flex; justify-content:space-between; font-size:.82rem; color:var(--muted)}
+.bar .track{position:relative; height:8px; background:#f5e6bf; border-radius:99px; margin-top:5px;
+  margin-inline:7px}
+.bar .track::before{content:""; position:absolute; left:50%; top:-3px; width:1px; height:14px; background:var(--line)}
+.bar .dot{position:absolute; top:50%; width:14px; height:14px; margin:-7px 0 0 -7px; border-radius:50%;
+  background:var(--accent); transition:left .4s}
+.theory{border-left:3px solid var(--sun); padding:2px 0 2px 14px; margin:14px 0}
+.theory a{color:var(--accent)}
+.share{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.share a,.share button{flex:1 1 calc(50% - 4px); min-width:140px; padding:12px; border-radius:var(--radius);
+  border:1px solid var(--line); background:var(--card); color:var(--sub); font:inherit; font-size:.92rem;
+  text-align:center; text-decoration:none; cursor:pointer}
+footer{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-size:.82rem; color:var(--muted)}
+footer a{color:var(--sub)}
+textarea{width:100%; font:inherit; padding:12px; border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--card); color:inherit; resize:vertical; min-height:96px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+.chip{padding:9px 14px; border:1px solid var(--line); border-radius:99px; background:var(--card);
+  font:inherit; font-size:.92rem; color:inherit; cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent); background:#fff7e8; color:var(--accent); font-weight:700}
+[hidden]{display:none !important}
+@media (min-width:560px){ h1{font-size:1.9rem} .q{font-size:1.2rem} }

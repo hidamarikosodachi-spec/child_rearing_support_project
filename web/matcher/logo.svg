@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ひだまりこそだち ロゴマーク 案A（v1: 親子家族構図）
+  コンセプト: 陽だまりの下で親子3人が一緒に育つ / Sun + Family of sprouts
+  - 中央上: 太陽（はちみつ色）= 「ひだまり」
+  - 両側: 背の高い双葉（ふたば）2株 = 親（2人の保護者を象徴）
+  - 真ん中: 背の低い一ッ葉 1株 = 子（親に見守られながら自分のペースで育つ）
+  - 「親子一緒に陽だまりの下で育っていく」家族の世界観を表現
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- 背景: クリーム -->
+  
+
+  <!-- 太陽の外周（柔らかな光のリング） -->
+  <circle cx="256" cy="170" r="100" fill="none" stroke="#FFAB76" stroke-width="3" opacity="0.32"/>
+
+  <!-- 太陽本体（はちみつ色） -->
+  <circle cx="256" cy="170" r="84" fill="#FFC857"/>
+
+  <!-- 太陽内側のハイライト（午後の光のにじみ） -->
+  <ellipse cx="234" cy="152" rx="26" ry="20" fill="#FFE0A3" opacity="0.55"/>
+
+  <!-- 地面（親子3株が並ぶ薄い影） -->
+  <ellipse cx="256" cy="424" rx="140" ry="6" fill="#E8DDB5" opacity="0.5"/>
+
+  <!-- 親（左）: 双葉、背が高い -->
+  <g transform="translate(186, 424)">
+    <!-- 茎 -->
+    <path d="M 0 0 Q 0 -50 0 -95" stroke="#7AA77A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- 双葉: 左の葉 -->
+    <path d="M -1 -88 Q -24 -100 -32 -128 Q -16 -122 -2 -98 Z" fill="#7AA77A"/>
+    <!-- 双葉: 右の葉 -->
+    <path d="M 1 -88 Q 24 -100 32 -128 Q 16 -122 2 -98 Z" fill="#7AA77A"/>
+  </g>
+
+  <!-- 子（中央）: 一ッ葉、背が低い -->
+  <g transform="translate(256, 424)">
+    <!-- 茎 -->
+    <path d="M 0 0 Q 0 -28 0 -52" stroke="#A4C293" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- 一ッ葉: 1枚の若い葉（やや右に向けて伸びる） -->
+    <path d="M 0 -48 Q 20 -58 24 -82 Q 4 -76 -2 -54 Z" fill="#A4C293"/>
+  </g>
+
+  <!-- 親（右）: 双葉、背が高い（左の鏡像） -->
+  <g transform="translate(326, 424)">
+    <!-- 茎 -->
+    <path d="M 0 0 Q 0 -50 0 -95" stroke="#7AA77A" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <!-- 双葉: 左の葉 -->
+    <path d="M -1 -88 Q -24 -100 -32 -128 Q -16 -122 -2 -98 Z" fill="#7AA77A"/>
+    <!-- 双葉: 右の葉 -->
+    <path d="M 1 -88 Q 24 -100 32 -128 Q 16 -122 2 -98 Z" fill="#7AA77A"/>
+  </g>
+</svg>
