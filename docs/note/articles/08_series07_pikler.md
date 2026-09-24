@@ -10,11 +10,13 @@ status: ceo_approved
 ceo_review_required: false
 ceo_reviewed: 2026-06-17
 created: 2026-06-17
+note_draft_key: nfceb954b7975  # 2026-09-24 下書き入稿済（本文+見出し画像）→ 残=オーナーが「公開に進む」→タグ9→「投稿する」
 author: メインClaude（連載量産バッチ2026-06-17・series_plan_v0.md §3準拠・既存ナレッジのみ・新規収集なし）
 source:
   - docs/note/series_plan_v0.md §3（連載フォーマット）§4.2（配信順第7回=ピクラー・アプローチ）
   - docs/knowledge/education_theories/tier_s/pikler/（pikler.md / practical_scenes.md / controversies.md）
 target_chars: 1800-2400
+note_tags: [子育て, 育児, 子育ての悩み, 育児の悩み, 育児ママ, 育児パパ, 乳児育児, 発達, 見守る子育て]
 tags: [子育て, 育児, ひだまりこそだち, となりの考え方, ピクラー, 乳児育児, 発達の個人差, 見守る子育て, 急かさない子育て]
 ---
 
