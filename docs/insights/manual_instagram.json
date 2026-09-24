@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-09-24",
+  "followers": null,
+  "reach": null,
+  "likes": null,
+  "comments": null,
+  "note": "IG API 未接続のため手入力。スマホ/PC の Instagram インサイトを見て数字を入れる（空欄は null のままでOK）。ストーリーは24hで消えるので、リンクタップ数は投稿翌日までに控える。",
+  "stories": [
+    {
+      "date": "2026-09-22",
+      "title": "連載05 NVC 告知（PC・Meta Business Suite から投稿・リンクスタンプ）",
+      "image": "assets/stories/05_series04_nvc.png",
+      "link": "https://note.com/hidamari_sodachi/n/n14b031f094b9",
+      "views": null,
+      "link_taps": null
+    }
+  ]
+}

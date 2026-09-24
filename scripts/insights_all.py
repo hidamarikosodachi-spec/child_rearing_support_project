@@ -64,6 +64,7 @@ OUT_DIR = PROJECT_ROOT / "docs" / "insights"
 HISTORY = OUT_DIR / "history.jsonl"
 DASHBOARD = OUT_DIR / "dashboard.md"
 MANUAL_IG = OUT_DIR / "manual_instagram.json"
+SELF_USERNAME = "hidamarikosodachi"  # 自分の返信を他者反応から除外するため
 NOTE_AUTH = PROJECT_ROOT / ".auth" / "note_state.json"
 
 
@@ -185,10 +186,14 @@ def collect_threads() -> dict[str, Any]:
     totals = {"views": 0, "likes": 0, "replies": 0, "reposts": 0, "quotes": 0}
     for p in load_threads_posts():
         ins = fetch_threads_post_insights(p["post_id"], token)
+        replies = _threads_replies(p["post_id"], token) if ins.get("replies") else []
+        # 自分の返信（T101 の note リンク導線）は「他者からの反応」ではないので除外する。
+        # 除外しないと導線を張るたびに能動反応が水増しされ、KPI が自作自演で膨らむ。
+        own = sum(1 for r in replies if r["author"] == SELF_USERNAME)
+        ins["replies"] = max(0, ins.get("replies", 0) - own)
         for k in totals:
             totals[k] += ins.get(k, 0)
         active = sum(ins[m] for m in ACTIVE_METRICS)
-        replies = _threads_replies(p["post_id"], token) if ins.get("replies") else []
         posts.append(
             {
                 "date": p["date"],
@@ -196,10 +201,11 @@ def collect_threads() -> dict[str, Any]:
                 "post_id": p["post_id"],
                 **ins,
                 "active": active,
+                "own_replies": own,
             }
         )
         for r in replies:
-            if r["author"] != "hidamarikosodachi":
+            if r["author"] != SELF_USERNAME:
                 replies_all.append({**r, "post_date": p["date"], "theme": p["theme"]})
     totals["active"] = totals["replies"] + totals["reposts"] + totals["quotes"]
     return {
