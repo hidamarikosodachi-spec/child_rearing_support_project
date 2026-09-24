@@ -58,7 +58,8 @@ def parse() -> tuple[str, dict]:
         if len(parts) < 2 or parts[0] not in ORDER:
             continue
         key, name = parts[0], parts[1]
-        t: dict = {"key": key, "name": name, "theories": []}
+        # label = 表示名（「灯台タイプ」）。name は内部向けの短い名前。
+        t: dict = {"key": key, "name": name, "label": f"{name}タイプ", "theories": []}
 
         for line in body.split("\n"):
             if line.startswith("- 軸: "):

@@ -110,7 +110,7 @@ function score() {
 // ---- 結果表示 ----
 function renderResult(r) {
   const t = TYPES[r.key];
-  $("tname").textContent = t.name;
+  $("tname").textContent = t.label;
   $("taxes").textContent = t.axes;
   $("tlead").textContent = t.lead;
   $("disclaimer").textContent = DISCLAIMER;
@@ -126,7 +126,7 @@ function renderResult(r) {
   }).join("");
   $("tothers").innerHTML = TYPE_ORDER.filter((k) => k !== t.key).map((k) => {
     const o = TYPES[k];
-    return `<a class="other" href="./?type=${k}"><b>${o.name}</b><span>${esc(o.lead)}</span>
+    return `<a class="other" href="./?type=${k}"><b>${o.label}</b><span>${esc(o.lead)}</span>
       <span class="ax">${o.axes}</span></a>`;
   }).join("") + `<a class="btn sub" href="types.html" style="margin-top:12px">8つのタイプの一覧を見る</a>`;
 
@@ -134,13 +134,13 @@ function renderResult(r) {
   if (r.near.length === 3) {
     $("tneutral").innerHTML = `<div class="card"><p class="note">3つの軸がどれも<b>まんなか</b>でした。
       その時々で形を変えているか、いまはまだ決めかねている時期なのかもしれません。
-      いちばん近いのは <b>${t.name}</b> ですが、${r.near.map((n) => `<b>${TYPES[n.key].name}</b>`).join("・")}
+      いちばん近いのは <b>${t.label}</b> ですが、${r.near.map((n) => `<b>${TYPES[n.key].label}</b>`).join("・")}
       の景色も、きっと思い当たるところがあります。</p></div>`;
   } else if (r.near.length) {
-    const others = r.near.map((n) => `<b>${TYPES[n.key].name}</b>`).join("・");
+    const others = r.near.map((n) => `<b>${TYPES[n.key].label}</b>`).join("・");
     $("tneutral").innerHTML = `<div class="card"><p class="note">
       ${r.near.map((n) => AXES[n.axis].name).join("・")}が<b>まんなか</b>でした。
-      あなたは <b>${t.name}</b> と ${others} のあいだにいます。${r.near.length === 1 ? "どちらも" : "どれも"}読んでみてください。</p></div>`;
+      あなたは <b>${t.label}</b> と ${others} のあいだにいます。${r.near.length === 1 ? "どちらも" : "どれも"}読んでみてください。</p></div>`;
   } else {
     $("tneutral").innerHTML = "";
   }
@@ -159,7 +159,7 @@ function renderResult(r) {
     </div>`).join("");
 
   const url = `${location.origin}${location.pathname}?type=${t.key}`;
-  const text = `わが家のこそだちタイプは「${t.name}」でした。${t.lead}`;
+  const text = `わが家のこそだちタイプは「${t.label}」でした。${t.lead}`;
   $("share").innerHTML = `
     <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(text + "\n")}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">X で共有</a>
     <a href="https://www.threads.net/intent/post?text=${encodeURIComponent(text + "\n" + url)}" target="_blank" rel="noopener">Threads で共有</a>
