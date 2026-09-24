@@ -72,3 +72,17 @@ textarea{width:100%; font:inherit; padding:12px; border:1px solid var(--line); b
 .chip[aria-pressed="true"]{border-color:var(--accent); background:#fff7e8; color:var(--accent); font-weight:700}
 [hidden]{display:none !important}
 @media (min-width:560px){ h1{font-size:1.9rem} .q{font-size:1.2rem} }
+
+/* ほかのタイプ・一覧 */
+.other{display:block; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:13px 16px; margin:8px 0; text-decoration:none; color:inherit}
+.other:hover{border-color:var(--sun)}
+.other b{display:inline-block; font-size:1.05rem; margin-right:10px}
+.other span{color:var(--muted); font-size:.92rem}
+.other .ax{display:block; font-size:.8rem; color:var(--sub); margin-top:3px; letter-spacing:.04em}
+.tcard{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; margin:14px 0}
+.tcard h3{font-size:1.25rem; margin:0 0 2px}
+.tcard .ax{font-size:.8rem; color:var(--sub); letter-spacing:.04em}
+.tcard .lead{margin:8px 0 10px}
+.tcard .k{font-size:.9rem; color:var(--muted); margin:8px 0 0}
+.tcard .k b{color:var(--title)}

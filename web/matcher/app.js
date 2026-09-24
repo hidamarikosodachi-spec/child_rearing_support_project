@@ -1,4 +1,4 @@
-import { QUESTIONS, SCALE, CONTEXT, TYPES, TYPE_MAP, AXES, NEUTRAL_THRESHOLD, DISCLAIMER } from "./data.js";
+import { QUESTIONS, SCALE, CONTEXT, TYPES, TYPE_MAP, TYPE_ORDER, AXES, NEUTRAL_THRESHOLD, DISCLAIMER } from "./data.js";
 
 const $ = (id) => document.getElementById(id);
 const SAVE_KEY = "hidamari_matcher_v1";
@@ -115,9 +115,20 @@ function renderResult(r) {
   $("tlead").textContent = t.lead;
   $("disclaimer").textContent = DISCLAIMER;
   $("tintro").textContent = t.intro;
+  $("tvalue").textContent = t.value;
   $("tstrength").textContent = t.strength;
   $("tstumble").textContent = t.stumble;
   $("ttomorrow").textContent = t.tomorrow;
+  $("twith").textContent = t.withOthers;
+  $("tease").innerHTML = t.ease.map((e) => {
+    const [head, ...rest] = e.split("。");
+    return `<div class="theory"><b>${esc(head)}。</b>${esc(rest.join("。"))}</div>`;
+  }).join("");
+  $("tothers").innerHTML = TYPE_ORDER.filter((k) => k !== t.key).map((k) => {
+    const o = TYPES[k];
+    return `<a class="other" href="./?type=${k}"><b>${o.name}</b><span>${esc(o.lead)}</span>
+      <span class="ax">${o.axes}</span></a>`;
+  }).join("") + `<a class="btn sub" href="types.html" style="margin-top:12px">8つのタイプの一覧を見る</a>`;
 
   // まんなかの軸がある場合は、近いタイプも併記する（無理に1つへ寄せない）
   if (r.near.length === 3) {

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>8つのこそだちタイプ一覧 | ひだまりこそだち</title>
+<meta name="description" content="子育ての「型」を8つの風景にしました。灯台・畑・たき火・山道・縁側・本棚・小川・野原。どれも正解で、どれにも強みとつまずきがあります。">
+<meta property="og:title" content="8つのこそだちタイプ">
+<meta property="og:description" content="灯台・畑・たき火・山道・縁側・本棚・小川・野原。どれも正解で、どれにも強みとつまずきがあります。">
+<link rel="icon" href="logo.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site"><img src="logo.svg" alt=""><span class="name">ひだまりこそだち</span></header>
+  <h1>8つのこそだちタイプ</h1>
+  <p class="lead">子育てのかたちを、3つの見方から8つの風景にしました。<br>
+    どれがいい・悪いではありません。どの風景にも強みがあり、つまずきやすいところがあります。</p>
+
+  <div class="card">
+    <p style="margin-bottom:8px"><b>3つの見方</b></p>
+    <p class="note">
+      <b>主導権</b>：導く ⇔ 委ねる（親が先に決めるか、子にまかせるか）<br>
+      <b>構造性</b>：整える ⇔ 流れる（毎日の形を決めるか、その日にまかせるか）<br>
+      <b>応答性</b>：寄り添う ⇔ 見守る（すぐ手を出すか、待つか）
+    </p>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="card" style="margin-top:24px">
+    <p><b>自分の風景を知りたい方へ</b></p>
+    <p class="note">18問・約3分。お名前もメールアドレスも必要ありません。</p>
+    <a class="btn" href="./">診断をはじめる</a>
+  </div>
+
+  <footer>
+    <p>ひだまりこそだち — 子育ての考え方を、親のことばに。<br>
+      <a href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note</a> ・
+      <a href="../privacy/">プライバシーについて</a> ・ <a href="./">診断</a></p>
+    <p style="margin-top:10px">この診断は、教育・発達に関する複数の理論をもとにした読みものです。医療・心理の診断ではありません。</p>
+  </footer>
+</div>
+<script type="module">
+import { TYPES, TYPE_ORDER } from "./types.js";
+const esc = (s) => s.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+document.getElementById("list").innerHTML = TYPE_ORDER.map((k) => {
+  const t = TYPES[k];
+  return `<div class="tcard">
+    <h3>${t.name}</h3>
+    <div class="ax">${t.axes}</div>
+    <p class="lead">${esc(t.lead)}</p>
+    <p>${esc(t.intro)}</p>
+    <p class="k"><b>強み</b>　${esc(t.strength.split("。")[0])}。</p>
+    <p class="k"><b>つまずきやすいところ</b>　${esc(t.stumble.split("。")[0])}。</p>
+    <p style="margin-top:12px"><a href="./?type=${k}">${t.name}をくわしく読む →</a></p>
+  </div>`;
+}).join("");
+</script>
+</body>
+</html>
