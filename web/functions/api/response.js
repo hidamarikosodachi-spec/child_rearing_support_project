@@ -1,7 +1,8 @@
 /**
- * 診断の回答を D1 に1行だけ記録する Worker。
- * - 認証なし・個人情報なし。レート制限は Cloudflare 側の設定に任せ、ここでは軽い検証のみ。
+ * POST /api/response — 診断の回答を D1 に1行だけ記録する Pages Function。
+ * - 認証なし・個人情報なし。軽い検証のみ行う。
  * - 保存に失敗しても、フロントは結果を表示する（体験を壊さない）。
+ * - Pages Function なのでサイトと同一オリジン（CORS 不要。念のためヘッダは付けておく）。
  */
 const TYPES = ["lighthouse", "field", "bonfire", "trail", "engawa", "bookshelf", "stream", "meadow"];
 const cors = (origin) => ({
@@ -10,12 +11,13 @@ const cors = (origin) => ({
   "Access-Control-Allow-Headers": "Content-Type",
 });
 
-export default {
-  async fetch(request, env) {
-    const origin = request.headers.get("Origin");
-    if (request.method === "OPTIONS") return new Response(null, { headers: cors(origin) });
-    if (request.method !== "POST") return new Response("Not found", { status: 404 });
+export async function onRequestOptions({ request }) {
+  return new Response(null, { headers: cors(request.headers.get("Origin")) });
+}
 
+export async function onRequestPost({ request, env }) {
+  const origin = request.headers.get("Origin");
+  {
     let b;
     try { b = await request.json(); } catch { return json({ ok: false }, 400, origin); }
 
@@ -40,8 +42,8 @@ export default {
       return json({ ok: false }, 500, origin);
     }
     return json({ ok: true }, 200, origin);
-  },
-};
+  }
+}
 const num = (v) => (typeof v === "number" && isFinite(v) ? Math.round(v * 100) / 100 : null);
 const json = (o, status, origin) =>
   new Response(JSON.stringify(o), { status, headers: { "Content-Type": "application/json", ...cors(origin) } });

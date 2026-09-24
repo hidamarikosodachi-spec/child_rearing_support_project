@@ -19,8 +19,9 @@ related: [[type_system_v1]] [[questions_v1]] [[type_results_v1]]
 | `matcher/data.js` | 質問15問・8タイプ・タイプ判定表 |
 | `matcher/style.css` | ブランド配色（`scripts/note_thumbnail.py` と共通の色） |
 | `privacy/index.html` | プライバシーについて（診断から常時リンク） |
-| `worker/index.js` | 回答を D1 に1行 INSERT する API（`POST /api/response`） |
-| `worker/schema.sql` | D1 のテーブル定義 |
+| `functions/api/response.js` | 回答を D1 に1行 INSERT する Pages Function（`POST /api/response`・サイトと同一オリジン） |
+| `schema.sql` | D1 のテーブル定義 |
+| `wrangler.toml` | Pages プロジェクト設定＋D1 バインディング |
 
 ## ローカルで確認する
 
@@ -30,39 +31,38 @@ cd web && python3 -m http.server 8765
 ```
 API 未設定でも診断は動く（送信は失敗しても握りつぶし、結果は必ず表示する）。
 
-## 公開手順（Cloudflare Pages + D1）
+## 公開状況（2026-09-24 公開済）
 
-**前提**: Cloudflare アカウント（R2 で使用中のもの）。オーナー作業は API トークン発行のみ。
+- 本番URL: **https://hidamari-kosodachi.pages.dev/matcher/**
+- Pages プロジェクト: `hidamari-kosodachi` ／ D1: `hidamari-matcher`（`35971a97-b7e4-4eac-a80c-c76af473e8e1`・APAC）
+- 認証は `.env` の `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`（gitignore 済）
+
+### 更新をデプロイする
 
 ```bash
-npm install -g wrangler        # 初回のみ
-wrangler login                 # ブラウザで認証（オーナー）
-
-# 1) DB を作る → 出力された database_id を worker/wrangler.toml に記入
-wrangler d1 create hidamari-matcher
-wrangler d1 execute hidamari-matcher --remote --file=web/worker/schema.sql
-
-# 2) API をデプロイ
-cd web/worker && wrangler deploy
-
-# 3) サイトを公開（web/ を publish ディレクトリに）
-wrangler pages deploy web --project-name hidamari-kosodachi
+cd web && set -a && . ../.env && set +a
+npx wrangler pages deploy . --project-name hidamari-kosodachi --commit-dirty=true
 ```
 
-`/api/response` を同一オリジンで受けるには、Pages プロジェクトに Worker を
-**Functions ルート**または**カスタムドメインのルート**で割り当てる。未設定の間は送信だけ失敗し、診断自体は動く。
+スキーマを変更したとき:
+```bash
+npx wrangler d1 execute hidamari-matcher --remote --file=schema.sql
+```
+
+> workers.dev のサブドメインは登録していない（標準 Worker ではなく **Pages Function** を使うため不要）。
+> これにより `/api/response` がサイトと同一オリジンになり、CORS の問題も起きない。
 
 ## 分析（回答データ）
 
 ```bash
 # タイプ分布
-wrangler d1 execute hidamari-matcher --remote --command \
+npx wrangler d1 execute hidamari-matcher --remote --command \
   "SELECT type, COUNT(*) n FROM responses WHERE type IS NOT NULL GROUP BY type ORDER BY n DESC"
 # 悩みの自由記述（原文は公開しない）
-wrangler d1 execute hidamari-matcher --remote --command \
+npx wrangler d1 execute hidamari-matcher --remote --command \
   "SELECT worry FROM responses WHERE worry <> '' ORDER BY created_at DESC LIMIT 50"
 # 離脱した設問
-wrangler d1 execute hidamari-matcher --remote --command \
+npx wrangler d1 execute hidamari-matcher --remote --command \
   "SELECT drop_at, COUNT(*) n FROM responses WHERE drop_at IS NOT NULL GROUP BY drop_at ORDER BY drop_at"
 ```
 集計結果は `docs/insights/matcher.md` に定期生成する（既存の insights 運用に合わせる）。

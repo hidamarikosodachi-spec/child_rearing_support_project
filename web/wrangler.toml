@@ -1,0 +1,10 @@
+# Cloudflare Pages（サイト + /api/response の Pages Function）
+name = "hidamari-kosodachi"
+compatibility_date = "2026-09-01"
+pages_build_output_dir = "."
+
+# 診断の回答を保存する D1（スキーマは schema.sql）
+[[d1_databases]]
+binding = "DB"
+database_name = "hidamari-matcher"
+database_id = "35971a97-b7e4-4eac-a80c-c76af473e8e1"

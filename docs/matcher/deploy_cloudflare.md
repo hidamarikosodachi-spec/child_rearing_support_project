@@ -7,6 +7,9 @@ related: [[type_system_v1]] [[web/README]]
 
 # 診断サイト公開の手順（Cloudflare）
 
+> ✅ **2026-09-24 公開完了 → https://hidamari-kosodachi.pages.dev/matcher/**
+> 以下は記録（再構築・引き継ぎ用）。日々の更新手順は [[web/README]] を見る。
+
 > **オーナーがやるのは「1. トークンを作って .env に貼る」だけ（10分）。** 残りは私（Claude）が実行する。
 
 ## 1. オーナー作業：API トークンを作る（10分・1回だけ）
