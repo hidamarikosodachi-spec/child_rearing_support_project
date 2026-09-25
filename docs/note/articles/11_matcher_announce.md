@@ -6,7 +6,9 @@ article_no: 11
 series: ""
 series_no: ""
 category: announcement
-status: ceo_approved
+status: published
+published: 2026-09-25
+published_url: https://note.com/hidamari_sodachi/n/n61ce78856346
 ceo_review_required: false
 ceo_reviewed: 2026-09-25
 created: 2026-09-25
