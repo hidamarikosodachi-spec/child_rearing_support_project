@@ -19,7 +19,8 @@ related: [[carousel04_matcher]] [[profile_matcher_v1]] [[deploy_cloudflare]]
 | 画像の公開URL | ✅ **Cloudflare Pages で配信**（`web/ig/...` → `https://hidamari-kosodachi.pages.dev/ig/...`）。**R2 は不要になった** |
 | `META_INSTAGRAM_BUSINESS_ID` | ❌ 未取得 |
 | Instagram 投稿権限つきトークン | ❌ 未取得（いまの `META_ACCESS_TOKEN` は **Threads 専用**で、Facebook Graph では弾かれる） |
-| `META_APP_ID` / `META_APP_SECRET` | ❌ 新マシンで未再設定 |
+| `META_APP_ID` / `META_APP_SECRET` | ❌ 未設定（※Instagramログイン方式では不要） |
+| Facebookページ | 無し（**Instagram単独のビジネスポートフォリオ**）→ ページ不要の方式を採る |
 
 ## できること・できないこと（先に把握）
 
@@ -27,44 +28,46 @@ related: [[carousel04_matcher]] [[profile_matcher_v1]] [[deploy_cloudflare]]
 - ❌ **ストーリーのリンクスタンプは API で貼れない**。ストーリーだけは今後も手動（Meta Business Suite）。
 - ⚠️ 自動投稿は「1日25件まで」等の API 制限あり。週1〜2本の運用なら問題ない。
 
-## オーナー作業（20分・1回だけ）
+## オーナー作業（15分・1回だけ）
 
-### 1. Instagram がプロアカウント＆Facebookページ連携になっているか確認
-Business Suite からストーリー投稿ができている（2026-09-24 実績）ので、**おそらく済んでいる**。
-念のため: Instagram アプリ → 設定 → アカウントの種類とツール → 「プロアカウント」になっているか。
+> **重要**: Meta Business Suite の「設定」画面では**トークンは作れません**。作業場所は **developers.facebook.com** です。
+> また、このアカウントは Facebookページを持たない Instagram 単独のポートフォリオなので、
+> 従来の「Facebookページ経由（Instagram Graph API）」ではなく、**Instagram ログイン方式**を使う。
+> こちらは **Facebookページ不要**で投稿までできる（Meta 公式ドキュメントで確認済 2026-09-25）。
 
-### 2. Meta アプリを作る
-1. https://developers.facebook.com/apps → 「アプリを作成」
-2. ユースケース: **「Instagram」**（または「その他」→ ビジネス）
-3. アプリ名: `hidamari-kosodachi`（任意）
-4. 作成後、**アプリID** と **app secret**（設定 → ベーシック）を控える
+### ステップ1: アプリを作る
+1. https://developers.facebook.com/apps を開く（Instagram と同じアカウントでログイン）
+2. 右上 **「アプリを作成」**
+3. ユースケースの選択 → **「Instagram」**（"Instagramのコンテンツを管理する" 等と書かれたもの）
+4. アプリ名: `hidamari-kosodachi`／連絡先メールを入力 → 作成
 
-### 3. アクセストークンを取得
-1. https://developers.facebook.com/tools/explorer （グラフAPIエクスプローラ）
-2. 右上でアプリに `hidamari-kosodachi` を選択
-3. 「ユーザーまたはページ」→ **自分のFacebookページ** を選ぶ
-4. 権限（アクセス許可）に次を追加:
-   - `instagram_basic`
-   - `instagram_content_publish`
-   - `pages_show_list`
-   - `pages_read_engagement`
-   - `business_management`
-5. 「アクセストークンを生成」→ Facebook のログイン確認 → 出てきたトークンをコピー
+### ステップ2: トークンを生成する（ここが本丸）
+1. 作成したアプリの左メニュー → **「Instagram」** → **「Instagramログインでのapi設定」**
+   （英語表記なら *API setup with Instagram login*）
+2. **「3. Instagramビジネスログインを設定」**あたりにある **「アクセストークンを生成」** をクリック
+3. Instagram のログイン画面が出る → **@hidamarikosodachi でログイン** → アクセスを許可
+4. 画面にトークン（非常に長い文字列）が表示される
+   ⚠️ **この画面を離れると二度と表示されない**ので、その場でコピー
+5. 同じ画面に出ている **Instagram アプリID** も控える（数字の羅列）
 
-### 4. `.env` に貼る
+### ステップ3: `.env` に貼る
 ```
-META_APP_ID=（アプリID）
-META_APP_SECRET=（app secret）
-META_INSTAGRAM_TOKEN=（手順3のトークン）
+META_INSTAGRAM_TOKEN=（ステップ2でコピーしたトークン）
+META_INSTAGRAM_APP_ID=（Instagram アプリID）
 ```
-> ⚠️ `META_ACCESS_TOKEN`（Threads用）は**上書きしない**。別の変数名で入れる。
+> ⚠️ `META_ACCESS_TOKEN`（Threads用）は**絶対に上書きしない**。別の行に追記する。
 
-### 5. 「入れました」と一言
+### ステップ4: 「入れました」と一言
 残りは私がやる:
-- `scripts/meta_setup_ids.py` で **Instagram ビジネスID / FBページID** を取得し `.env` に追記
+- ユーザーID（`META_INSTAGRAM_BUSINESS_ID`）を API から取得して `.env` に追記
 - 短期トークン → **長期トークン（60日）** に交換
-- カルーセル④で実投稿テスト
-- 月次リフレッシュを `meta_token_refresh.py` の運用に追加
+- カルーセル④で dry-run → 実投稿
+- 60日ごとのリフレッシュを定期作業（T112）に追加
+
+### つまずいたら
+- **「Instagram」のユースケースが出ない** → 「その他」→「ビジネス」を選び、作成後にダッシュボードの製品追加から「Instagram」を追加
+- **ログインで弾かれる** → Instagram がプロアカウント（ビジネスまたはクリエイター）になっているか確認
+- **トークンをコピーし損ねた** → 同じ画面で作り直せる（何度でも可）
 
 ## 私の運用（有効化後）
 
