@@ -31,6 +31,7 @@ Instagram 自動投稿スクリプト
 from __future__ import annotations
 
 import logging
+import re
 import os
 import sys
 import time
@@ -74,8 +75,17 @@ def build_caption(draft: Draft) -> str:
         ハッシュタグ付与済みキャプション。
     """
     body = draft.body.strip()
+    # ドラフトはスライド原稿・注意書き・キャプションを1ファイルに持つ。
+    # 「## キャプション（投稿本文）」があれば、その節だけを投稿本文にする
+    # （無いと原稿全体が本文として投稿されてしまう）。
+    m = re.search(r"^##\s*キャプション[^\n]*\n(.+?)(?=\n##\s|\Z)", body, re.S | re.M)
+    if m:
+        body = m.group(1).strip()
+    else:
+        logger.warning("「## キャプション（投稿本文）」が見つからないため本文全体を使います: %s", draft.path.name)
     tags = draft.hashtags
-    if tags:
+    # キャプション末尾に既にハッシュタグ行があれば二重に付けない
+    if tags and not re.search(r"(^|\n)#\S+", body):
         tag_line = " ".join(f"#{t}" for t in tags)
         body = f"{body}\n\n{tag_line}".strip()
     if len(body) > IG_CAPTION_MAX:
