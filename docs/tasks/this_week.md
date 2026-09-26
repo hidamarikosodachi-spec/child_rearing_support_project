@@ -19,6 +19,7 @@ related: [[backlog]] [[ceo_self_management_v0]] [[posting_schedule]]
 |---|---|---|---|
 | **9/24(木)** | ✅ 05 NVC の IG ストーリー告知を**PC（Meta Business Suite）から投稿**（スタンプ欄の「🔗リンク」＝リンクスタッカー・手順確立） | 2分 | ✅ |
 | **9/25(金)** | **連載 08 ピクラー を note 公開**：下書き入稿済 → https://editor.note.com/notes/nfceb954b7975/edit/ を開き「公開に進む」→タグ9個（子育て/育児/子育ての悩み/育児の悩み/育児ママ/育児パパ/乳児育児/発達/見守る子育て）→「投稿する」 | 3分 | ⬜ |
+| **9/28(日)** | **Instagram にカルーセル④（診断告知・6枚）を投稿**＋ストーリー（リンクスタンプに診断URL）。画像は `assets/instagram/2026-09-28/`・キャプションは [[carousel04_matcher]] | 5分 | ⬜ |
 | **9/27(土)** | 週次レビュー：私がまとめた「今週/来週/要判断」に一言回答（下記） | 10分 | 毎週 |
 | **随時** | **診断を一度やってみる** → https://hidamari-kosodachi.pages.dev/matcher/ （タイプ名と文章の感触を一言ください） | 5分 | ⬜ |
 | **9/24(木)** | ✅ Cloudflare トークン発行 → **診断サイト公開完了**（https://hidamari-kosodachi.pages.dev/matcher/ ） | 10分 | ✅ |
