@@ -148,9 +148,16 @@ def main(as_json: bool) -> None:
         )
 
     posts = _load_posts()
+    # 自分の返信（T101 の note リンク導線）は他者反応ではないので差し引く。
+    # 差し引かないと、導線を張るたびに「能動反応」が自作自演で増える（insights_all.py と同じ扱い）。
+    own_reply_ids = {
+        r.get("reply_post_id") for r in posts if r.get("reply_post_id")
+    }
     rows = []
     for p in posts:
         ins = fetch_post_insights(p["post_id"], token)
+        if p.get("reply_post_id"):
+            ins["replies"] = max(0, ins.get("replies", 0) - 1)
         active = sum(ins[m] for m in ACTIVE_METRICS)
         rows.append({**p, "insights": ins, "active": active})
 
