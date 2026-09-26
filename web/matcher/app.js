@@ -126,9 +126,9 @@ function renderResult(r) {
   }).join("");
   $("tothers").innerHTML = TYPE_ORDER.filter((k) => k !== t.key).map((k) => {
     const o = TYPES[k];
-    return `<a class="other" href="./?type=${k}"><b>${o.label}</b><span>${esc(o.lead)}</span>
+    return `<a class="other" href="t/${k}"><b>${o.label}</b><span>${esc(o.lead)}</span>
       <span class="ax">${o.axes}</span></a>`;
-  }).join("") + `<a class="btn sub" href="types.html" style="margin-top:12px">8つのタイプの一覧を見る</a>`;
+  }).join("") + `<a class="btn sub" href="types" style="margin-top:12px">8つのタイプの一覧を見る</a>`;
 
   // まんなかの軸がある場合は、近いタイプも併記する（無理に1つへ寄せない）
   if (r.near.length === 3) {
@@ -158,7 +158,8 @@ function renderResult(r) {
                : `<span class="note">（連載で書く予定です）</span>`}
     </div>`).join("");
 
-  const url = `${location.origin}${location.pathname}?type=${t.key}`;
+  // 共有先は静的なタイプページ（OGP 画像と説明文が入っているので、SNS でプレビューが出る）
+  const url = `${location.origin}/matcher/t/${t.key}`;
   const text = `わが家のこそだちタイプは「${t.label}」でした。${t.lead}`;
   $("share").innerHTML = `
     <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent(text + "\n")}&url=${encodeURIComponent(url)}" target="_blank" rel="noopener">X で共有</a>

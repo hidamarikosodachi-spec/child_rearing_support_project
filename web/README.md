@@ -19,6 +19,9 @@ related: [[type_system_v1]] [[questions_v1]] [[type_results_v1]]
 | `matcher/data.js` | 質問15問・8タイプ・タイプ判定表 |
 | `matcher/style.css` | ブランド配色（`scripts/note_thumbnail.py` と共通の色） |
 | `privacy/index.html` | プライバシーについて（診断から常時リンク） |
+| `matcher/t/*.html` | **自動生成**：タイプ別の静的ページ（OGP・本文・導線）。`scripts/build_matcher_pages.py` |
+| `og/*.png` | **自動生成**：SNS 共有用の画像 1200x630。`scripts/build_matcher_og.py` |
+| `sitemap.xml` / `robots.txt` | 自動生成（同上） |
 | `functions/api/response.js` | 回答を D1 に1行 INSERT する Pages Function（`POST /api/response`・サイトと同一オリジン） |
 | `schema.sql` | D1 のテーブル定義 |
 | `wrangler.toml` | Pages プロジェクト設定＋D1 バインディング |
@@ -36,6 +39,17 @@ API 未設定でも診断は動く（送信は失敗しても握りつぶし、�
 - 本番URL: **https://hidamari-kosodachi.pages.dev/matcher/**
 - Pages プロジェクト: `hidamari-kosodachi` ／ D1: `hidamari-matcher`（`35971a97-b7e4-4eac-a80c-c76af473e8e1`・APAC）
 - 認証は `.env` の `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`（gitignore 済）
+
+### コンテンツを変えたときの手順
+
+```bash
+python3 scripts/build_matcher_types.py    # docs/matcher/type_results_v1.md → web/matcher/types.js
+python3 scripts/build_matcher_pages.py    # → web/matcher/t/*.html・sitemap.xml・robots.txt
+.venv/bin/python scripts/build_matcher_og.py   # → web/og/*.png（タイプ名や一行を変えたときだけ）
+```
+
+> **URL は拡張子なしに統一**（Cloudflare Pages は `.html` を拡張子なしへ 308 転送するため、
+> リンク・canonical・sitemap はすべて `/matcher/t/engawa` の形で書く）。
 
 ### 更新をデプロイする
 

@@ -6,6 +6,10 @@
 <title>8つのこそだちタイプ一覧 | ひだまりこそだち</title>
 <meta name="description" content="子育ての「型」を8つの風景にしました。灯台タイプ・畑タイプ・たき火タイプ・山道タイプ・縁側タイプ・本棚タイプ・小川タイプ・野原タイプ。どれも正解で、どれにも強みとつまずきがあります。">
 <meta property="og:title" content="8つのこそだちタイプ">
+<meta property="og:image" content="https://hidamari-kosodachi.pages.dev/og/matcher.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://hidamari-kosodachi.pages.dev/matcher/types">
+<link rel="canonical" href="https://hidamari-kosodachi.pages.dev/matcher/types">
 <meta property="og:description" content="灯台タイプ・畑タイプ・たき火タイプ・山道タイプ・縁側タイプ・本棚タイプ・小川タイプ・野原タイプ。どれも正解で、どれにも強みとつまずきがあります。">
 <link rel="icon" href="logo.svg">
 <link rel="stylesheet" href="style.css">
@@ -53,7 +57,7 @@ document.getElementById("list").innerHTML = TYPE_ORDER.map((k) => {
     <p>${esc(t.intro)}</p>
     <p class="k"><b>強み</b>　${esc(t.strength.split("。")[0])}。</p>
     <p class="k"><b>つまずきやすいところ</b>　${esc(t.stumble.split("。")[0])}。</p>
-    <p style="margin-top:12px"><a href="./?type=${k}">${t.label}をくわしく読む →</a></p>
+    <p style="margin-top:12px"><a href="t/${k}">${t.label}をくわしく読む →</a></p>
   </div>`;
 }).join("");
 </script>
