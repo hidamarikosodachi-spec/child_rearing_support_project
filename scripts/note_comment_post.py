@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import json
 import random
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -83,7 +84,9 @@ def _today_counts() -> dict[str, int]:
             rec = json.loads(line)
         except Exception:  # noqa: BLE001
             continue
-        if rec.get("date") == today and rec.get("action") == "comment" and rec.get("ok"):
+        # verified が False/未設定の古い記録は数えない（未投稿なのに枠を食うため）
+        if (rec.get("date") == today and rec.get("action") == "comment"
+                and rec.get("ok") and rec.get("verified")):
             counts["own" if rec.get("own") else "other"] += 1
     return counts
 
@@ -95,7 +98,41 @@ def _log(rec: dict[str, Any]) -> None:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
 
 
-def _post_one(page, entry: dict[str, Any], own: bool) -> dict[str, Any]:
+SELF_URLNAME = "hidamari_sodachi"
+
+
+def _comment_text(node: Any) -> str:
+    """note のコメントはリッチテキストの木。{type:'text', value:...} を再帰で拾う。"""
+    if isinstance(node, dict):
+        if node.get("type") == "text":
+            return str(node.get("value", ""))
+        return "".join(_comment_text(c) for c in (node.get("children") or []))
+    return ""
+
+
+def _verify_posted(ctx, url: str, comment: str) -> bool:
+    """投稿が実際に反映されたかを API で確認する。
+
+    送信ボタンを押せても POST が失敗していることがあり（2026-09-26 に実際に発生し、
+    2件が「成功」と記録されたまま未投稿だった）、クリックの成否を成功とみなしてはいけない。
+    """
+    key = url.rstrip("/").split("/")[-1]
+    head = comment.strip().split("\n")[0][:12]
+    try:
+        r = ctx.request.get(
+            f"https://note.com/api/v3/notes/{key}/note_comments?per_page=20&order=newest"
+        )
+        for c in r.json().get("data", []):
+            if (c.get("user") or {}).get("urlname") != SELF_URLNAME:
+                continue
+            if head and head in _comment_text(c.get("comment")):
+                return True
+    except Exception:  # noqa: BLE001
+        return False
+    return False
+
+
+def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any]:
     """1記事にコメント（＋スキ）を実際に投稿する。--commit 時のみ呼ぶ。"""
     url, comment = entry["url"], entry["comment"]
     page.goto(url, wait_until="networkidle", timeout=45000)
@@ -119,18 +156,37 @@ def _post_one(page, entry: dict[str, Any], own: bool) -> dict[str, Any]:
 
     ta = scope.locator(COMMENT_TEXTAREA).last if reply_to else page.locator(COMMENT_TEXTAREA).first
     ta.wait_for(state="visible", timeout=20000)
+    ta.scroll_into_view_if_needed()
+    page.wait_for_timeout(500)
     ta.click()
     ta.fill(comment)  # fill は改行（\n）を保持し、Enter誤送信もしない
     page.wait_for_timeout(1500)
 
     # 送信ボタン（入力後に出現・テキスト無しの aria-label='送信' アイコンボタン）。
     # note UI 変更時は要追従＝初回 --headed 推奨。
-    submit = scope.locator(
-        "button[aria-label='送信'], button:has-text('コメントする'), button:has-text('投稿する')"
-    ).first
+    # 送信ボタンは aria-label='送信' のアイコンボタンだけを対象にする。
+    # 以前は :has-text('投稿する') を OR で並べていたため、DOM 上で先に現れる
+    # note ヘッダーの「投稿」ボタンを .first が掴み、コメントが送信されていなかった（2026-09-26）。
+    submit = scope.locator("button[aria-label='送信']").first
     submit.wait_for(state="visible", timeout=10000)
     submit.click()
-    page.wait_for_timeout(2500)
+    page.wait_for_timeout(3500)
+
+    # 反映確認（クリックできた＝投稿できた、ではない）。1度だけ再送を試す。
+    verified = _verify_posted(ctx, url, comment) if ctx is not None else None
+    if verified is False:
+        click.echo("   [warn] 反映を確認できず。1度だけ再送します。")
+        ta = page.locator(COMMENT_TEXTAREA).first
+        ta.scroll_into_view_if_needed()
+        page.wait_for_timeout(500)
+        ta.click()
+        ta.fill(comment)
+        page.wait_for_timeout(1500)
+        page.locator("button[aria-label='送信']").first.click()
+        page.wait_for_timeout(4000)
+        verified = _verify_posted(ctx, url, comment)
+    if verified is False:
+        raise RuntimeError("コメントが反映されませんでした（送信は押せたが未反映）")
 
     liked = False
     if entry.get("like"):
@@ -205,7 +261,15 @@ def main(date: str, commit: bool, headed: bool) -> None:
     posted = 0
     with sync_playwright() as p:
         b = p.chromium.launch(headless=not headed)
-        ctx = b.new_context(storage_state=str(AUTH_PATH))
+        ctx = b.new_context(
+            storage_state=str(AUTH_PATH),
+            viewport={"width": 1280, "height": 1000},
+            # UA を付けないと投稿 POST が通らない（送信ボタンは押せるのに未反映になる。2026-09-26 に判明）
+            user_agent=(
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+            ),
+        )
         page = ctx.new_page()
         for i, q in enumerate(to_post, 1):
             d, own = q["entry"], q["own"]
@@ -214,8 +278,8 @@ def main(date: str, commit: bool, headed: bool) -> None:
                 break
             click.echo(f"\n[{i}/{len(to_post)}] 投稿中 @{d.get('author')} ...")
             try:
-                r = _post_one(page, d, own)
-                _log({"action": "comment", "ok": True, **r})
+                r = _post_one(page, d, own, ctx=ctx)
+                _log({"action": "comment", "ok": True, "verified": True, **r})
                 posted += 1
                 click.echo(f"   [OK] コメント投稿{'＋スキ' if r['liked'] else ''}")
             except Exception as exc:  # noqa: BLE001
