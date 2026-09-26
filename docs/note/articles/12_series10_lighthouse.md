@@ -7,7 +7,9 @@ series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 10
 category: series
 matcher_type: lighthouse
-status: ceo_approved
+status: published
+published: 2026-09-26
+published_url: https://note.com/hidamari_sodachi/n/nb2aa26393f6d
 ceo_review_required: false
 ceo_reviewed: 2026-09-25
 created: 2026-09-25
