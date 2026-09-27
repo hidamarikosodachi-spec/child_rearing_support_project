@@ -6,7 +6,8 @@ theme: 子育てタイプ診断リリース告知（T114・全チャネル同時
 slides: 7
 status: ceo_approved
 scheduled_post: 2026-09-28
-owner_approved: false
+owner_approved: true
+posted: 2026-09-28   # オーナー手動投稿（7枚＋ストーリー・リンクスタンプに診断URL）
 hashtags: [子育て, 育児, 子育ての悩み, 育児の悩み, 育児ママ, 育児パパ, 子育て診断, ひだまりこそだち]
 matcher_url: https://hidamari-kosodachi.pages.dev/matcher/
 pipeline_draft: docs/drafts/instagram/2026-09-28.md

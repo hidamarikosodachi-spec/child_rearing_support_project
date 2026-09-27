@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-24",
+  "as_of": "2026-09-28",
   "followers": null,
   "reach": null,
   "likes": null,
@@ -13,6 +13,26 @@
       "link": "https://note.com/hidamari_sodachi/n/n14b031f094b9",
       "views": null,
       "link_taps": null
+    },
+    {
+      "date": "2026-09-28",
+      "title": "診断告知カルーセル④（7枚）と同時のストーリー",
+      "image": "assets/stories/matcher_announce.png",
+      "link": "https://hidamari-kosodachi.pages.dev/matcher/",
+      "views": null,
+      "link_taps": null
+    }
+  ],
+  "posts": [
+    {
+      "date": "2026-09-28",
+      "type": "carousel",
+      "slides": 7,
+      "title": "わが家はどの風景？ 8つのこそだちタイプ（診断告知）",
+      "reach": null,
+      "likes": null,
+      "saves": null,
+      "profile_visits": null
     }
   ]
 }

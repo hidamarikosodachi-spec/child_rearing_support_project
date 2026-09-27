@@ -15,7 +15,7 @@ related: [[backlog]] [[publishing_plan_v1]] [[posting_schedule]] [[theme_perform
 
 | 日付 | やること | 所要 | 状態 |
 |---|---|---|---|
-| **9/28(月)** | **Instagram にカルーセル④（診断告知・6枚）＋ストーリー投稿**。画像 `assets/instagram/2026-09-28/`・キャプションは [[carousel04_matcher]] | 5分 | ⬜ |
+| **9/28(月)** | ✅ Instagram カルーセル④（7枚）＋ストーリー 投稿完了 | 5分 | ✅ |
 | **10/4(日)** | 週次レビューに一言回答 | 5分 | 毎週 |
 
 > それ以外（執筆・入稿・公開・Threads・誠実接触・診断サイト）は私がやります。
