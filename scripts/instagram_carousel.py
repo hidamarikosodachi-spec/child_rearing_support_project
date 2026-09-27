@@ -94,6 +94,9 @@ def _frame(inner_html: str, page_no: int, total: int) -> str:
 @page {{ size: {W}px {H}px; margin: 0; }}
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
 html, body {{ width: {W}px; height: {H}px; }}
+/* 日本語は既定だと単語の途中でも折り返す。keep-all で禁止し、改行は原稿側で決める
+   （オーナー指示 2026-09-27「文末から読んで1行で読めるように」） */
+* {{ word-break: keep-all; overflow-wrap: normal; line-break: strict; }}
 body {{ font-family: 'Noto Sans CJK JP', sans-serif; background: {C_BG};
   position: relative; overflow: hidden; }}
 .sun  {{ position: absolute; top: -210px; right: -210px; width: 540px; height: 540px;

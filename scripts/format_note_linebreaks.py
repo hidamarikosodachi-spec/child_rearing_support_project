@@ -24,7 +24,13 @@ import sys
 OPEN = "「（『"
 CLOSE = "」）』"
 ENDERS = "。！？!?"
-LIMIT = 25  # この長さを超えていれば読点でも改行
+LIMIT = 25   # この長さを超えていれば読点でも改行
+HARD = 34    # これを超える行は、助詞の切れ目でさらに分ける（スマホで折り返させない）
+# 「1行だけ読んで意味が通る」ようにするため、助詞の後ろを切れ目として使う
+# （オーナー指示 2026-09-27・[[feedback-line-breaks]]）
+PARTICLES = ("ので", "けど", "から", "より", "ため", "のに", "ては", "ても", "でも",
+             "には", "とは", "では", "って", "は", "が", "を", "に", "で", "と", "も")
+NO_HEAD = "、。）」』】,.!?！？ー・"
 
 
 def break_text(s):
@@ -52,7 +58,60 @@ def break_text(s):
         i += 1
     if cur:
         lines.append(cur)
-    return [l for l in lines if l != ""]
+    out = []
+    for l in lines:
+        out.extend(_split_long(l))
+    return [l for l in out if l != ""]
+
+
+def _split_long(line):
+    """HARD 字を超える行を、助詞の切れ目で分ける。切れ目が無ければそのまま返す。
+
+    スマホ幅では長い行が自動で折り返り、単語の途中で切れて読みづらくなるため。
+    """
+    if len(line) <= HARD or "](http" in line:   # リンク記法は途中で切らない
+        return [line]
+
+    def in_emph(pos, text):
+        """pos が **太字** の内側かどうか（内側では切らない）。"""
+        spans, start = [], 0
+        while True:
+            a = text.find("**", start)
+            if a < 0:
+                break
+            b = text.find("**", a + 2)
+            if b < 0:
+                break
+            spans.append((a, b + 2))
+            start = b + 2
+        return any(a < pos < b for a, b in spans)
+    res, rest = [], line
+    while len(rest) > HARD:
+        cuts = []
+        for p in PARTICLES:
+            start = 0
+            while True:
+                i = rest.find(p, start)
+                if i < 0 or i + len(p) > HARD:
+                    break
+                end = i + len(p)
+                if (end < len(rest) and rest[end] not in NO_HEAD and end >= 8
+                        and not in_emph(end, rest)):
+                    cuts.append(end)
+                start = i + 1
+        if not cuts:
+            break
+        cut = max(cuts)
+        if len(rest) - cut < 5:                # 「いい」だけの行を作らない
+            earlier = [c for c in cuts if len(rest) - c >= 5]
+            if not earlier:
+                break
+            cut = max(earlier)
+        res.append(rest[:cut])
+        rest = rest[cut:]
+    if rest:
+        res.append(rest)
+    return res
 
 
 def process_body_line(line):
