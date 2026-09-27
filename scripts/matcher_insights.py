@@ -23,6 +23,8 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs/insights/matcher.md"
 DB = "hidamari-matcher"
 ANNOUNCE = "2026-09-25"          # 各SNSで告知した日。これより前は試用として分ける
+# 自分（Claude）の動作確認は本番集計に混ぜない。確認したら D1 から削除する運用にする
+# （2026-09-26 の全軸+2.00 の1件は動作確認だったため削除済）。
 JST = timezone(timedelta(hours=9))
 TYPE_JP = {
     "lighthouse": "灯台", "field": "畑", "bonfire": "たき火", "trail": "山道",
