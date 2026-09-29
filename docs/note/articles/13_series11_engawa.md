@@ -7,7 +7,9 @@ series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 11
 category: series
 matcher_type: engawa
-status: ceo_approved
+status: published
+published: 2026-09-29
+published_url: https://note.com/hidamari_sodachi/n/n0de5a2163a03
 ceo_review_required: false
 ceo_reviewed: 2026-09-26
 created: 2026-09-26
