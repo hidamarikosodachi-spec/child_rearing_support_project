@@ -36,7 +36,16 @@
       "shares": 0,
       "comments": 1,
       "interactions": 1,
-      "note": "投稿翌日(9/29)時点。閲覧者は '--'（集計前）。コメント1件＝IG初の外部反応"
+      "note": "投稿翌日(9/29)時点。閲覧者は '--'（集計前）。コメント1件＝IG初の外部反応",
+      "url": "https://www.instagram.com/p/Ddx_x5JE72M/",
+      "comments_detail": [
+        {
+          "user": "kakeru_papapa",
+          "text": "「正しい・間違い」じゃなくて方向の違い、という考え方に気持ちが楽になりました",
+          "replied": true,
+          "note": "パパアカウント。反応したのは表紙ではなく3〜4枚目の主張そのもの（正しい/間違いではなく方向の違い）。note・Threads では取れていない層"
+        }
+      ]
     }
   ]
 }

@@ -8,6 +8,8 @@ status: ceo_approved
 scheduled_post: 2026-09-28
 owner_approved: true
 posted: 2026-09-28   # オーナー手動投稿（7枚＋ストーリー・リンクスタンプに診断URL）
+post_url: https://www.instagram.com/p/Ddx_x5JE72M/
+result: "9/29時点＝コメント1（@kakeru_papapa・返信済）／いいね0・保存0・シェア0・閲覧者は集計前。反応は3〜4枚目の主張『正しい/間違いではなく方向の違い』に対して"
 hashtags: [子育て, 育児, 子育ての悩み, 育児の悩み, 育児ママ, 育児パパ, 子育て診断, ひだまりこそだち]
 matcher_url: https://hidamari-kosodachi.pages.dev/matcher/
 pipeline_draft: docs/drafts/instagram/2026-09-28.md

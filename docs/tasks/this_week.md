@@ -83,3 +83,4 @@ related: [[backlog]] [[publishing_plan_v1]] [[posting_schedule]] [[theme_perform
 - [ ] 診断のタイプ名・記事のトーンに違和感はないか
 - [ ] インプレッションの伸びが続いているか（[[dashboard]]・`note_dashboard.py`）
 - [ ] 誠実接触を週2に増やすことに異論はないか（BAN リスクは変わらず私が管理）
+- [ ] **Instagram を主戦場に引き上げるか**（9/28 カルーセル④で **コメント1件・パパアカウントから**＝反応率は全チャネル中いちばん良い。ただし投稿はオーナー手動5分）
