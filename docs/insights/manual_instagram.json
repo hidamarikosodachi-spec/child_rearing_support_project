@@ -1,10 +1,10 @@
 {
-  "as_of": "2026-09-28",
+  "as_of": "2026-09-29",
   "followers": null,
   "reach": null,
   "likes": null,
   "comments": null,
-  "note": "IG API 未接続のため手入力。スマホ/PC の Instagram インサイトを見て数字を入れる（空欄は null のままでOK）。ストーリーは24hで消えるので、リンクタップ数は投稿翌日までに控える。",
+  "note": "IG API 未接続のため手入力。スマホ/PC の Instagram インサイトを見て数字を入れる（空欄は null のままでOK）。ストーリーは24hで消えるので、リンクタップ数は投稿翌日までに控える。 ／ 9/29: カルーセル④にコメント1件（IG初の反応）。返信はオーナーがアプリから。",
   "stories": [
     {
       "date": "2026-09-22",
@@ -30,9 +30,13 @@
       "slides": 7,
       "title": "わが家はどの風景？ 8つのこそだちタイプ（診断告知）",
       "reach": null,
-      "likes": null,
-      "saves": null,
-      "profile_visits": null
+      "likes": 0,
+      "saves": 0,
+      "profile_visits": null,
+      "shares": 0,
+      "comments": 1,
+      "interactions": 1,
+      "note": "投稿翌日(9/29)時点。閲覧者は '--'（集計前）。コメント1件＝IG初の外部反応"
     }
   ]
 }
