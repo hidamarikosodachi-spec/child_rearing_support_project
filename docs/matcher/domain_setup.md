@@ -57,3 +57,28 @@ related: [[web_growth_strategy_v1]] [[deploy_cloudflare]] [[web/README]]
 ## 注意
 - ドメイン購入の API は現行トークンの権限外（`Authentication error` を確認済）。**画面からの操作が必要**。
 - 取得後すぐは検索に出ない。**効き始めるのは3〜6ヶ月後**。焦って評価しない。
+
+---
+
+## 取得後の進捗（2026-09-29）
+
+| 手順 | 状態 |
+|---|---|
+| ドメイン取得 | ✅ オーナー購入（Cloudflare Registrar） |
+| ゾーン作成 | ✅ `hidamari-kosodachi.com`（active・自動） |
+| Pages へカスタムドメイン追加 | ✅ API で追加（status: pending） |
+| **DNS レコード作成** | ⛔ **トークンに Zone:DNS 権限が無く実行不可** |
+| URL 置換・リダイレクト・Search Console | ⏳ DNS 有効化の後 |
+
+### 解除方法（どちらか一方でよい）
+
+**方法A：トークンに DNS 権限を足す（推奨・以後も私が作業できる）**
+1. https://dash.cloudflare.com/profile/api-tokens → `hidamari-matcher-deploy` の **編集**
+2. 「アクセス許可」に1行追加 → **ゾーン / DNS / 編集**
+3. ゾーンリソース: 「包含 → 特定のゾーン → hidamari-kosodachi.com」
+4. 保存（**トークンの文字列は変わらない**ので .env の更新は不要）
+
+**方法B：画面から手で足す（1回きり）**
+1. Cloudflare → **Websites** → `hidamari-kosodachi.com` → **DNS** → **レコードを追加**
+2. 種類 `CNAME` ／ 名前 `@` ／ ターゲット `hidamari-kosodachi.pages.dev` ／ **プロキシ ON（オレンジの雲）**
+3. 同じ要領で 名前 `www` ／ ターゲット `hidamari-kosodachi.pages.dev` ／ プロキシ ON
