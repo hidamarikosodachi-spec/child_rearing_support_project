@@ -73,6 +73,21 @@ related: [[writing_voice_v1]] [[web_growth_strategy_v1]] [[series_plan_v0]]
 6. **物語形式は使わない**（[[writing_voice_v1]] は Threads/IG 限定）。
 7. **「あなた」を使ってよい**（note では避け気味だが、検索記事は1対1で話す）。
 
+## 4.5 制作の流れ（2026-09-30 構築）
+
+```
+docs/site/articles/<slug>.md        ← 記事の正本（Obsidianで読める・私が執筆）
+        ↓ python3 scripts/build_site_articles.py
+web/kosodachi/<slug>.html           ← 公開ページ（OGP・構造化データ・共通CSS）
+        ↓ wrangler pages deploy
+https://hidamari-kosodachi.com/kosodachi/<slug>
+```
+
+- front-matter の `status` が **published** のものだけ公開される（`draft` は生成されない）
+- `--all` を付けると draft も生成（オーナー確認用）
+- 公開すると `build_matcher_pages.py` が **sitemap に自動で追加**する
+- 記事ページには**構造化データ（Article）**を入れてある（検索での表示に効く）
+
 ## 5. 最初に書く10本（検索語ベース）
 
 実測で反応が大きかったテーマ（[[theme_performance_v1]]）＝自責が強い順に並べた。

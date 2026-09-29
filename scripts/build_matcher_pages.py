@@ -112,6 +112,21 @@ def page(t: dict, types: dict, order: list, disc: str) -> str:
 """
 
 
+def _article_urls() -> list[str]:
+    """公開済みの検索記事（docs/site/articles）を sitemap に含める。"""
+    urls = []
+    src = ROOT / "docs/site/articles"
+    for f in sorted(src.glob("*.md")) if src.exists() else []:
+        head = f.read_text(encoding="utf-8").split("---", 2)[1]
+        meta = dict(
+            (l.split(":", 1)[0].strip(), l.split(":", 1)[1].strip())
+            for l in head.splitlines() if ":" in l
+        )
+        if meta.get("status") == "published" and meta.get("slug"):
+            urls.append(f"{SITE}/kosodachi/{meta['slug']}")
+    return urls
+
+
 def main() -> None:
     types, order, disc = load_types()
     out = WEB / "matcher/t"
@@ -121,7 +136,7 @@ def main() -> None:
     print(f"[OK] web/matcher/t/*.html を生成（{len(order)}件）")
 
     urls = [f"{SITE}/matcher/", f"{SITE}/matcher/types", f"{SITE}/privacy/"] + \
-           [f"{SITE}/matcher/t/{k}" for k in order]
+           [f"{SITE}/matcher/t/{k}" for k in order] + _article_urls()
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">'.replace("sitemap.org", "sitemaps.org")]
     for u in urls:
