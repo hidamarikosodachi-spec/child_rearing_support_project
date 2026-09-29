@@ -30,7 +30,7 @@ related: [[carousel04_matcher]] [[profile_matcher_v1]] [[deploy_cloudflare]]
 |---|---|
 | 投稿スクリプト（カルーセル/単画像） | ✅ 完成（`scripts/post_instagram.py`） |
 | キャプション抽出 | ✅ 修正済（「## キャプション（投稿本文）」節だけを本文にする） |
-| 画像の公開URL | ✅ **Cloudflare Pages で配信**（`web/ig/...` → `https://hidamari-kosodachi.pages.dev/ig/...`）。**R2 は不要になった** |
+| 画像の公開URL | ✅ **Cloudflare Pages で配信**（`web/ig/...` → `https://hidamari-kosodachi.com/ig/...`）。**R2 は不要になった** |
 | `META_INSTAGRAM_BUSINESS_ID` | ❌ 未取得 |
 | Instagram 投稿権限つきトークン | ❌ 未取得（いまの `META_ACCESS_TOKEN` は **Threads 専用**で、Facebook Graph では弾かれる） |
 | `META_APP_ID` / `META_APP_SECRET` | ❌ 未設定（※Instagramログイン方式では不要） |

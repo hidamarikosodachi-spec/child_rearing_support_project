@@ -18,7 +18,7 @@ source:
   - docs/matcher/type_results_v1.md（小川タイプ）
   - docs/knowledge/education_theories/tier_s/shiomi/・kurahashi/
 target_chars: 1800-2200
-matcher_url: https://hidamari-kosodachi.pages.dev/matcher/
+matcher_url: https://hidamari-kosodachi.com/matcher/
 ---
 
 > 連載「となりの考え方」第12回＝タイプ別シリーズ第3弾（小川タイプ）。
@@ -187,8 +187,8 @@ matcher_url: https://hidamari-kosodachi.pages.dev/matcher/
 
 ---
 
-自分がどのタイプに近いかは、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.pages.dev/matcher/)（18問・約3分）で見られます。
-[8つのタイプの一覧](https://hidamari-kosodachi.pages.dev/matcher/types)はこちらです。
+自分がどのタイプに近いかは、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.com/matcher/)（18問・約3分）で見られます。
+[8つのタイプの一覧](https://hidamari-kosodachi.com/matcher/types)はこちらです。
 
 ---
 

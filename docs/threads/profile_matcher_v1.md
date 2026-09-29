@@ -11,7 +11,7 @@ related: [[profile_v0]] [[type_system_v1]]
 
 ## リンク欄
 **変更前**: https://note.com/hidamari_sodachi
-**変更後**: https://hidamari-kosodachi.pages.dev/matcher/
+**変更後**: https://hidamari-kosodachi.com/matcher/
 
 ## 自己紹介（コピペ用）
 

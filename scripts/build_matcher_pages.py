@@ -21,7 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
-SITE = "https://hidamari-kosodachi.pages.dev"
+SITE = "https://hidamari-kosodachi.com"
 
 
 def load_types() -> tuple[dict, list, str]:

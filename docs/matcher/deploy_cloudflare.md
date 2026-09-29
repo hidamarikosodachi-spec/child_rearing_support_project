@@ -7,7 +7,7 @@ related: [[type_system_v1]] [[web/README]]
 
 # 診断サイト公開の手順（Cloudflare）
 
-> ✅ **2026-09-24 公開完了 → https://hidamari-kosodachi.pages.dev/matcher/**
+> ✅ **2026-09-24 公開完了 → https://hidamari-kosodachi.com/matcher/**
 > 以下は記録（再構築・引き継ぎ用）。日々の更新手順は [[web/README]] を見る。
 
 > **オーナーがやるのは「1. トークンを作って .env に貼る」だけ（10分）。** 残りは私（Claude）が実行する。
@@ -55,7 +55,7 @@ wrangler pages project create hidamari-kosodachi           # 初回のみ
 wrangler pages deploy web --project-name hidamari-kosodachi
 ```
 
-公開URL（例）: `https://hidamari-kosodachi.pages.dev/matcher/`
+公開URL（例）: `https://hidamari-kosodachi.com/matcher/`
 → 動作確認（実際に1回診断して D1 に行が入るか）まで私がやり、URL をお知らせする。
 
 ## 3. 公開後

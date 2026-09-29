@@ -36,7 +36,7 @@ API 未設定でも診断は動く（送信は失敗しても握りつぶし、�
 
 ## 公開状況（2026-09-24 公開済）
 
-- 本番URL: **https://hidamari-kosodachi.pages.dev/matcher/**
+- 本番URL: **https://hidamari-kosodachi.com/matcher/**
 - Pages プロジェクト: `hidamari-kosodachi` ／ D1: `hidamari-matcher`（`35971a97-b7e4-4eac-a80c-c76af473e8e1`・APAC）
 - 認証は `.env` の `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`（gitignore 済）
 

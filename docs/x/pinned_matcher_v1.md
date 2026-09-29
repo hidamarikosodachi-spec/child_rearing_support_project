@@ -22,7 +22,7 @@ related: [[profile_v0]] [[type_system_v1]]
 
 18問・約3分。名前もメールも要りません。
 
-https://hidamari-kosodachi.pages.dev/matcher/
+https://hidamari-kosodachi.com/matcher/
 
 #子育て #育児
 
@@ -37,7 +37,7 @@ https://hidamari-kosodachi.pages.dev/matcher/
 ## 3. プロフィール（ウェブサイト欄）
 
 **変更前**: https://note.com/hidamari_sodachi
-**変更後**: https://hidamari-kosodachi.pages.dev/matcher/
+**変更後**: https://hidamari-kosodachi.com/matcher/
 
 > 診断を入口にし、結果ページから note 連載へ送る導線に変更（T101）。
 > note は固定ポストと結果ページの両方から辿れるので、入口は診断に一本化する。

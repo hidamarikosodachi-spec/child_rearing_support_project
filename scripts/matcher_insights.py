@@ -78,7 +78,7 @@ def main() -> None:
         "# 診断インサイト（わが家のこそだちタイプ）", "",
         "> **自動生成（`scripts/matcher_insights.py`）。手で編集しない。**",
         "> 自由記述の原文は載せない（プライバシーポリシーの約束）。頻出語と件数のみ。", "",
-        f"集計 {datetime.now(JST):%Y-%m-%d %H:%M} JST ／ 診断URL https://hidamari-kosodachi.pages.dev/matcher/", "",
+        f"集計 {datetime.now(JST):%Y-%m-%d %H:%M} JST ／ 診断URL https://hidamari-kosodachi.com/matcher/", "",
         "## サマリ", "",
         "| 項目 | 件数 |", "|---|---|",
         f"| 完了した回答（告知 {ANNOUNCE} 以降） | **{n}** |",

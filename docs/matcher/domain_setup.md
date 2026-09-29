@@ -7,6 +7,8 @@ related: [[web_growth_strategy_v1]] [[deploy_cloudflare]] [[web/README]]
 
 # 独自ドメイン `hidamari-kosodachi.com` の取得と接続
 
+> ✅ **2026-09-29 稼働開始 → https://hidamari-kosodachi.com/matcher/**
+
 > 空き確認済み（2026-09-29・RDAP で未登録）。**ドメイン購入だけはオーナーの決済操作が必要**（API では不可）。
 > 取得後の接続・移行はすべて私（Claude）が行う。
 
@@ -50,7 +52,7 @@ related: [[web_growth_strategy_v1]] [[deploy_cloudflare]] [[web/README]]
 
 | いま | 移行後 |
 |---|---|
-| `hidamari-kosodachi.pages.dev/matcher/` | `hidamari-kosodachi.com/matcher/` |
+| `hidamari-kosodachi.com/matcher/` | `hidamari-kosodachi.com/matcher/` |
 | `…/matcher/t/engawa` | `hidamari-kosodachi.com/matcher/t/engawa` |
 | （新設） | `hidamari-kosodachi.com/kosodachi/<slug>` ＝ 悩み別の検索記事 |
 
@@ -67,8 +69,12 @@ related: [[web_growth_strategy_v1]] [[deploy_cloudflare]] [[web/README]]
 | ドメイン取得 | ✅ オーナー購入（Cloudflare Registrar） |
 | ゾーン作成 | ✅ `hidamari-kosodachi.com`（active・自動） |
 | Pages へカスタムドメイン追加 | ✅ API で追加（status: pending） |
-| **DNS レコード作成** | ⛔ **トークンに Zone:DNS 権限が無く実行不可** |
-| URL 置換・リダイレクト・Search Console | ⏳ DNS 有効化の後 |
+| **DNS レコード作成** | ✅ CNAME `@` / `www` → pages.dev（プロキシON） |
+| SSL 証明書 | ✅ 発行済み（apex / www とも 200） |
+| サイト内URLの置換 | ✅ 27ファイル（canonical・OGP・sitemap・生成スクリプト） |
+| 旧URLのリダイレクト | ✅ `functions/_middleware.js` で 301（POST は除外） |
+| Web Analytics のホスト追加 | ⏳ オーナー操作（下記） |
+| Google Search Console | ⏳ 次にやる |
 
 ### 解除方法（どちらか一方でよい）
 
@@ -80,5 +86,19 @@ related: [[web_growth_strategy_v1]] [[deploy_cloudflare]] [[web/README]]
 
 **方法B：画面から手で足す（1回きり）**
 1. Cloudflare → **Websites** → `hidamari-kosodachi.com` → **DNS** → **レコードを追加**
-2. 種類 `CNAME` ／ 名前 `@` ／ ターゲット `hidamari-kosodachi.pages.dev` ／ **プロキシ ON（オレンジの雲）**
-3. 同じ要領で 名前 `www` ／ ターゲット `hidamari-kosodachi.pages.dev` ／ プロキシ ON
+2. 種類 `CNAME` ／ 名前 `@` ／ ターゲット `hidamari-kosodachi.com` ／ **プロキシ ON（オレンジの雲）**
+3. 同じ要領で 名前 `www` ／ ターゲット `hidamari-kosodachi.com` ／ プロキシ ON
+
+
+## 移行後の残作業
+
+### オーナー（3分）
+**Web Analytics に新ホスト名を追加**（いまは pages.dev のみ計測しているため、新ドメインの訪問が記録されない）
+1. https://dash.cloudflare.com/42eee9ce328ae3727b92ca4530e88471/web-analytics
+2. `hidamari-kosodachi.com` を **Add a site**
+3. 表示される token を教えてください → 私がタグを差し替えます
+   （※ 既存の pages.dev 用サイトは残しておいてよい）
+
+### 私
+- Google Search Console 登録＋sitemap 送信（DNS 認証は権限があるので自動でできる）
+- 悩み別記事の置き場と生成スクリプト（`docs/site/articles/` → `/kosodachi/<slug>`）

@@ -10,7 +10,7 @@ related: [[profile_v0]] [[carousel04_matcher]]
 > **オーナー作業**: プロフィール編集 → ウェブサイト欄と自己紹介を差し替え。所要3分。
 
 ## ウェブサイト欄
-**変更後**: https://hidamari-kosodachi.pages.dev/matcher/
+**変更後**: https://hidamari-kosodachi.com/matcher/
 
 ## 自己紹介（150字以内・コピペ用）
 
