@@ -69,6 +69,7 @@ def main(days: int, as_json: bool) -> None:
         refs[d["refererHost"] or "直接・不明"] += r["count"]
         dates[d.get("date", "")] += r["count"]
     click.echo(f"=== 診断サイトの訪問（直近{days}日）合計 {total} ===")
+    click.echo("※ 2026-09-29 に独自ドメインへ移行。移行前は hidamari-kosodachi.pages.dev 側に計上されている")
     click.echo("\n--- ページ別 ---")
     for k, v in pages.most_common(12):
         click.echo(f"  {v:>4}  {k}")
