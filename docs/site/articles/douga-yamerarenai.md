@@ -1,10 +1,10 @@
 ---
 slug: douga-yamerarenai
 title: 動画をやめられないとき
-description: 見せてしまう罪悪感と、終わらせ方のコツ。時間より大事な見方と、見せた日を責めなくていい理由。
+description: 動画をやめられないときの終わらせ方3つと、見せた日を責めなくていい理由。やめられないのは意志ではなく、終わりが外から来ない仕組みだからです。
 search_intent: 子供 動画 やめられない / youtube 見せすぎ 罪悪感
 category: asobi
-tags: 動画, スクリーンタイム, 罪悪感, 終わらせ方
+tags: asobi, jiko, age-2-3
 status: published
 date: 2026-10-01
 theory: 見通しを渡す（終わりを先に決める）

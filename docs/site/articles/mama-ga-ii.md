@@ -1,10 +1,10 @@
 ---
 slug: mama-ga-ii
 title: 「ママがいい」と泣かれる日
-description: 何をしても「ママがいい」と拒まれるとき。父親側にできることと、この時期の意味。交代しなくても関わりは作れます。
+description: 「ママがいい」と泣かれる日に、父親側にできること。交代ではなく並ぶ・得意な場面を持つ・母親が離れる時間をつくる。順位は一時的なもので入れ替わります。
 search_intent: ママがいい パパ 拒否 / 父親 イヤがられる 育児
 category: kodomo
-tags: ママがいい, 父親, 甘え, 抱っこ
+tags: papa, kyodai, age-0-1
 status: published
 date: 2026-10-01
 theory: 愛着（対象の順位は変わる）

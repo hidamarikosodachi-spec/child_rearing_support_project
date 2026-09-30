@@ -1,10 +1,10 @@
 ---
 slug: kanshaku-osamaranai
 title: かんしゃくが収まらないとき
-description: 泣き叫んで手がつけられないとき、その場でできることと、やらないほうがいいこと。落ち着いたあとの声かけまで。
+description: かんしゃくが収まらないとき、その場でできる3つとやらないほうがいいこと。感情を抑える力はゆっくり育つので、静める役はそばにいる大人が担います。
 search_intent: 癇癪 収まらない 3歳 / かんしゃく 対応 泣き叫ぶ
 category: kodomo
-tags: かんしゃく, イヤイヤ期, 3歳, 泣く
+tags: age-2-3, iraira
 status: published
 date: 2026-10-01
 theory: 感情の調整（大人が一緒に静まる）

@@ -1,10 +1,10 @@
 ---
 slug: iraira-tomaranai
 title: イライラが止まらない日に
-description: 子どもにイライラが止まらない日があります。今できるいちばん小さな対処と、なぜ余裕がなくなるのか。毎日おだやかにはできません。
+description: 子どもへのイライラが止まらない日に、この10分でできる3つのこと。座る・水を飲む・少し離れる。いらだちは感情ではなく、睡眠と休憩の残量のサインとして出てきます。
 search_intent: 子育て イライラ 止まらない / 育児 イライラ 自己嫌悪
 category: kimochi
-tags: イライラ, 余裕がない, 自己嫌悪, 休む
+tags: iraira, tsukare
 status: published
 date: 2026-10-01
 theory: 自己調整（親の状態が先）

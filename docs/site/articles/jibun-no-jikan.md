@@ -1,10 +1,10 @@
 ---
 slug: jibun-no-jikan
 title: 自分の時間がないと感じたら
-description: 子どもが寝たあとの時間が、自分のためになっていないと感じるとき。取り戻し方と、そう感じる理由。
+description: 子どもが寝たあとの時間が休息にならないのはなぜか。自分のためだけの時間を取り戻す3つの方法と、休めているかは長さではなく何を考えていたかで決まるという話。
 search_intent: 自分の時間がない 育児 / ママ 自分の時間 ほしい
 category: kimochi
-tags: 自分の時間, 休む, 余裕がない, 夜
+tags: tsukare, bedtime
 status: published
 date: 2026-10-01
 theory: 養育者の回復（休息は関わりの質に直結する）

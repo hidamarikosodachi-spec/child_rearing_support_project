@@ -92,6 +92,10 @@ def main() -> None:
         render(build_html(t["label"], t["lead"], t["axes"]), OUT / f"type_{k}.png")
     render(build_html("8つのこそだちタイプ", "18問・約3分。正解も順位もありません。", "導く/委ねる・整える/流れる・寄り添う/見守る"),
            OUT / "matcher.png")
+    render(build_html("読みもの", "いま困っていることから選べます。", "気持ち・生活・子どもの様子・遊びと道具"),
+           OUT / "kosodachi.png")
+    render(build_html("頼れる相談先", "まだそこまでではない、と思う段階で使って大丈夫です。", "保健センター・子育て支援センター・電話とLINE"),
+           OUT / "soudan.png")
 
 
 if __name__ == "__main__":

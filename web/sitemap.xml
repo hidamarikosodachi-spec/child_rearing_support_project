@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hidamari-kosodachi.com/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/all</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/soudan/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/matcher/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/matcher/types</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/privacy/</loc><changefreq>monthly</changefreq></url>
@@ -40,6 +42,21 @@
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/2歳</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/3歳</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/SNS</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-0-1</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-2-3</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-4-6</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/asobi</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/bedtime</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/fuan</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/hoikuen</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/iraira</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/jiko</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/kaimono</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/kyodai</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/meal</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/morning</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/papa</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/tsukare</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/いやがる</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/かんしゃく</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/きょうだい</loc><changefreq>monthly</changefreq></url>

@@ -1,10 +1,10 @@
 ---
 slug: iyaiya-tsukareta
 title: イヤイヤ期に疲れ果てた日
-description: 何を言っても「いや」の時期に。対応を減らす方法と、この時期がいつまで続くのか。
+description: 何を言っても「いや」の時期に疲れ果てた日に。選ばせる・待つ・通してしまうの3つと、イヤイヤ期が自我の芽生えとして正常である理由、いつごろ収まるか。
 search_intent: イヤイヤ期 疲れた / イヤイヤ期 いつまで つらい
 category: kodomo
-tags: イヤイヤ期, 2歳, かんしゃく, 余裕がない
+tags: age-2-3, iraira, tsukare
 status: published
 date: 2026-10-01
 theory: 自我の芽生え（自分で決めたい時期）

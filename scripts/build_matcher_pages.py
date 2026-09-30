@@ -142,7 +142,7 @@ def main() -> None:
         (out / f"{k}.html").write_text(page(types[k], types, order, disc), encoding="utf-8")
     print(f"[OK] web/matcher/t/*.html を生成（{len(order)}件）")
 
-    urls = [f"{SITE}/", f"{SITE}/kosodachi/", f"{SITE}/matcher/", f"{SITE}/matcher/types", f"{SITE}/privacy/"] + \
+    urls = [f"{SITE}/", f"{SITE}/kosodachi/", f"{SITE}/kosodachi/all", f"{SITE}/soudan/", f"{SITE}/matcher/", f"{SITE}/matcher/types", f"{SITE}/privacy/"] + \
            [f"{SITE}/matcher/t/{k}" for k in order] + _article_urls()
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">'.replace("sitemap.org", "sitemaps.org")]

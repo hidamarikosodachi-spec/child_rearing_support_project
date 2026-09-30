@@ -1,10 +1,10 @@
 ---
 slug: kyodai-genka
 title: きょうだいげんかが続く日
-description: 一日に何度も止めに入って疲れるとき。どこまで見守り、どこで入るか。上の子を責めずに済む方法。
+description: きょうだいげんかが続いて疲れるとき。どちらが悪いか決めない・危ないときだけ入る・上の子に先に声をかけるの3つと、けんかが繰り返される構造について。
 search_intent: きょうだい喧嘩 疲れた / 兄弟 喧嘩 仲裁 どうすれば
 category: kodomo
-tags: きょうだい, けんか, 上の子, 仲裁
+tags: kyodai, iraira, age-4-6
 status: published
 date: 2026-10-01
 theory: 対等な関わり（裁定者にならない）

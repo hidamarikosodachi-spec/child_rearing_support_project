@@ -1,10 +1,10 @@
 ---
 slug: ehon-yomanai
 title: 絵本を読んでも聞かない日
-description: 最後まで聞いてくれない、同じ本ばかり。読み聞かせがうまくいかないときの見方と、やめていい基準。
+description: 絵本を最後まで聞いてくれない、同じ本ばかり持ってくるとき。途中でやめていい理由と、反復が安心の確認である理由。読まない日があっても大丈夫です。
 search_intent: 絵本 読み聞かせ 聞かない / 絵本 同じ本ばかり 2歳
 category: asobi
-tags: 絵本, 遊び, 2歳, 読み聞かせ
+tags: asobi, bedtime, age-2-3
 status: published
 date: 2026-10-01
 theory: 反復の意味（同じものを求める時期）

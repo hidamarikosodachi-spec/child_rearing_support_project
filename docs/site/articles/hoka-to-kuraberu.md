@@ -1,10 +1,10 @@
 ---
 slug: hoka-to-kuraberu
 title: ほかの子と比べてしまうとき
-description: 同じ月齢の子ができていることが気になる日に。比べてしまう理由と、見る場所を変えるという方法。
+description: 同じ月齢の子と比べてしまう日に。発達は順序が同じでも速度が違うこと、見る場所を昨日のその子に変えること、そして心配が続くときの相談先について。
 search_intent: 他の子と比べてしまう 育児 / 同じ月齢 できない 不安
 category: kimochi
-tags: 比べてしまう, 発達, 不安, SNS
+tags: fuan, jiko
 status: published
 date: 2026-10-01
 theory: 発達の個人差（順序は同じ、速度は違う）

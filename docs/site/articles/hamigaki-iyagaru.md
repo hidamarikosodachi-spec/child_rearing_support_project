@@ -1,10 +1,10 @@
 ---
 slug: hamigaki-iyagaru
 title: 歯みがきを嫌がるとき
-description: 毎晩の歯みがきが戦いになっているとき。押さえつけずに済ませる方法と、どこまでできれば大丈夫か。
+description: 歯みがきを嫌がって毎晩が戦いになるとき。終わりを数えて見せる・奥歯に絞る・姿勢を変えるの3つと、押さえつけずに続けるための考え方。
 search_intent: 歯磨き 嫌がる 2歳 / 仕上げ磨き 泣く 押さえつけ
 category: seikatsu
-tags: 歯みがき, 夜, 2歳, いやがる
+tags: bedtime, age-2-3
 status: published
 date: 2026-10-01
 theory: 見通しを渡す（終わりが分かると耐えられる）

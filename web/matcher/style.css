@@ -108,3 +108,20 @@ p, li, .lead, .note, .ab, .theory, .other span {
 .tag-chip{display:inline-block; padding:5px 12px; margin:0 6px 6px 0; border:1px solid var(--line);
   border-radius:99px; background:var(--card); color:var(--sub); font-size:.85rem; text-decoration:none}
 .tag-chip:hover{border-color:var(--sun)}
+
+/* 読みもの：カード（リンクはタイトルのみ＝読み上げ配慮） */
+.card-item{background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:15px 17px; margin:10px 0}
+.card-title{display:block; font-size:1.05rem; font-weight:700; color:var(--title); text-decoration:none; line-height:1.6}
+.card-title:hover{color:var(--accent)}
+.card-desc{margin:6px 0 0; font-size:.9rem; color:var(--muted); line-height:1.75}
+.card-meta{margin:8px 0 0; font-size:.78rem; color:var(--sub); letter-spacing:.04em}
+/* カテゴリ（いまの状況から選ぶ） */
+.cat{display:block; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:15px 17px; margin:10px 0; text-decoration:none; color:inherit}
+.cat:hover{border-color:var(--sun)}
+.cat b{display:block; font-size:1.05rem; color:var(--title)}
+.cat span{display:block; font-size:.85rem; color:var(--muted); margin-top:4px}
+.cat .n{color:var(--sub); font-size:.78rem; margin-top:6px}
+.tag-axis{margin:16px 0 2px; font-size:.82rem; color:var(--sub); letter-spacing:.08em}
+.tag-chip .n{display:inline-block; margin-left:6px; font-size:.75rem; color:var(--muted)}

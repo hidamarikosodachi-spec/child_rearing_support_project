@@ -1,10 +1,10 @@
 ---
 slug: akachan-gaeri
 title: 下の子が生まれてからの上の子
-description: できていたことをやらなくなった、よく泣くようになった。赤ちゃん返りへの対応と、5分でできること。
+description: 下の子が生まれてから上の子が変わったと感じたら。1日5分だけ上の子を見る時間のつくり方と、赤ちゃん返りが「まだここにいていいか」の確認である理由。
 search_intent: 赤ちゃん返り 上の子 対応 / 上の子 かわいくない 下の子
 category: kodomo
-tags: 赤ちゃん返り, きょうだい, 甘え, 抱っこ
+tags: age-2-3, kyodai, fuan
 status: published
 date: 2026-10-01
 theory: 愛着（安全基地の確認行動）

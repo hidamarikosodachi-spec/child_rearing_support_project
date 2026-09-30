@@ -1,10 +1,10 @@
 ---
 slug: kodomo-kawaikunai
 title: 子どもをかわいいと思えない日
-description: 子どもをかわいいと思えない日があります。それは愛情が消えたからではありません。そう感じる理由と、今日できること。
+description: 子どもをかわいいと思えない日があります。愛情が消えたのではなく、消耗で感じる力が鈍っているだけです。そう感じる理由と、今日できる3つのこと、相談できる場所。
 search_intent: 子ども かわいいと思えない / 我が子 かわいくない 罪悪感
 category: kimochi
-tags: 自己嫌悪, 余裕がない, 罪悪感, 愛情
+tags: jiko, tsukare
 status: published
 date: 2026-10-01
 theory: 愛着（感情ではなく行動で続く）

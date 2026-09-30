@@ -1,10 +1,10 @@
 ---
 slug: hoikuen-asa-naku
 title: 保育園の朝に泣かれるとき
-description: 別れ際に泣かれてつらい朝に。別れ方のコツと、泣くことの意味。慣れていないのは親のほうかもしれません。
+description: 保育園の朝に泣かれてつらいとき。別れを短くする・同じ言葉で終える・迎えで喜ぶの3つと、別れ際に泣くのは関係がうまくいっている証拠だという話。
 search_intent: 保育園 朝 泣く いつまで / 登園 泣く つらい
 category: kodomo
-tags: 保育園, 朝の支度, 泣く, 慣らし保育
+tags: hoikuen, morning, fuan
 status: published
 date: 2026-10-01
 theory: 愛着（分離と再会のセット）

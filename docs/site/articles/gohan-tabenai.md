@@ -1,10 +1,10 @@
 ---
 slug: gohan-tabenai
 title: ごはんを食べてくれない日
-description: 作ったものを食べてくれないとき。今日からできることと、量より大事にしたい見方。食べない時期は多くの子にあります。
+description: ごはんを食べてくれない日に。量を減らす・役割を分ける・3日で見るという3つと、1歳半から3歳ごろに食べなくなるのが発達として正常である理由。
 search_intent: 子供 ごはん 食べない / 偏食 3歳 心配
 category: seikatsu
-tags: 偏食, 食事, 3歳, 心配
+tags: meal, fuan, age-2-3
 status: published
 date: 2026-10-01
 theory: 食の自律（食べる量は子どもが決める）

@@ -1,10 +1,10 @@
 ---
 slug: donatte-shimatta
 title: 「怒鳴ってしまった」と後悔する夜に
-description: 怒鳴ってしまった日でも、親子の関係はやり直せます。今夜できる3つのことと、なぜそうなるのか、そして毎日はおだやかにできないことについて。
+description: 怒鳴ってしまった日でも、親子の関係はやり直せます。今夜できる3つのことと、怒鳴ってしまう理由（性格ではなく余裕の量）、そして週に何度かは声が大きくなるのがふつうだということ。
 search_intent: 子供 怒鳴ってしまう 後悔 / 子供 怒鳴ってしまった 自己嫌悪
 category: kimochi
-tags: 怒鳴る, 後悔, イライラ, 寝る前
+tags: iraira, jiko, bedtime
 status: published
 date: 2026-09-30
 theory: ボウルビィ（愛着の修復）

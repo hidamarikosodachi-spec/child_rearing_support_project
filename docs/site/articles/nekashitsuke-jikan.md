@@ -1,10 +1,10 @@
 ---
 slug: nekashitsuke-jikan
 title: 寝かしつけに1時間かかる日
-description: 寝かしつけが長引いてつらいとき。今夜から変えられる3つと、なぜ時間がかかるのか。寝ない日があっても大丈夫です。
+description: 寝かしつけに1時間かかる日が続くとき。起きている時間・部屋の明るさ・手順の3つを変えると入りが変わります。寝ない日があっても大丈夫な理由も書いています。
 search_intent: 寝かしつけ 時間かかる / 寝かしつけ 1時間 つらい
 category: seikatsu
-tags: 寝かしつけ, 夜, 生活リズム, 2歳
+tags: bedtime, tsukare, age-2-3
 status: published
 date: 2026-10-01
 theory: 睡眠圧と入眠儀式
