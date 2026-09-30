@@ -102,3 +102,19 @@ related: [[web_growth_strategy_v1]] [[deploy_cloudflare]] [[web/README]]
 ### 私
 - Google Search Console 登録＋sitemap 送信（DNS 認証は権限があるので自動でできる）
 - 悩み別記事の置き場と生成スクリプト（`docs/site/articles/` → `/kosodachi/<slug>`）
+
+## Google Search Console（2026-09-30 完了）
+
+| 手順 | 状態 |
+|---|---|
+| プロパティ登録（ドメイン） | ✅ オーナー実施。Cloudflare 連携の **Authorize** でTXTレコードが自動追加された |
+| sitemap 送信 | ✅ `https://hidamari-kosodachi.com/sitemap.xml` →「成功しました」検出11ページ |
+| 検索パフォーマンスのデータ | ⏳ 翌日から。中身が溜まるのは数週間〜数ヶ月先 |
+
+> **つまずいた点**: ドメインプロパティでは `sitemap.xml` だけでは無効。**URL全体**を入れる必要がある。
+
+### これから見る場所
+- **検索パフォーマンス** … どんな検索語で表示/クリックされたか（次の記事テーマを決める実データ）
+- **ページ（インデックス作成）** … 検索に載っているページ／載っていないページと、その理由
+
+記事を公開したら sitemap は自動更新されるので、**再送信は不要**（Google が定期的に読みに来る）。
