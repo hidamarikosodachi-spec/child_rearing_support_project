@@ -124,6 +124,13 @@ def _article_urls() -> list[str]:
         )
         if meta.get("status") == "published" and meta.get("slug"):
             urls.append(f"{SITE}/kosodachi/{meta['slug']}")
+    # カテゴリ・タグの一覧ページ（生成済みのものだけ）
+    web = ROOT / "web/kosodachi"
+    for sub in ("category", "tag"):
+        d = web / sub
+        if d.exists():
+            for f in sorted(d.glob("*.html")):
+                urls.append(f"{SITE}/kosodachi/{sub}/{f.stem}")
     return urls
 
 

@@ -22,6 +22,31 @@ SRC = ROOT / "docs/site/articles"
 OUT = ROOT / "web/kosodachi"
 SITE = "https://hidamari-kosodachi.com"
 
+# カテゴリは増やさない（迷子になる）。詳細は docs/site/taxonomy_v1.md
+CATEGORIES = {
+    "kimochi": "気持ちがしんどい日に",
+    "seikatsu": "毎日の生活",
+    "kodomo": "子どもの様子",
+    "asobi": "遊びと道具",
+}
+
+
+def popular_slugs() -> list[str]:
+    """Web Analytics の実測ページビュー順。取れなければ空（架空の人気順は作らない）。"""
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from web_analytics import fetch  # noqa: PLC0415
+        rows = fetch(30)
+    except Exception:  # noqa: BLE001
+        return []
+    from collections import Counter
+    c: Counter[str] = Counter()
+    for r in rows:
+        path = r["dimensions"]["requestPath"]
+        if path.startswith("/kosodachi/") and path.count("/") == 2:
+            c[path.rsplit("/", 1)[-1]] += r["count"]
+    return [s for s, _ in c.most_common()]
+
 
 def fm_parse(text: str) -> tuple[dict, str]:
     parts = text.split("---", 2)
@@ -102,8 +127,11 @@ TEMPLATE = """<!DOCTYPE html>
 <body>
 <div class="wrap">
   <header class="site"><img src="/matcher/logo.svg" alt=""><span class="name">ひだまりこそだち</span></header>
+  <p class="step"><a href="/kosodachi/category/{cat_slug}">{cat_name}</a></p>
   <h1>{title}</h1>
 {body}
+  <p class="tags">{tags_html}</p>
+{related}
   <footer>
     <p>ひだまりこそだち — 子育ての考え方を、親のことばに。<br>
       <a href="/">トップ</a> ・
@@ -126,13 +154,13 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>読みもの一覧 | ひだまりこそだち</title>
-<meta name="description" content="子育てで困っていることから読める記事の一覧です。怒鳴ってしまった夜、動画をやめられないとき、保育園の朝に泣かれるとき。">
-<link rel="canonical" href="https://hidamari-kosodachi.com/kosodachi/">
+<title>{title} | ひだまりこそだち</title>
+<meta name="description" content="{lead}">
+<link rel="canonical" href="{canonical}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="読みもの一覧 | ひだまりこそだち">
-<meta property="og:description" content="子育てで困っていることから読める記事の一覧です。">
-<meta property="og:url" content="https://hidamari-kosodachi.com/kosodachi/">
+<meta property="og:title" content="{title} | ひだまりこそだち">
+<meta property="og:description" content="{lead}">
+<meta property="og:url" content="{canonical}">
 <meta property="og:image" content="https://hidamari-kosodachi.com/og/matcher.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/matcher/logo.svg">
@@ -141,16 +169,16 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <body>
 <div class="wrap">
   <header class="site"><img src="/matcher/logo.svg" alt=""><span class="name">ひだまりこそだち</span></header>
-  <h1>読みもの</h1>
-  <p class="lead">いま困っていることから読めます。</p>
-{cards}
+  <h1>{title}</h1>
+  <p class="lead">{lead}</p>
+{body}
   <div class="card" style="margin-top:24px">
     <p><b>わが家のこそだちタイプ診断</b></p>
     <p class="note">18問・約3分。子育てのかたちを8つの風景にしてお返しします。</p>
     <a class="btn" href="/matcher/">診断をはじめる</a>
   </div>
   <footer>
-    <p><a href="/">ひだまりこそだち トップ</a> ・
+    <p><a href="/">トップ</a> ・ <a href="/kosodachi/">読みもの一覧</a> ・
       <a href="/matcher/">診断</a> ・
       <a href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note の連載</a> ・
       <a href="/privacy/">プライバシーについて</a></p>
@@ -181,7 +209,13 @@ def main() -> None:
                   f"\n     → スマホで途中改行しやすい。17字前後に縮める")
         url = f"{SITE}/kosodachi/{slug}"
         import json as _json
+        cat = meta.get("category", "kimochi")
+        tags = [t.strip() for t in meta.get("tags", "").split(",") if t.strip()]
         page = TEMPLATE.format(
+            cat_slug=cat, cat_name=html.escape(CATEGORIES.get(cat, "読みもの")),
+            tags_html="".join(
+                f'<a class="tag-chip" href="/kosodachi/tag/{t}">#{html.escape(t)}</a>' for t in tags),
+            related="{related}",
             title=html.escape(meta["title"], quote=True),
             desc=html.escape(meta.get("description", ""), quote=True),
             url=url, site=SITE, date=meta.get("date", ""),
@@ -189,25 +223,84 @@ def main() -> None:
             desc_json=_json.dumps(meta.get("description", ""), ensure_ascii=False),
             body=md_to_html(body),
         )
-        (OUT / f"{slug}.html").write_text(page, encoding="utf-8")
         made.append((slug, meta["title"]))
-        meta_list.append((slug, meta["title"], meta.get("description", "")))
-    # 一覧ページと、トップページが読む JSON を生成する
+        meta_list.append({"slug": slug, "title": meta["title"],
+                          "description": meta.get("description", ""),
+                          "category": cat, "tags": tags, "date": meta.get("date", ""),
+                          "page": page})
+    # ---- 一覧・カテゴリ・タグのページを生成 ----
     import json as _j
-    (OUT / "articles.json").write_text(
-        _j.dumps([{"slug": s_, "title": t_, "description": d_} for s_, t_, d_ in meta_list],
-                 ensure_ascii=False, indent=2), encoding="utf-8")
-    cards = "\n".join(
-        f'      <a class="other" href="/kosodachi/{s_}"><b>{html.escape(t_)}</b>'
-        f'<span>{html.escape(d_)}</span></a>' for s_, t_, d_ in meta_list
-    ) or '      <p class="note">準備中です。</p>'
-    (OUT / "index.html").write_text(INDEX_TEMPLATE.format(cards=cards), encoding="utf-8")
 
-    print(f"[OK] {len(made)} 本を生成 → web/kosodachi/（一覧ページと articles.json も更新）")
-    for s, t in made:
-        print(f"  /kosodachi/{s}  {t}")
-    if made:
-        print("※ sitemap は build_matcher_pages.py が生成するので、記事を公開したらそちらも更新する")
+    def card(a: dict) -> str:
+        return (f'      <a class="other" href="/kosodachi/{a["slug"]}"><b>{html.escape(a["title"])}</b>'
+                f'<span>{html.escape(a["description"])}</span></a>')
+
+    by_date = sorted(meta_list, key=lambda a: a["date"], reverse=True)
+    pops = popular_slugs()
+    by_pop = [a for s_ in pops for a in meta_list if a["slug"] == s_]
+
+    # 記事ページ（関連記事を差し込んでから書き出す）
+    for a in meta_list:
+        rel = [x for x in by_date if x["slug"] != a["slug"] and x["category"] == a["category"]][:3]
+        block = ""
+        if rel:
+            block = ("  <h2>同じテーマの読みもの</h2>\n"
+                     + "\n".join(card(x) for x in rel) + "\n")
+        (OUT / f'{a["slug"]}.html').write_text(a["page"].replace("{related}", block), encoding="utf-8")
+
+    (OUT / "articles.json").write_text(
+        _j.dumps([{k: a[k] for k in ("slug", "title", "description", "category", "tags", "date")}
+                  for a in by_date], ensure_ascii=False, indent=2), encoding="utf-8")
+
+    def section(title: str, items: list[dict]) -> str:
+        if not items:
+            return ""
+        return f"  <h2>{title}</h2>\n" + "\n".join(card(a) for a in items) + "\n"
+
+    cats_html = ""
+    for cs, cn in CATEGORIES.items():
+        n = len([a for a in meta_list if a["category"] == cs])
+        if n:
+            cats_html += (f'      <a class="other" href="/kosodachi/category/{cs}">'
+                          f'<b>{cn}</b><span>{n}本</span></a>\n')
+    all_tags = sorted({t for a in meta_list for t in a["tags"]})
+    tags_html = "".join(f'<a class="tag-chip" href="/kosodachi/tag/{t}">#{html.escape(t)}</a>'
+                        for t in all_tags)
+
+    # 記事が少ないうちは「人気」と「新着」が同じ並びになって意味がないので出さない
+    show_pop = len(meta_list) >= 3 and by_pop
+    body = (section("人気の読みもの", by_pop[:5] if show_pop else [])
+            + section("新着", by_date[:8])
+            + (f"  <h2>カテゴリ</h2>\n{cats_html}" if cats_html else "")
+            + (f'  <h2>タグ</h2>\n  <p class="tags">{tags_html}</p>\n' if tags_html else ""))
+    (OUT / "index.html").write_text(
+        INDEX_TEMPLATE.format(title="読みもの", lead="いま困っていることから読めます。",
+                              body=body, canonical=f"{SITE}/kosodachi/"), encoding="utf-8")
+
+    # カテゴリ別
+    (OUT / "category").mkdir(exist_ok=True)
+    for cs, cn in CATEGORIES.items():
+        items = [a for a in by_date if a["category"] == cs]
+        if not items:
+            continue
+        (OUT / "category" / f"{cs}.html").write_text(
+            INDEX_TEMPLATE.format(title=cn, lead=f"「{cn}」の読みもの {len(items)}本",
+                                  body="\n".join(card(a) for a in items),
+                                  canonical=f"{SITE}/kosodachi/category/{cs}"), encoding="utf-8")
+
+    # タグ別
+    (OUT / "tag").mkdir(exist_ok=True)
+    for t in all_tags:
+        items = [a for a in by_date if t in a["tags"]]
+        (OUT / "tag" / f"{t}.html").write_text(
+            INDEX_TEMPLATE.format(title=f"#{t}", lead=f"「{t}」の読みもの {len(items)}本",
+                                  body="\n".join(card(a) for a in items),
+                                  canonical=f"{SITE}/kosodachi/tag/{t}"), encoding="utf-8")
+
+    print(f"[OK] 記事{len(made)}本 / カテゴリ{len([c for c in CATEGORIES if any(a['category']==c for a in meta_list)])} / タグ{len(all_tags)} を生成")
+    print(f"     人気順: {'表示' if show_pop else '非表示（記事3本未満、または実測データ無し）'}")
+    for s_, t_ in made:
+        print(f"  /kosodachi/{s_}  {t_}")
 
 
 if __name__ == "__main__":

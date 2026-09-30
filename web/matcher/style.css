@@ -102,3 +102,9 @@ p, li, .lead, .note, .ab, .theory, .other span {
   word-break: auto-phrase;
   line-break: strict;
 }
+
+/* タグ（読みもののタグチップ） */
+.tags{margin:18px 0 6px; line-height:2.2}
+.tag-chip{display:inline-block; padding:5px 12px; margin:0 6px 6px 0; border:1px solid var(--line);
+  border-radius:99px; background:var(--card); color:var(--sub); font-size:.85rem; text-decoration:none}
+.tag-chip:hover{border-color:var(--sun)}
