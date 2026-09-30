@@ -129,6 +129,11 @@ def main() -> None:
             print(f"  skip（{meta.get('status')}）: {f.name}")
             continue
         slug = meta["slug"]
+        # スマホ幅では 1行あたり約11字。17字前後を超えると文節の途中で折り返りやすく、
+        # Google の検索結果でも約30字で切られる（2026-09-30 実測して決めた上限）。
+        if len(meta["title"]) > 20:
+            print(f"  ⚠ タイトルが長い（{len(meta['title'])}字）: {meta['title']}"
+                  f"\n     → スマホで途中改行しやすい。17字前後に縮める")
         url = f"{SITE}/kosodachi/{slug}"
         import json as _json
         page = TEMPLATE.format(

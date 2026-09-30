@@ -86,3 +86,12 @@ textarea{width:100%; font:inherit; padding:12px; border:1px solid var(--line); b
 .tcard .lead{margin:8px 0 10px}
 .tcard .k{font-size:.9rem; color:var(--muted); margin:8px 0 0}
 .tcard .k b{color:var(--title)}
+
+/* 見出しは文節の途中で折り返させない（日本語は既定で任意の位置に折り返すため）。
+   keep-all だけだと収まらない場合に溢れるので、anywhere を保険に併用する。
+   （オーナー指摘 2026-09-30「文末から読むと『きることと、明日からのこと』になる」） */
+h1, h2, h3, .typename, .tcard h3, .q, .cover-title {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
