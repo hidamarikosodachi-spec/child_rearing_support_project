@@ -1,9 +1,9 @@
 ---
 slug: donatte-shimatta
 title: 「怒鳴ってしまった」と後悔する夜に — 今日できることと、明日からのこと
-description: 怒鳴ってしまった日は、やり直せます。今夜できる3つのことと、なぜそうなるのか、そして「毎日はできない」ことについて。
+description: 怒鳴ってしまった日でも、親子の関係はやり直せます。今夜できる3つのことと、なぜそうなるのか、そして毎日はおだやかにできないことについて。
 search_intent: 子供 怒鳴ってしまう 後悔 / 子供 怒鳴ってしまった 自己嫌悪
-status: draft   # トーン修正 2026-09-30（禁止形の見出し→呼びかけ・保証の語りへ）
+status: published
 date: 2026-09-30
 theory: ボウルビィ（愛着の修復）
 related_note: https://note.com/hidamari_sodachi/n/n14b031f094b9
