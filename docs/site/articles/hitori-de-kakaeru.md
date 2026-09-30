@@ -4,7 +4,7 @@ title: ひとりで抱えている日が続くとき
 description: ワンオペで限界に近いとき、必要なのは工夫より「減らすこと」と「人を入れること」。今週削っていい3つと、一時保育・ファミサポなど頼る先の順番を書いています。
 search_intent: ワンオペ 限界 / ワンオペ育児 つらい 助けて
 category: kimochi
-tags: tsukare, jiko
+tags: tsukare, jiko, age-any
 status: published
 date: 2026-10-01
 theory: 養育者の負荷（支援の量が結果を変える）

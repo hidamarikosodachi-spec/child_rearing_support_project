@@ -4,7 +4,7 @@ title: 子どもをかわいいと思えない日
 description: 子どもをかわいいと思えない日があります。愛情が消えたのではなく、消耗で感じる力が鈍っているだけです。そう感じる理由と、今日できる3つのこと、相談できる場所。
 search_intent: 子ども かわいいと思えない / 我が子 かわいくない 罪悪感
 category: kimochi
-tags: jiko, tsukare
+tags: jiko, tsukare, age-any
 status: published
 date: 2026-10-01
 theory: 愛着（感情ではなく行動で続く）

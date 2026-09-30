@@ -4,6 +4,7 @@
   <url><loc>https://hidamari-kosodachi.com/kosodachi/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/all</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/soudan/</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/about/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/matcher/</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/matcher/types</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/privacy/</loc><changefreq>monthly</changefreq></url>
@@ -45,6 +46,7 @@
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-0-1</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-2-3</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-4-6</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/age-any</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/asobi</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/bedtime</loc><changefreq>monthly</changefreq></url>
   <url><loc>https://hidamari-kosodachi.com/kosodachi/tag/fuan</loc><changefreq>monthly</changefreq></url>

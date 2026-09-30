@@ -6,7 +6,8 @@
     "category": "seikatsu",
     "tags": [
       "morning",
-      "bedtime"
+      "bedtime",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -53,7 +54,8 @@
     "category": "kimochi",
     "tags": [
       "jiko",
-      "tsukare"
+      "tsukare",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -75,7 +77,8 @@
     "category": "kimochi",
     "tags": [
       "tsukare",
-      "bedtime"
+      "bedtime",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -98,7 +101,8 @@
     "category": "kimochi",
     "tags": [
       "iraira",
-      "tsukare"
+      "tsukare",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -109,7 +113,8 @@
     "category": "kimochi",
     "tags": [
       "fuan",
-      "jiko"
+      "jiko",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -121,7 +126,8 @@
     "tags": [
       "hoikuen",
       "morning",
-      "fuan"
+      "fuan",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -132,7 +138,8 @@
     "category": "kimochi",
     "tags": [
       "tsukare",
-      "jiko"
+      "jiko",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -190,7 +197,8 @@
     "category": "asobi",
     "tags": [
       "asobi",
-      "kaimono"
+      "kaimono",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -202,7 +210,8 @@
     "tags": [
       "morning",
       "hoikuen",
-      "iraira"
+      "iraira",
+      "age-any"
     ],
     "date": "2026-10-01"
   },
@@ -226,7 +235,8 @@
     "tags": [
       "iraira",
       "jiko",
-      "bedtime"
+      "bedtime",
+      "age-any"
     ],
     "date": "2026-09-30"
   }

@@ -4,7 +4,7 @@ title: 朝の支度が進まない日
 description: 朝の支度が進まず、毎朝どなってしまうとき。着替え・持ち物・出る時刻を組み替える3つの方法と、なぜ朝がいちばん難しい時間なのか。選択肢を減らすといちばん効きます。
 search_intent: 朝 支度 進まない 子供 / 朝 イライラ 保育園 準備
 category: seikatsu
-tags: morning, hoikuen, iraira
+tags: morning, hoikuen, iraira, age-any
 status: published
 date: 2026-10-01
 theory: 選択肢を絞る（決定の負荷を減らす）

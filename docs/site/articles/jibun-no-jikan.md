@@ -4,7 +4,7 @@ title: 自分の時間がないと感じたら
 description: 子どもが寝たあとの時間が休息にならないのはなぜか。自分のためだけの時間を取り戻す3つの方法と、休めているかは長さではなく何を考えていたかで決まるという話。
 search_intent: 自分の時間がない 育児 / ママ 自分の時間 ほしい
 category: kimochi
-tags: tsukare, bedtime
+tags: tsukare, bedtime, age-any
 status: published
 date: 2026-10-01
 theory: 養育者の回復（休息は関わりの質に直結する）

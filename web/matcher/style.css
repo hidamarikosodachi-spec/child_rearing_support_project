@@ -125,3 +125,15 @@ p, li, .lead, .note, .ab, .theory, .other span {
 .cat .n{color:var(--sub); font-size:.78rem; margin-top:6px}
 .tag-axis{margin:16px 0 2px; font-size:.82rem; color:var(--sub); letter-spacing:.08em}
 .tag-chip .n{display:inline-block; margin-left:6px; font-size:.75rem; color:var(--muted)}
+
+/* よくある困りごと（直接リンク） */
+.quick{display:block; background:var(--card); border:1px solid var(--line); border-radius:99px;
+  padding:13px 20px; margin:8px 0; text-decoration:none; color:var(--title); font-weight:700}
+.quick:hover{border-color:var(--sun); color:var(--accent)}
+.quick::after{content:" →"; color:var(--sub); font-weight:400}
+/* この記事について */
+.about-article{margin-top:28px; padding:16px 18px; border:1px solid var(--line);
+  border-radius:var(--radius); background:transparent}
+.about-article .ttl{font-weight:700; font-size:.9rem; color:var(--sub); margin:0 0 8px}
+.about-article p{margin:0 0 6px; font-size:.82rem; color:var(--muted); line-height:1.8}
+.about-article a{color:var(--sub)}

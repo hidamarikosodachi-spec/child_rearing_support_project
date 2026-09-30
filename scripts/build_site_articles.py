@@ -25,6 +25,7 @@ SITE = "https://hidamari-kosodachi.com"
 # カテゴリは増やさない（迷子になる）。詳細は docs/site/taxonomy_v1.md
 TAGS = {  # slug: (表示名, 軸)
     "age-0-1": ("0〜1歳", "年齢"), "age-2-3": ("2〜3歳", "年齢"), "age-4-6": ("4〜6歳", "年齢"),
+    "age-any": ("年齢を問わず", "年齢"),
     "morning": ("朝", "場面"), "meal": ("食事", "場面"), "bedtime": ("寝る前", "場面"),
     "hoikuen": ("保育園", "場面"), "asobi": ("遊び", "場面"), "kaimono": ("買うか迷う", "場面"),
     "iraira": ("イライラ", "気持ち"), "jiko": ("自己嫌悪", "気持ち"),
@@ -172,7 +173,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{title} | ひだまりこそだち</title>
+<title>{page_title} | ひだまりこそだち</title>
 <meta name="description" content="{lead}">
 <link rel="canonical" href="{canonical}">
 <meta property="og:type" content="website">
@@ -199,6 +200,7 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
     <p><a href="/">トップ</a> ・ <a href="/kosodachi/">読みもの</a> ・
       <a href="/kosodachi/all">すべての読みもの</a> ・
       <a href="/soudan/">頼れる相談先</a> ・
+      <a href="/about/">このサイトについて</a> ・
       <a href="/matcher/">診断</a> ・
       <a href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note の連載</a> ・
       <a href="/privacy/">プライバシーについて</a></p>
@@ -209,6 +211,12 @@ INDEX_TEMPLATE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+def render_index(**kw) -> str:
+    """一覧系ページのHTML。page_title を省くと title と同じにする（H1は語りかけ、titleは検索語）。"""
+    kw.setdefault("page_title", kw["title"])
+    return INDEX_TEMPLATE.format(**kw)
 
 
 def main() -> None:
@@ -234,7 +242,8 @@ def main() -> None:
         page = TEMPLATE.format(
             cat_slug=cat, cat_name=html.escape(CATEGORIES.get(cat, "読みもの")),
             tags_html="".join(
-                f'<a class="tag-chip" href="/kosodachi/tag/{t}">#{html.escape(t)}</a>' for t in tags),
+                f'<a class="tag-chip" href="/kosodachi/tag/{t}">'
+                f'{html.escape(TAGS.get(t, (t, ""))[0])}</a>' for t in tags),
             related="{related}",
             title=html.escape(meta["title"], quote=True),
             desc=html.escape(meta.get("description", ""), quote=True),
@@ -247,7 +256,8 @@ def main() -> None:
         meta_list.append({"slug": slug, "title": meta["title"],
                           "description": meta.get("description", ""),
                           "category": cat, "tags": tags, "date": meta.get("date", ""),
-                          "chars": len(body.replace("\n", "")), "page": page})
+                          "chars": len(body.replace("\n", "")),
+                          "theory": meta.get("theory", ""), "page": page})
     # ---- 一覧・カテゴリ・タグのページを生成 ----
     import json as _j
 
@@ -274,8 +284,17 @@ def main() -> None:
         rel = [x for x in by_date if x["slug"] != a["slug"] and x["category"] == a["category"]][:3]
         block = ("  <h2>同じテーマの読みもの</h2>\n" + "\n".join(card(x) for x in rel) + "\n") if rel else ""
         block += ('  <div class="card" style="margin-top:20px"><p class="note">'
-                  'ひとりで抱えているときは、<a href="/soudan/">頼れる相談先</a>もあります。'
+                  '読むより、誰かに話したいときは、<a href="/soudan/">頼れる相談先</a>もあります。'
                   '「まだそこまでではない」と思う段階で使って大丈夫です。</p></div>\n')
+        block += ('  <div class="about-article">\n'
+                  '    <p class="ttl">この記事について</p>\n'
+                  f'    <p>参考にした考え方：{html.escape(a["theory"]) if a["theory"] else "—"}</p>\n'
+                  f'    <p>最終更新：{a["date"].replace("-", "/")}</p>\n'
+                  '    <p>書いているのは、0〜6歳の子と過ごす人のための小さなメディア「ひだまりこそだち」です。'
+                  '専門家の監修は受けていません。医療や発達の判断が必要なことは、'
+                  '<a href="/soudan/">相談先</a>をご案内しています。'
+                  '<a href="/about/">編集方針</a></p>\n'
+                  '  </div>\n')
         (OUT / f'{a["slug"]}.html').write_text(a["page"].replace("{related}", block), encoding="utf-8")
 
     (OUT / "articles.json").write_text(
@@ -308,18 +327,39 @@ def main() -> None:
                 out.append(f'  <p class="tag-axis">{axis}</p>\n  <p class="tags">{"".join(chips)}</p>')
         return "\n".join(out)
 
-    # ---- 一覧トップ：困りごと起点を最上部に ----
+    # ---- 一覧トップ：困りごと起点を最上部に（2026-10-01 UXレビュー反映）----
     pick = next((a for a in by_date if a["slug"] == "donatte-shimatta"), by_date[0])
-    body = (f'  <h2>いまの状況から選ぶ</h2>\n{cat_cards()}\n'
+    # 「よくある困りごと」＝親が頭の中で使う言葉で、直接記事へ送る
+    QUICK = [
+        ("今夜、寝てくれない", "nekashitsuke-jikan"),
+        ("朝からもう疲れた", "asa-no-shitaku"),
+        ("「いや」しか言わない", "iyaiya-tsukareta"),
+        ("ひとりで抱えている", "hitori-de-kakaeru"),
+        ("子どもの育ちが気になる", "hoka-to-kuraberu"),
+    ]
+    quick_html = "\n".join(
+        f'      <a class="quick" href="/kosodachi/{sl}">{html.escape(label)}</a>'
+        for label, sl in QUICK if any(a["slug"] == sl for a in meta_list))
+
+    body = (f'  <h2>いま困っていることから</h2>\n{cat_cards()}\n'
+            f'  <h2>よくある困りごと</h2>\n{quick_html}\n'
             f'  <h2>まず読んでほしい一本</h2>\n{card(pick)}\n'
+            f'  <h2>もう少し絞って探す</h2>\n{tag_block()}\n'
             f'  <h2>新着</h2>\n' + "\n".join(card(a, show_date=True) for a in by_date[:5]) + "\n"
             f'  <p style="margin-top:14px"><a class="btn sub" href="/kosodachi/all">'
             f'すべての読みもの（{len(by_date)}本）</a></p>\n'
-            f'  <h2>タグで探す</h2>\n{tag_block()}\n')
+            f'  <div class="card" style="margin-top:26px">\n'
+            f'    <p><b>読むより、誰かに話したいとき</b></p>\n'
+            f'    <p class="note">ひとりで抱えなくても大丈夫です。無料で使える相談先をまとめています。</p>\n'
+            f'    <a class="btn sub" href="/soudan/">頼れる相談先を見る</a>\n'
+            f'  </div>\n')
     (OUT / "index.html").write_text(
-        INDEX_TEMPLATE.format(title="読みもの", lead="いま困っていることから選べます。",
-                              body=body, canonical=f"{SITE}/kosodachi/",
-                              og="https://hidamari-kosodachi.com/og/kosodachi.png"), encoding="utf-8")
+        render_index(
+            title="いま困っていること、ありますか？",
+            page_title="子育ての読みもの一覧",
+            lead="寝かしつけ、イヤイヤ、イライラ。2〜3分で読める子育てのヒントを集めています。",
+            body=body, canonical=f"{SITE}/kosodachi/",
+            og="https://hidamari-kosodachi.com/og/kosodachi.png"), encoding="utf-8")
 
     # ---- すべての読みもの ----
     all_body = ""
@@ -328,7 +368,7 @@ def main() -> None:
         if items:
             all_body += f"  <h2>{cn}</h2>\n" + "\n".join(card(a) for a in items) + "\n"
     (OUT / "all.html").write_text(
-        INDEX_TEMPLATE.format(title=f"すべての読みもの（{len(by_date)}本）",
+        render_index(title=f"すべての読みもの（{len(by_date)}本）",
                               lead="カテゴリごとに並べています。",
                               body=all_body, canonical=f"{SITE}/kosodachi/all",
                               og="https://hidamari-kosodachi.com/og/kosodachi.png"), encoding="utf-8")
@@ -340,7 +380,7 @@ def main() -> None:
         if not items:
             continue
         (OUT / "category" / f"{cs}.html").write_text(
-            INDEX_TEMPLATE.format(title=cn, lead=CAT_DESC.get(cs, "") + f"／{len(items)}本",
+            render_index(title=cn, lead=CAT_DESC.get(cs, "") + f"／{len(items)}本",
                                   body="\n".join(card(a) for a in items),
                                   canonical=f"{SITE}/kosodachi/category/{cs}",
                                   og="https://hidamari-kosodachi.com/og/kosodachi.png"), encoding="utf-8")
@@ -352,7 +392,7 @@ def main() -> None:
         items = [a for a in by_date if t in a["tags"]]
         label = TAGS.get(t, (t, ""))[0]
         (OUT / "tag" / f"{t}.html").write_text(
-            INDEX_TEMPLATE.format(title=label, lead=f"「{label}」の読みもの {len(items)}本",
+            render_index(title=label, lead=f"「{label}」の読みもの {len(items)}本",
                                   body="\n".join(card(a) for a in items),
                                   canonical=f"{SITE}/kosodachi/tag/{t}",
                                   og="https://hidamari-kosodachi.com/og/kosodachi.png"), encoding="utf-8")

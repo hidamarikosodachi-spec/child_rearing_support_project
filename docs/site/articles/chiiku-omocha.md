@@ -4,7 +4,7 @@ title: 知育おもちゃは必要か
 description: 知育おもちゃは必要か。多くの場合は家にあるもので足りる理由と、あったほうが助かる場面、選ぶときの3つの基準。買わなくても遅れることはありません。
 search_intent: 知育おもちゃ 必要か / 知育玩具 意味ない
 category: asobi
-tags: asobi, kaimono
+tags: asobi, kaimono, age-any
 status: published
 date: 2026-10-01
 theory: モンテッソーリ（整えられた環境）

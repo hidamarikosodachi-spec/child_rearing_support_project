@@ -4,7 +4,7 @@ title: 生活リズムが崩れたとき
 description: 連休や体調不良で生活リズムが崩れたあと、どこから戻すか。寝る時刻ではなく起床時刻からそろえる理由と、朝の光・昼寝の切り上げという順番を書いています。
 search_intent: 生活リズム 崩れた 子供 戻し方 / 子供 早寝早起き 戻らない
 category: seikatsu
-tags: morning, bedtime
+tags: morning, bedtime, age-any
 status: published
 date: 2026-10-01
 theory: 体内時計（光と起床時刻が起点）
