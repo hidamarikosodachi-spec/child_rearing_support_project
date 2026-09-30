@@ -22,7 +22,7 @@ Instagram 自動投稿スクリプト
 
 関連 .env キー:
     META_ACCESS_TOKEN
-    META_INSTAGRAM_BUSINESS_ID
+    META_INSTAGRAM_TOKEN, META_INSTAGRAM_USER_ID
     R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY,
     R2_BUCKET_NAME, R2_PUBLIC_URL
     LOG_LEVEL (optional)
@@ -59,7 +59,11 @@ from scripts.lib.r2_uploader import upload_if_local  # noqa: E402
 logger = logging.getLogger("post_instagram")
 
 
-GRAPH_API_BASE = "https://graph.facebook.com/v20.0"
+# Instagram ログイン方式（Facebookページ不要）は graph.instagram.com を使う。
+# 旧方式（Facebookページ経由）を使う場合だけ META_GRAPH_HOST で切り替える。
+GRAPH_HOST = os.environ.get("META_GRAPH_HOST", "https://graph.instagram.com")
+GRAPH_API_VERSION = "v21.0"
+GRAPH_API_BASE = f"{GRAPH_HOST}/{GRAPH_API_VERSION}"
 IG_CAPTION_MAX = 2200
 CONTAINER_POLL_INTERVAL = 3
 CONTAINER_POLL_MAX = 20  # 約60秒
@@ -331,8 +335,8 @@ def main(date: str, commit: bool) -> None:
         print_dry_run_notice()
         return
 
-    user_id = _get_required_env("META_INSTAGRAM_BUSINESS_ID")
-    access_token = _get_required_env("META_ACCESS_TOKEN")
+    user_id = _get_required_env("META_INSTAGRAM_USER_ID")
+    access_token = _get_required_env("META_INSTAGRAM_TOKEN")
 
     success = 0
     for i, d in enumerate(drafts, 1):
