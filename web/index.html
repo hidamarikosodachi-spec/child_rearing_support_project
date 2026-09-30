@@ -63,8 +63,9 @@
 const res = await fetch("/kosodachi/articles.json").catch(() => null);
 const items = res && res.ok ? await res.json() : [];
 document.getElementById("articles").innerHTML = items.length
-  ? items.map(a => `<a class="other" href="/kosodachi/${a.slug}"><b>${a.title}</b>
+  ? items.slice(0, 8).map(a => `<a class="other" href="/kosodachi/${a.slug}"><b>${a.title}</b>
       <span>${a.description}</span></a>`).join("")
+    + `<a class="btn sub" href="/kosodachi/" style="margin-top:12px">読みもの一覧（${items.length}本）</a>`
   : `<p class="note">準備中です。</p>`;
 </script>
 </body>
