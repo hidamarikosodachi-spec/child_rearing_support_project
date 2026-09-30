@@ -19,6 +19,9 @@ related: [[type_system_v1]] [[questions_v1]] [[type_results_v1]]
 | `matcher/data.js` | 質問15問・8タイプ・タイプ判定表 |
 | `matcher/style.css` | ブランド配色（`scripts/note_thumbnail.py` と共通の色） |
 | `privacy/index.html` | プライバシーについて（診断から常時リンク） |
+| `index.html` | **サイトのトップ**（ブランド紹介・診断への導線・記事一覧・note 連載） |
+| `kosodachi/index.html` | **自動生成**：読みもの一覧。`scripts/build_site_articles.py` |
+| `kosodachi/articles.json` | 自動生成：トップが読む記事リスト |
 | `matcher/t/*.html` | **自動生成**：タイプ別の静的ページ（OGP・本文・導線）。`scripts/build_matcher_pages.py` |
 | `og/*.png` | **自動生成**：SNS 共有用の画像 1200x630。`scripts/build_matcher_og.py` |
 | `sitemap.xml` / `robots.txt` | 自動生成（同上） |

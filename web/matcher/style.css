@@ -90,8 +90,15 @@ textarea{width:100%; font:inherit; padding:12px; border:1px solid var(--line); b
 /* 見出しは文節の途中で折り返させない（日本語は既定で任意の位置に折り返すため）。
    keep-all だけだと収まらない場合に溢れるので、anywhere を保険に併用する。
    （オーナー指摘 2026-09-30「文末から読むと『きることと、明日からのこと』になる」） */
+/* 見出し＝短いので「文節を割らない」を厳格に */
 h1, h2, h3, .typename, .tcard h3, .q, .cover-title {
   word-break: keep-all;
   overflow-wrap: anywhere;
+  line-break: strict;
+}
+/* 本文＝ブラウザに文節を判定させて、そこで折り返す（日本語向けの指定）。
+   未対応ブラウザでは normal に戻るだけで、表示は壊れない。 */
+p, li, .lead, .note, .ab, .theory, .other span {
+  word-break: auto-phrase;
   line-break: strict;
 }

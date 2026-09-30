@@ -133,6 +133,19 @@ https://hidamari-kosodachi.com/kosodachi/<slug>
 - 公開すると `build_matcher_pages.py` が **sitemap に自動で追加**する
 - 記事ページには**構造化データ（Article）**を入れてある（検索での表示に効く）
 
+## 4.6 サイトの構成（2026-09-30）
+
+| URL | 内容 | 生成 |
+|---|---|---|
+| `/` | トップ（ブランド・診断への導線・記事一覧） | 手書き（`web/index.html`） |
+| `/kosodachi/` | 読みもの一覧 | **自動**（記事を公開すると増える） |
+| `/kosodachi/<slug>` | 各記事 | **自動** |
+| `/matcher/` | 診断 | — |
+| `/matcher/types`・`/matcher/t/<type>` | 8タイプ | 自動 |
+| `/privacy/` | プライバシー | 手書き |
+
+記事を1本公開すると、**記事ページ・一覧・トップ・sitemap が同時に更新される**（手作業なし）。
+
 ## 5. 最初に書く10本（検索語ベース）
 
 実測で反応が大きかったテーマ（[[theme_performance_v1]]）＝自責が強い順に並べた。

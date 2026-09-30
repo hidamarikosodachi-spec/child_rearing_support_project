@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ひだまりこそだち — 子育ての考え方を、親のことばに</title>
+<meta name="description" content="0〜6歳の子と過ごす人のための、ちいさなメディア。子育ての考え方を「正解」としてではなく、となりに並べて読めるように書いています。">
+<link rel="canonical" href="https://hidamari-kosodachi.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ひだまりこそだち — 子育ての考え方を、親のことばに">
+<meta property="og:description" content="0〜6歳の子と過ごす人のための、ちいさなメディア。">
+<meta property="og:url" content="https://hidamari-kosodachi.com/">
+<meta property="og:image" content="https://hidamari-kosodachi.com/og/matcher.png">
+<meta property="og:site_name" content="ひだまりこそだち">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/matcher/logo.svg">
+<link rel="stylesheet" href="/matcher/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site" style="padding-top:34px">
+    <img src="/matcher/logo.svg" alt="" style="width:56px;height:56px">
+    <span class="name" style="font-size:1.15rem">ひだまりこそだち</span>
+  </header>
+
+  <h1>子育ての考え方を、<br>親のことばに</h1>
+  <p class="lead">
+    0〜6歳の子と過ごす人のための、ちいさなメディアです。<br>
+    教育や発達の考え方を「正解」としてではなく、となりに並べて読めるように書いています。
+  </p>
+
+  <div class="card">
+    <p style="margin-bottom:6px"><b>わが家のこそだちタイプ診断</b></p>
+    <p class="note">18問・約3分。お名前もメールアドレスも必要ありません。<br>
+      子育てのかたちを、8つの風景にしてお返しします。</p>
+    <a class="btn" href="/matcher/">診断をはじめる</a>
+    <a class="btn sub" href="/matcher/types" style="margin-top:10px">先に8つのタイプを見る</a>
+  </div>
+
+  <h2>読みもの</h2>
+  <p class="note">いま困っていることから読めます。</p>
+  <div id="articles"></div>
+
+  <div class="card" style="margin-top:24px">
+    <p><b>連載「となりの考え方」</b></p>
+    <p class="note">教育・発達の考え方を1つずつ取り上げて、子育てのとなりに並べていく連載です。note で公開しています。</p>
+    <a class="btn sub" href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note で連載を読む</a>
+  </div>
+
+  <footer>
+    <p>ひだまりこそだち<br>
+      <a href="/matcher/">こそだちタイプ診断</a> ・
+      <a href="/kosodachi/">読みもの一覧</a> ・
+      <a href="https://note.com/hidamari_sodachi" target="_blank" rel="noopener">note</a> ・
+      <a href="/privacy/">プライバシーについて</a></p>
+    <p style="margin-top:10px">このサイトの記事は、教育・発達に関する複数の理論をもとにした読みものです。
+      医療・心理の診断や治療にかわるものではありません。
+      気がかりが強いときは、地域の子育て支援センターや小児科にご相談ください。</p>
+  </footer>
+</div>
+<script type="module">
+// 記事一覧は build_site_articles.py が articles.json を生成する
+const res = await fetch("/kosodachi/articles.json").catch(() => null);
+const items = res && res.ok ? await res.json() : [];
+document.getElementById("articles").innerHTML = items.length
+  ? items.map(a => `<a class="other" href="/kosodachi/${a.slug}"><b>${a.title}</b>
+      <span>${a.description}</span></a>`).join("")
+  : `<p class="note">準備中です。</p>`;
+</script>
+</body>
+</html>
