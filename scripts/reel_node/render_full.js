@@ -7,7 +7,18 @@ const path = require('path');
 const { createCanvas, GlobalFonts } = require('@napi-rs/canvas');
 const rough = require('roughjs');
 
-GlobalFonts.registerFromPath('/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc', 'HidamariJP');
+// 新マシンではフォントがユーザー領域にある。候補を順に探して最初に見つかったものを使う
+// （見つからないと日本語が豆腐□になるので、起点で止める）
+const FONT_CANDIDATES = [
+  process.env.HIDAMARI_FONT,
+  '/home/saki/.local/share/fonts/NotoSansCJK-Regular.ttc',
+  '/home/saki/.local/share/fonts/NotoSansCJK-Bold.ttc',
+  '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc',
+].filter(Boolean);
+const fontPath = FONT_CANDIDATES.find(p => fs.existsSync(p));
+if (!fontPath) throw new Error('日本語フォントが見つかりません: ' + FONT_CANDIDATES.join(', '));
+GlobalFonts.registerFromPath(fontPath, 'HidamariJP');
+console.log('font:', fontPath);
 const FONT = 'HidamariJP';
 const W = 1080, H = 1920;            // 出力（設計540x960を×2）
 const FLOOR = 960 * 0.60;
