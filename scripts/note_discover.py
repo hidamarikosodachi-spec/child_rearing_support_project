@@ -59,9 +59,10 @@ def _is_relevant(item: dict[str, Any]) -> bool:
     """タイトル＋抜粋＋著者名に育児/教育系キーワードが含まれるか（ゆるい判定）。"""
     hay = " ".join(
         [
-            item.get("name", ""),
-            item.get("body", "") or "",
-            (item.get("user") or {}).get("nickname", ""),
+            # API は name / nickname も null を返すことがある（2026-10-01 に遭遇）
+            item.get("name") or "",
+            item.get("body") or "",
+            (item.get("user") or {}).get("nickname") or "",
         ]
     )
     return any(kw in hay for kw in RELEVANCE_KEYWORDS)

@@ -1,42 +1,43 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-09-30
+updated: 2026-10-01
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-09-30 18:16 JST／前回比は 2026-09-27 集計との差。
+> 集計 2026-10-01 21:27 JST／前回比は 2026-09-30 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 246（+8） | 41（+5） | 8（+0） | — | **0** | — |
-| Threads | views 2040（+322） | 5（+0） | 2（+0） | 2（+0） | — | 0（+0） |
+| note | PV 260（+14） | 41（+0） | 8（+0） | — | **0** | — |
+| Threads | views 2040（+0） | 5（+0） | 2（+0） | 2（+0） | — | 0（+0） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **246**（目標下限まで残り 134）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **260**（目標下限まで残り 120）
 
 ## note 記事別
 
 | PV | スキ | コメ | 未返信 | 記事 |
 |---|---|---|---|---|
-| 75 | 16 | 0 | 0 | [ひだまりこそだち をはじめます — 親子が並んで座る、ちいさな縁側のよ…](https://note.com/hidamari_sodachi/n/nafa8104b6f1f) |
+| 76 | 16 | 0 | 0 | [ひだまりこそだち をはじめます — 親子が並んで座る、ちいさな縁側のよ…](https://note.com/hidamari_sodachi/n/nafa8104b6f1f) |
 | 51 | 4 | 1 | 0 | [「抱っこしすぎ」と言われた夜に — 愛着理論から考える](https://note.com/hidamari_sodachi/n/n8ea1a555c23a) |
-| 41 | 6 | 0 | 0 | [つくる前に、声を聞かせてください — アンケートのお願い](https://note.com/hidamari_sodachi/n/n0e6db37bd948) |
+| 42 | 6 | 0 | 0 | [つくる前に、声を聞かせてください — アンケートのお願い](https://note.com/hidamari_sodachi/n/n0e6db37bd948) |
 | 23 | 2 | 1 | 0 | [「甘やかしすぎ」と言われた日に — 過保護と過干渉のあいだ](https://note.com/hidamari_sodachi/n/ncce6a2e0fc40) |
 | 20 | 3 | 1 | 0 | [「ちゃんと叱らないと」と言われたとき — ほめる・叱るのその先へ](https://note.com/hidamari_sodachi/n/n9a114e4ed4cd) |
 | 18 | 1 | 1 | 0 | [「早くしなさい」ばかり言っている気がして — 待つことと、放っておくこ…](https://note.com/hidamari_sodachi/n/nb3b6456a1085) |
-| 6 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
-| 5 | 2 | 0 | 0 | [「先回りしすぎかな」と思った日に — 灯台タイプの子育て](https://note.com/hidamari_sodachi/n/nb2aa26393f6d) |
+| 9 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
+| 7 | 2 | 0 | 0 | [「先回りしすぎかな」と思った日に — 灯台タイプの子育て](https://note.com/hidamari_sodachi/n/nb2aa26393f6d) |
+| 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
 | 3 | 2 | 0 | 0 | [「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
-| 3 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
-| 1 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
-| 0 | 3 | 0 | 0 | [抱っこをせがまなくなった日に — 縁側タイプの子育て](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
+| 3 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
+| 2 | 3 | 0 | 0 | [抱っこをせがまなくなった日に — 縁側タイプの子育て](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
+| 2 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に — 小川タイプの子育て](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
 
 ## Threads 投稿別
 
@@ -85,3 +86,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-09-24 | 230 | 34 | 8 | 1685 | 2 | 0 |
 | 2026-09-27 | 238 | 36 | 8 | 1718 | 2 | 0 |
 | 2026-09-30 | 246 | 41 | 8 | 2040 | 2 | 0 |
+| 2026-10-01 | 260 | 41 | 8 | 2040 | 2 | 0 |
