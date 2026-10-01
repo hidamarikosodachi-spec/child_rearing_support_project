@@ -73,6 +73,39 @@ def _get(path: str, params: dict) -> dict:
         return json.loads(e.read().decode())
 
 
+def check_duplicate(caption: str, video_url: str) -> list[str]:
+    """過去の投稿と同じ内容でないか確かめる（2026-10-01 に重複投稿をやらかしたため）。
+
+    判定は2つ。(1) 同じ動画ファイルを投稿済みか（ログ）。
+    (2) 既存投稿のキャプションと文字の重なりが大きいか（先頭120字の2-gram 一致率）。
+    """
+    warns: list[str] = []
+    if LOG.exists():
+        for line in LOG.read_text(encoding="utf-8").splitlines():
+            try:
+                r = json.loads(line)
+            except Exception:  # noqa: BLE001
+                continue
+            if r.get("video") == video_url:
+                warns.append(f"同じ動画URLを {r.get('ts','?')[:10]} に投稿済み: {r.get('permalink')}")
+
+    def grams(t: str) -> set[str]:
+        t = re.sub(r"[\s#\u3000]", "", t)[:120]
+        return {t[i:i + 2] for i in range(len(t) - 1)}
+
+    mine = grams(caption)
+    if mine:
+        _, uid = _env()
+        for m in _get(f"{uid}/media", {"fields": "caption,permalink,timestamp", "limit": 25}).get("data", []):
+            other = grams(m.get("caption") or "")
+            if not other:
+                continue
+            ratio = len(mine & other) / len(mine)
+            if ratio >= 0.5:
+                warns.append(f"既存投稿と内容が {ratio:.0%} 重なります（{m.get('timestamp','')[:10]}）: {m.get('permalink')}")
+    return warns
+
+
 def caption_from(md: Path) -> str:
     """台本mdから「## キャプション」節を取り出す。無ければ本文全体。"""
     s = md.read_text(encoding="utf-8")
@@ -86,8 +119,9 @@ def caption_from(md: Path) -> str:
 @click.option("--caption", help="キャプションを直接指定")
 @click.option("--cover", help="サムネ画像の公開URL（任意）")
 @click.option("--commit", is_flag=True, help="付けると実投稿")
+@click.option("--allow-duplicate", is_flag=True, help="重複の疑いがあっても投稿する")
 def main(video_url: str, caption_file: Path | None, caption: str | None,
-         cover: str | None, commit: bool) -> None:
+         cover: str | None, commit: bool, allow_duplicate: bool) -> None:
     if not caption and caption_file:
         caption = caption_from(caption_file)
     caption = (caption or "").strip()
@@ -96,6 +130,13 @@ def main(video_url: str, caption_file: Path | None, caption: str | None,
 
     click.echo(f"動画: {video_url}")
     click.echo(f"キャプション（{len(caption)}字）:\n---\n{caption[:400]}\n---")
+
+    for w in (dups := check_duplicate(caption, video_url)):
+        click.echo(f"[重複の疑い] {w}")
+    if dups and not allow_duplicate:
+        raise click.ClickException(
+            "過去の投稿と重なります。別の内容にするか、意図的なら --allow-duplicate を付けてください。")
+
     if not commit:
         click.echo("[dry-run] 投稿していません。--commit で実行します。")
         return
