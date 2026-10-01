@@ -167,10 +167,14 @@ def main() -> None:
             key = a.key or next((s for s in pg.url.split("/") if s.startswith("n") and len(s) == 13), None)
 
             if not a.key and thumb and not a.no_eyecatch:
+                # 保存直後はメニューの描画が間に合わないことがあるので、待ってから開く
+                pg.wait_for_timeout(2500)
                 pg.locator("button[data-id='ButtonIcon']").first.click()
-                pg.wait_for_timeout(1500)
-                with pg.expect_file_chooser(timeout=10000) as fc:
-                    pg.get_by_role("button", name="画像をアップロード").first.click()
+                pg.wait_for_timeout(2500)
+                upload = pg.get_by_role("button", name="画像をアップロード").first
+                upload.wait_for(state="visible", timeout=20000)
+                with pg.expect_file_chooser(timeout=20000) as fc:
+                    upload.click()
                 fc.value.set_files(str(thumb))
                 pg.wait_for_timeout(4000)
                 pg.get_by_role("button", name="保存").first.click()
