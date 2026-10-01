@@ -55,6 +55,19 @@ related: [[series_plan_v0]] [[type_system_v1]] [[posting_schedule]] [[backlog]]
 
 > 8本そろった時点で、診断の結果ページ「となりに置いてみる考え方」から各タイプ記事へ全リンクを張る（診断↔記事の相互送客が完成）。
 
+## 公開後の告知（オーナー指示 2026-10-01）
+
+note を公開したら、**毎回 Instagram のストーリーで告知する**。
+
+```bash
+.venv/bin/python scripts/promote_note_article.py docs/note/articles/<記事>.md
+cd web && npx wrangler pages deploy . --project-name hidamari-kosodachi --commit-dirty=true
+```
+→ ストーリー画像を生成してサイトに置き、スマホ用URLと貼るリンクを出力する。
+**オーナーの作業は1分**（保存 → ストーリー投稿 → リンクスタンプ）。
+
+リンクスタンプは API で貼れないため、ここだけ手作業。フィード投稿は週1まで（[[feedback-note-to-instagram]]）。
+
 ## 運用ルール
 
 1. 公開前に必ず `scripts/format_note_linebreaks.py` を通す。
