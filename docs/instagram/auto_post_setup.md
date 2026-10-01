@@ -90,6 +90,37 @@ META_INSTAGRAM_TOKEN=（ステップ4のトークン）
 - **ログインで弾かれる** → Instagram がプロアカウント（ビジネス/クリエイター）か確認
 - **新しい Facebook アカウントがロックされた** → 本人確認を済ませる。急がず数日待つ
 
+## 2026-10-01 の到達点と、残る1つの壁
+
+### できたこと
+| 項目 | 状態 |
+|---|---|
+| Meta アプリ（既存・Threads と共用） | ✅ `ひだまりこそだち-IG` / Instagram アプリID `1446329940874658` |
+| 権限5つ | ✅ basic / content_publish / manage_comments / manage_insights / manage_messages |
+| アクセストークン | ✅ **発行済・最初から長期（60日）** |
+| **app secret** | **不要だった**（`ig_refresh_token` での更新は token だけで通る） |
+| ユーザーID | ✅ `29188937977385802`（`.env` に保存） |
+| 接続確認 | ✅ `me` / `me/media` / `insights` すべて応答 |
+
+### 残る壁：**アプリが開発モード**
+`GET /{media-id}/comments` が **comments_count=3 なのに空配列**を返す。
+原因は**アプリが開発モードのままで、実データを返さない**ため（インサイトも全て 0 で返っている）。
+
+**→ アプリを「ライブモード」に切り替える必要がある。**
+自分のアカウントだけを操作する用途なので**アプリレビューは不要**だが、
+ライブ公開にはプライバシーポリシーURLの登録が要る（本サイトに既にあるので使える）。
+
+| 必要なもの | 用意 |
+|---|---|
+| プライバシーポリシーURL | ✅ https://hidamari-kosodachi.com/privacy/ |
+| 利用規約URL（求められた場合） | ✅ https://hidamari-kosodachi.com/about/ で代用可 |
+
+### トークン更新（確立済み・app secret 不要）
+```bash
+curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$META_INSTAGRAM_TOKEN"
+```
+**60日ごと**に実行して `.env` を更新する。次回めやす **2026-11-25**。
+
 ## 私の運用（有効化後）
 
 ```bash
