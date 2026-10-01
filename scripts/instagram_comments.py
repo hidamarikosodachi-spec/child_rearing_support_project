@@ -43,7 +43,9 @@ def _env() -> tuple[str, str]:
     for line in (ROOT / ".env").read_text(encoding="utf-8").splitlines():
         if "=" in line and line.startswith("META_INSTAGRAM_"):
             k, v = line.split("=", 1)
-            os.environ.setdefault(k.strip(), v.strip())
+            # 行末コメント（ # 以降）は値に含めない
+            v = v.split("#", 1)[0].strip().strip('"').strip("'")
+            os.environ[k.strip()] = v
     tok = os.environ.get("META_INSTAGRAM_TOKEN", "").strip()
     uid = os.environ.get("META_INSTAGRAM_USER_ID", "").strip()
     if not tok or not uid:
@@ -81,31 +83,59 @@ def cli() -> None:
     pass
 
 
-@cli.command("list", help="直近の投稿に付いたコメントを表示する（読み取りのみ）。")
+@cli.command("list", help="コメントを時系列で表示し、対応が要るスレッドを示す（読み取りのみ）。")
 @click.option("--limit", default=10, help="見る投稿数")
 def list_comments(limit: int) -> None:
+    """スレッド単位で見る。
+
+    Instagram では、相手の書き込みが「トップレベルのコメント」と
+    「自分のコメントへの返信」の両方に現れる。さらに username が None で返ることがあるため、
+    **スレッドの最後の発言が自分かどうか**で対応要否を判断する（いちばん誤判定が少ない）。
+    """
     _, uid = _env()
-    me = _get(f"{uid}", {"fields": "username"})
+    me = _get(f"{uid}", {"fields": "username"}).get("username")
+    # API は自分の発言でも username を空で返すことがあるため、
+    # このツールで投稿した返信の ID をログから拾って「自分」と判定する。
+    own_ids: set[str] = set()
+    if LOG.exists():
+        for line in LOG.read_text(encoding="utf-8").splitlines():
+            try:
+                r = json.loads(line)
+            except Exception:  # noqa: BLE001
+                continue
+            if r.get("reply_id"):
+                own_ids.add(str(r["reply_id"]))
     media = _get(f"{uid}/media", {
         "fields": "id,caption,permalink,timestamp,comments_count", "limit": limit})
-    total = 0
+    need, done = 0, 0
     for m in media.get("data", []):
         if not m.get("comments_count"):
             continue
         cs = _get(f"{m['id']}/comments", {
-            "fields": "id,text,username,timestamp,replies{id,username,text}"})
+            "fields": "id,text,username,timestamp,replies{id,username,text,timestamp}"})
         for c in cs.get("data", []):
-            if c.get("username") == me.get("username"):
-                continue  # 自分のコメントは対象外
-            replied = any(r.get("username") == me.get("username")
-                          for r in (c.get("replies", {}).get("data") or []))
-            total += 1
-            mark = "✅返信済" if replied else "🔴未返信"
-            click.echo(f"\n{mark}  @{c.get('username')}  {c.get('timestamp','')[:10]}")
-            click.echo(f"  {c.get('text','')}")
-            click.echo(f"  comment_id: {c['id']}")
-            click.echo(f"  投稿: {m.get('permalink')}")
-    click.echo(f"\n他者コメント {total} 件")
+            thread = [c] + list((c.get("replies") or {}).get("data") or [])
+            thread.sort(key=lambda x: x.get("timestamp", ""))
+            # 本文が "@自分" で始まるものは、相手が自分宛に書いた返信（＝相手の発言）
+            def who(x: dict) -> str:
+                if x["id"] in own_ids:
+                    return me
+                u = x.get("username")
+                if u:
+                    return u
+                return "（相手）" if x.get("text", "").startswith("@" + me) else "（不明）"
+            last = thread[-1]
+            waiting = who(last) != me
+            if all(who(x) == me for x in thread):
+                continue  # 自分の発言だけのスレッドは表示しない
+            (need := need + 1) if waiting else (done := done + 1)
+            click.echo(f"\n{'🔴 返事待ち' if waiting else '✅ 対応済'}  {m.get('permalink')}")
+            for x in thread:
+                mark = "自分" if who(x) == me else who(x)
+                click.echo(f"   [{x.get('timestamp','')[:10]}] {mark}: {x.get('text','').strip()[:70]}")
+                if who(x) != me:
+                    click.echo(f"      comment_id: {x['id']}")
+    click.echo(f"\n返事待ち {need} / 対応済 {done}")
 
 
 @cli.command("reply", help="コメントに返信する（--commit 無しは dry-run）。")
