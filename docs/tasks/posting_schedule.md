@@ -43,7 +43,7 @@ related: [[this_week]] [[backlog]]
 | **9/29(火)** | note | **連載11（縁側タイプ）** | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n0de5a2163a03 |
 | **10/1(木)** | note | **連載12（小川タイプ）** | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n3e7da1f53c4d |
 | **10/3(土)** | note | **野原タイプ**（連載13） | 🤖Claude | 🟠 下書き入稿済 n6c7cdb10ada1 |
-| **10/6(火)** | note | **畑タイプ** | 🤖Claude | ✍️ 執筆予定 |
+| **10/6(火)** | note | **畑タイプ** | 🤖Claude | 🟠 下書き入稿済 ne5af2727034c |
 | **10/8(木)** | note | **本棚タイプ** | 🤖Claude | ✍️ 執筆予定 |
 | **10/10(土)** | note | **たき火タイプ** | 🤖Claude | ✍️ 執筆予定 |
 | **10/13(火)** | note | **山道タイプ**（8タイプ出し切り） | 🤖Claude | ✍️ 執筆予定 |
