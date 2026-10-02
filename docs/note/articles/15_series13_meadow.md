@@ -13,7 +13,7 @@ ceo_reviewed: 2026-10-01
 created: 2026-10-01
 note_draft_key: n6c7cdb10ada1  # 下書き入稿済（本文+見出し画像+診断リンク）。公開 10/3 予定
 author: メインClaude（CEO・タイプ別連載の第4弾）
-note_tags: [子育て, 育児, 子育ての悩み, 育児の悩み, 育児ママ, 育児パパ, 見守る子育て, 自主性, 子育て診断]
+note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, 育児の悩み, 見守る子育て, 自主性, 子育て診断, 育児日記]
 source:
   - docs/matcher/type_results_v1.md（野原タイプ）
   - docs/knowledge/education_theories/tier_s/pikler/

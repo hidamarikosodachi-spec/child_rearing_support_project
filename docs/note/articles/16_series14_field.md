@@ -13,7 +13,7 @@ ceo_reviewed: 2026-10-02
 created: 2026-10-02
 note_draft_key: ne5af2727034c  # 下書き入稿済（本文+見出し画像+診断リンク）。公開 10/6 予定
 author: メインClaude（CEO・タイプ別連載の第5弾）
-note_tags: [子育て, 育児, 子育ての悩み, 育児の悩み, モンテッソーリ, おうちモンテ, 自主性, 見守る子育て, 子育て診断]
+note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, モンテッソーリ, おうちモンテ, 自主性, 育児の悩み, 子育て診断]
 source:
   - docs/matcher/type_results_v1.md（畑タイプ）
   - docs/knowledge/education_theories/tier_s/montessori/
