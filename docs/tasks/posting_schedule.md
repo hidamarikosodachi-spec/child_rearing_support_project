@@ -39,7 +39,7 @@ related: [[this_week]] [[backlog]]
 | **9/25〜** | **X** | **固定ポスト（診断告知）＋プロフィール改訂** | ✋手動 | 🟡 文面用意済（[[pinned_matcher_v1]]）→ 投稿して「固定」（5分） |
 | **9/25(金)** | Threads | 診断リリース告知（＋1返信目に診断リンク2本） | 🤖自動 | ✅ 投稿済 16:53 https://www.threads.com/@hidamarikosodachi/post/Dds99pqAXsD → **オーナーが固定する** |
 | **9/28(月)** | Instagram | カルーセル④（診断告知・**7枚**）＋ストーリー（リンクスタンプ） | ✋手動 | ✅ 投稿済（オーナー） |
-| 10/4(土) | Threads | 診断フォロー（縁側タイプの一節・＋返信に診断リンク） | 🤖自動 | 🟡 承認済・スタンバイ |
+| 10/4(日) | Threads | 診断フォロー（縁側タイプの一節・＋返信に診断リンク） | 🤖自動 | 🟡 承認済・スタンバイ |
 | **9/29(火)** | note | **連載11（縁側タイプ）** | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n0de5a2163a03 |
 | **10/1(木)** | note | **連載12（小川タイプ）** | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n3e7da1f53c4d |
 | **10/3(土)** | note | **野原タイプ**（連載13） | 🤖Claude | 🟠 下書き入稿済 n6c7cdb10ada1 |
