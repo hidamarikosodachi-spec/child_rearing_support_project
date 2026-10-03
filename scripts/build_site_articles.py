@@ -12,6 +12,8 @@ front-matter:
 """
 from __future__ import annotations
 
+import datetime as _dt
+
 import html
 import re
 import sys
@@ -228,6 +230,9 @@ def main() -> None:
         meta, body = fm_parse(f.read_text(encoding="utf-8"))
         if meta.get("status") != "published" and not show_draft:
             print(f"  skip（{meta.get('status')}）: {f.name}")
+            continue
+        if not show_draft and meta.get("date", "") > _dt.date.today().isoformat():
+            print(f"  skip（予約 {meta.get('date')}）: {f.name}")
             continue
         slug = meta["slug"]
         # スマホ幅では 1行あたり約11字。17字前後を超えると文節の途中で折り返りやすく、
