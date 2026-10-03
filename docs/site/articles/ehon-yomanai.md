@@ -6,7 +6,7 @@ search_intent: 絵本 読み聞かせ 聞かない / 絵本 同じ本ばかり 2
 category: asobi
 tags: asobi, bedtime, age-2-3
 status: published
-date: 2026-10-01
+date: 2026-09-15
 theory: 反復の意味（同じものを求める時期）
 ---
 

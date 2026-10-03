@@ -6,7 +6,7 @@ search_intent: ワンオペ 限界 / ワンオペ育児 つらい 助けて
 category: kimochi
 tags: tsukare, jiko, age-any
 status: published
-date: 2026-10-01
+date: 2026-09-22
 theory: 養育者の負荷（支援の量が結果を変える）
 ---
 

@@ -6,7 +6,7 @@ search_intent: 子供 ごはん 食べない / 偏食 3歳 心配
 category: seikatsu
 tags: meal, fuan, age-2-3
 status: published
-date: 2026-10-01
+date: 2026-09-19
 theory: 食の自律（食べる量は子どもが決める）
 ---
 

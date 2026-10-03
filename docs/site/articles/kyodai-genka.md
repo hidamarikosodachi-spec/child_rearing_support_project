@@ -6,7 +6,7 @@ search_intent: きょうだい喧嘩 疲れた / 兄弟 喧嘩 仲裁 どうす�
 category: kodomo
 tags: kyodai, iraira, age-4-6
 status: published
-date: 2026-10-01
+date: 2026-09-17
 theory: 対等な関わり（裁定者にならない）
 ---
 

@@ -6,7 +6,7 @@ search_intent: 他の子と比べてしまう 育児 / 同じ月齢 できない
 category: kimochi
 tags: fuan, jiko, age-any
 status: published
-date: 2026-10-01
+date: 2026-09-18
 theory: 発達の個人差（順序は同じ、速度は違う）
 ---
 

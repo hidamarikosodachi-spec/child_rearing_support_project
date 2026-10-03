@@ -6,7 +6,7 @@ search_intent: 保育園 朝 泣く いつまで / 登園 泣く つらい
 category: kodomo
 tags: hoikuen, morning, fuan, age-any
 status: published
-date: 2026-10-01
+date: 2026-09-26
 theory: 愛着（分離と再会のセット）
 ---
 

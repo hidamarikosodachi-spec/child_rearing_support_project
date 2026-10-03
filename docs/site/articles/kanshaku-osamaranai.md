@@ -6,7 +6,7 @@ search_intent: 癇癪 収まらない 3歳 / かんしゃく 対応 泣き叫ぶ
 category: kodomo
 tags: age-2-3, iraira
 status: published
-date: 2026-10-01
+date: 2026-09-25
 theory: 感情の調整（大人が一緒に静まる）
 ---
 

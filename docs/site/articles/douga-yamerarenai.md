@@ -6,7 +6,7 @@ search_intent: 子供 動画 やめられない / youtube 見せすぎ 罪悪感
 category: asobi
 tags: asobi, jiko, age-2-3
 status: published
-date: 2026-10-01
+date: 2026-10-03
 theory: 見通しを渡す（終わりを先に決める）
 ---
 

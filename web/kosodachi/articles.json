@@ -1,98 +1,15 @@
 [
   {
-    "slug": "seikatsu-rizumu",
-    "title": "生活リズムが崩れたとき",
-    "description": "連休や体調不良で生活リズムが崩れたあと、どこから戻すか。寝る時刻ではなく起床時刻からそろえる理由と、朝の光・昼寝の切り上げという順番を書いています。",
-    "category": "seikatsu",
+    "slug": "douga-yamerarenai",
+    "title": "動画をやめられないとき",
+    "description": "動画をやめられないときの終わらせ方3つと、見せた日を責めなくていい理由。やめられないのは意志ではなく、終わりが外から来ない仕組みだからです。",
+    "category": "asobi",
     "tags": [
-      "morning",
-      "bedtime",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "nekashitsuke-jikan",
-    "title": "寝かしつけに1時間かかる日",
-    "description": "寝かしつけに1時間かかる日が続くとき。起きている時間・部屋の明るさ・手順の3つを変えると入りが変わります。寝ない日があっても大丈夫な理由も書いています。",
-    "category": "seikatsu",
-    "tags": [
-      "bedtime",
-      "tsukare",
+      "asobi",
+      "jiko",
       "age-2-3"
     ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "mama-ga-ii",
-    "title": "「ママがいい」と泣かれる日",
-    "description": "「ママがいい」と泣かれる日に、父親側にできること。交代ではなく並ぶ・得意な場面を持つ・母親が離れる時間をつくる。順位は一時的なもので入れ替わります。",
-    "category": "kodomo",
-    "tags": [
-      "papa",
-      "kyodai",
-      "age-0-1"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "kyodai-genka",
-    "title": "きょうだいげんかが続く日",
-    "description": "きょうだいげんかが続いて疲れるとき。どちらが悪いか決めない・危ないときだけ入る・上の子に先に声をかけるの3つと、けんかが繰り返される構造について。",
-    "category": "kodomo",
-    "tags": [
-      "kyodai",
-      "iraira",
-      "age-4-6"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "kodomo-kawaikunai",
-    "title": "子どもをかわいいと思えない日",
-    "description": "子どもをかわいいと思えない日があります。愛情が消えたのではなく、消耗で感じる力が鈍っているだけです。そう感じる理由と、今日できる3つのこと、相談できる場所。",
-    "category": "kimochi",
-    "tags": [
-      "jiko",
-      "tsukare",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "kanshaku-osamaranai",
-    "title": "かんしゃくが収まらないとき",
-    "description": "かんしゃくが収まらないとき、その場でできる3つとやらないほうがいいこと。感情を抑える力はゆっくり育つので、静める役はそばにいる大人が担います。",
-    "category": "kodomo",
-    "tags": [
-      "age-2-3",
-      "iraira"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "jibun-no-jikan",
-    "title": "自分の時間がないと感じたら",
-    "description": "子どもが寝たあとの時間が休息にならないのはなぜか。自分のためだけの時間を取り戻す3つの方法と、休めているかは長さではなく何を考えていたかで決まるという話。",
-    "category": "kimochi",
-    "tags": [
-      "tsukare",
-      "bedtime",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "iyaiya-tsukareta",
-    "title": "イヤイヤ期に疲れ果てた日",
-    "description": "何を言っても「いや」の時期に疲れ果てた日に。選ばせる・待つ・通してしまうの3つと、イヤイヤ期が自我の芽生えとして正常である理由、いつごろ収まるか。",
-    "category": "kodomo",
-    "tags": [
-      "age-2-3",
-      "iraira",
-      "tsukare"
-    ],
-    "date": "2026-10-01"
+    "date": "2026-10-03"
   },
   {
     "slug": "iraira-tomaranai",
@@ -104,126 +21,17 @@
       "tsukare",
       "age-any"
     ],
-    "date": "2026-10-01"
+    "date": "2026-10-02"
   },
   {
-    "slug": "hoka-to-kuraberu",
-    "title": "ほかの子と比べてしまうとき",
-    "description": "同じ月齢の子と比べてしまう日に。発達は順序が同じでも速度が違うこと、見る場所を昨日のその子に変えること、そして心配が続くときの相談先について。",
+    "slug": "kodomo-kawaikunai",
+    "title": "子どもをかわいいと思えない日",
+    "description": "子どもをかわいいと思えない日があります。愛情が消えたのではなく、消耗で感じる力が鈍っているだけです。そう感じる理由と、今日できる3つのこと、相談できる場所。",
     "category": "kimochi",
     "tags": [
-      "fuan",
       "jiko",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "hoikuen-asa-naku",
-    "title": "保育園の朝に泣かれるとき",
-    "description": "保育園の朝に泣かれてつらいとき。別れを短くする・同じ言葉で終える・迎えで喜ぶの3つと、別れ際に泣くのは関係がうまくいっている証拠だという話。",
-    "category": "kodomo",
-    "tags": [
-      "hoikuen",
-      "morning",
-      "fuan",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "hitori-de-kakaeru",
-    "title": "ひとりで抱えている日が続くとき",
-    "description": "ワンオペで限界に近いとき、必要なのは工夫より「減らすこと」と「人を入れること」。今週削っていい3つと、一時保育・ファミサポなど頼る先の順番を書いています。",
-    "category": "kimochi",
-    "tags": [
       "tsukare",
-      "jiko",
       "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "hamigaki-iyagaru",
-    "title": "歯みがきを嫌がるとき",
-    "description": "歯みがきを嫌がって毎晩が戦いになるとき。終わりを数えて見せる・奥歯に絞る・姿勢を変えるの3つと、押さえつけずに続けるための考え方。",
-    "category": "seikatsu",
-    "tags": [
-      "bedtime",
-      "age-2-3"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "gohan-tabenai",
-    "title": "ごはんを食べてくれない日",
-    "description": "ごはんを食べてくれない日に。量を減らす・役割を分ける・3日で見るという3つと、1歳半から3歳ごろに食べなくなるのが発達として正常である理由。",
-    "category": "seikatsu",
-    "tags": [
-      "meal",
-      "fuan",
-      "age-2-3"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "ehon-yomanai",
-    "title": "絵本を読んでも聞かない日",
-    "description": "絵本を最後まで聞いてくれない、同じ本ばかり持ってくるとき。途中でやめていい理由と、反復が安心の確認である理由。読まない日があっても大丈夫です。",
-    "category": "asobi",
-    "tags": [
-      "asobi",
-      "bedtime",
-      "age-2-3"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "douga-yamerarenai",
-    "title": "動画をやめられないとき",
-    "description": "動画をやめられないときの終わらせ方3つと、見せた日を責めなくていい理由。やめられないのは意志ではなく、終わりが外から来ない仕組みだからです。",
-    "category": "asobi",
-    "tags": [
-      "asobi",
-      "jiko",
-      "age-2-3"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "chiiku-omocha",
-    "title": "知育おもちゃは必要か",
-    "description": "知育おもちゃは必要か。多くの場合は家にあるもので足りる理由と、あったほうが助かる場面、選ぶときの3つの基準。買わなくても遅れることはありません。",
-    "category": "asobi",
-    "tags": [
-      "asobi",
-      "kaimono",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "asa-no-shitaku",
-    "title": "朝の支度が進まない日",
-    "description": "朝の支度が進まず、毎朝どなってしまうとき。着替え・持ち物・出る時刻を組み替える3つの方法と、なぜ朝がいちばん難しい時間なのか。選択肢を減らすといちばん効きます。",
-    "category": "seikatsu",
-    "tags": [
-      "morning",
-      "hoikuen",
-      "iraira",
-      "age-any"
-    ],
-    "date": "2026-10-01"
-  },
-  {
-    "slug": "akachan-gaeri",
-    "title": "下の子が生まれてからの上の子",
-    "description": "下の子が生まれてから上の子が変わったと感じたら。1日5分だけ上の子を見る時間のつくり方と、赤ちゃん返りが「まだここにいていいか」の確認である理由。",
-    "category": "kodomo",
-    "tags": [
-      "age-2-3",
-      "kyodai",
-      "fuan"
     ],
     "date": "2026-10-01"
   },
@@ -239,5 +47,197 @@
       "age-any"
     ],
     "date": "2026-09-30"
+  },
+  {
+    "slug": "nekashitsuke-jikan",
+    "title": "寝かしつけに1時間かかる日",
+    "description": "寝かしつけに1時間かかる日が続くとき。起きている時間・部屋の明るさ・手順の3つを変えると入りが変わります。寝ない日があっても大丈夫な理由も書いています。",
+    "category": "seikatsu",
+    "tags": [
+      "bedtime",
+      "tsukare",
+      "age-2-3"
+    ],
+    "date": "2026-09-29"
+  },
+  {
+    "slug": "asa-no-shitaku",
+    "title": "朝の支度が進まない日",
+    "description": "朝の支度が進まず、毎朝どなってしまうとき。着替え・持ち物・出る時刻を組み替える3つの方法と、なぜ朝がいちばん難しい時間なのか。選択肢を減らすといちばん効きます。",
+    "category": "seikatsu",
+    "tags": [
+      "morning",
+      "hoikuen",
+      "iraira",
+      "age-any"
+    ],
+    "date": "2026-09-28"
+  },
+  {
+    "slug": "mama-ga-ii",
+    "title": "「ママがいい」と泣かれる日",
+    "description": "「ママがいい」と泣かれる日に、父親側にできること。交代ではなく並ぶ・得意な場面を持つ・母親が離れる時間をつくる。順位は一時的なもので入れ替わります。",
+    "category": "kodomo",
+    "tags": [
+      "papa",
+      "kyodai",
+      "age-0-1"
+    ],
+    "date": "2026-09-27"
+  },
+  {
+    "slug": "hoikuen-asa-naku",
+    "title": "保育園の朝に泣かれるとき",
+    "description": "保育園の朝に泣かれてつらいとき。別れを短くする・同じ言葉で終える・迎えで喜ぶの3つと、別れ際に泣くのは関係がうまくいっている証拠だという話。",
+    "category": "kodomo",
+    "tags": [
+      "hoikuen",
+      "morning",
+      "fuan",
+      "age-any"
+    ],
+    "date": "2026-09-26"
+  },
+  {
+    "slug": "kanshaku-osamaranai",
+    "title": "かんしゃくが収まらないとき",
+    "description": "かんしゃくが収まらないとき、その場でできる3つとやらないほうがいいこと。感情を抑える力はゆっくり育つので、静める役はそばにいる大人が担います。",
+    "category": "kodomo",
+    "tags": [
+      "age-2-3",
+      "iraira"
+    ],
+    "date": "2026-09-25"
+  },
+  {
+    "slug": "iyaiya-tsukareta",
+    "title": "イヤイヤ期に疲れ果てた日",
+    "description": "何を言っても「いや」の時期に疲れ果てた日に。選ばせる・待つ・通してしまうの3つと、イヤイヤ期が自我の芽生えとして正常である理由、いつごろ収まるか。",
+    "category": "kodomo",
+    "tags": [
+      "age-2-3",
+      "iraira",
+      "tsukare"
+    ],
+    "date": "2026-09-24"
+  },
+  {
+    "slug": "akachan-gaeri",
+    "title": "下の子が生まれてからの上の子",
+    "description": "下の子が生まれてから上の子が変わったと感じたら。1日5分だけ上の子を見る時間のつくり方と、赤ちゃん返りが「まだここにいていいか」の確認である理由。",
+    "category": "kodomo",
+    "tags": [
+      "age-2-3",
+      "kyodai",
+      "fuan"
+    ],
+    "date": "2026-09-23"
+  },
+  {
+    "slug": "hitori-de-kakaeru",
+    "title": "ひとりで抱えている日が続くとき",
+    "description": "ワンオペで限界に近いとき、必要なのは工夫より「減らすこと」と「人を入れること」。今週削っていい3つと、一時保育・ファミサポなど頼る先の順番を書いています。",
+    "category": "kimochi",
+    "tags": [
+      "tsukare",
+      "jiko",
+      "age-any"
+    ],
+    "date": "2026-09-22"
+  },
+  {
+    "slug": "jibun-no-jikan",
+    "title": "自分の時間がないと感じたら",
+    "description": "子どもが寝たあとの時間が休息にならないのはなぜか。自分のためだけの時間を取り戻す3つの方法と、休めているかは長さではなく何を考えていたかで決まるという話。",
+    "category": "kimochi",
+    "tags": [
+      "tsukare",
+      "bedtime",
+      "age-any"
+    ],
+    "date": "2026-09-21"
+  },
+  {
+    "slug": "seikatsu-rizumu",
+    "title": "生活リズムが崩れたとき",
+    "description": "連休や体調不良で生活リズムが崩れたあと、どこから戻すか。寝る時刻ではなく起床時刻からそろえる理由と、朝の光・昼寝の切り上げという順番を書いています。",
+    "category": "seikatsu",
+    "tags": [
+      "morning",
+      "bedtime",
+      "age-any"
+    ],
+    "date": "2026-09-20"
+  },
+  {
+    "slug": "gohan-tabenai",
+    "title": "ごはんを食べてくれない日",
+    "description": "ごはんを食べてくれない日に。量を減らす・役割を分ける・3日で見るという3つと、1歳半から3歳ごろに食べなくなるのが発達として正常である理由。",
+    "category": "seikatsu",
+    "tags": [
+      "meal",
+      "fuan",
+      "age-2-3"
+    ],
+    "date": "2026-09-19"
+  },
+  {
+    "slug": "hoka-to-kuraberu",
+    "title": "ほかの子と比べてしまうとき",
+    "description": "同じ月齢の子と比べてしまう日に。発達は順序が同じでも速度が違うこと、見る場所を昨日のその子に変えること、そして心配が続くときの相談先について。",
+    "category": "kimochi",
+    "tags": [
+      "fuan",
+      "jiko",
+      "age-any"
+    ],
+    "date": "2026-09-18"
+  },
+  {
+    "slug": "kyodai-genka",
+    "title": "きょうだいげんかが続く日",
+    "description": "きょうだいげんかが続いて疲れるとき。どちらが悪いか決めない・危ないときだけ入る・上の子に先に声をかけるの3つと、けんかが繰り返される構造について。",
+    "category": "kodomo",
+    "tags": [
+      "kyodai",
+      "iraira",
+      "age-4-6"
+    ],
+    "date": "2026-09-17"
+  },
+  {
+    "slug": "hamigaki-iyagaru",
+    "title": "歯みがきを嫌がるとき",
+    "description": "歯みがきを嫌がって毎晩が戦いになるとき。終わりを数えて見せる・奥歯に絞る・姿勢を変えるの3つと、押さえつけずに続けるための考え方。",
+    "category": "seikatsu",
+    "tags": [
+      "bedtime",
+      "age-2-3"
+    ],
+    "date": "2026-09-16"
+  },
+  {
+    "slug": "ehon-yomanai",
+    "title": "絵本を読んでも聞かない日",
+    "description": "絵本を最後まで聞いてくれない、同じ本ばかり持ってくるとき。途中でやめていい理由と、反復が安心の確認である理由。読まない日があっても大丈夫です。",
+    "category": "asobi",
+    "tags": [
+      "asobi",
+      "bedtime",
+      "age-2-3"
+    ],
+    "date": "2026-09-15"
+  },
+  {
+    "slug": "chiiku-omocha",
+    "title": "知育おもちゃは必要か",
+    "description": "知育おもちゃは必要か。多くの場合は家にあるもので足りる理由と、あったほうが助かる場面、選ぶときの3つの基準。買わなくても遅れることはありません。",
+    "category": "asobi",
+    "tags": [
+      "asobi",
+      "kaimono",
+      "age-any"
+    ],
+    "date": "2026-09-14"
   }
 ]

@@ -6,7 +6,7 @@ search_intent: 知育おもちゃ 必要か / 知育玩具 意味ない
 category: asobi
 tags: asobi, kaimono, age-any
 status: published
-date: 2026-10-01
+date: 2026-09-14
 theory: モンテッソーリ（整えられた環境）
 ---
 

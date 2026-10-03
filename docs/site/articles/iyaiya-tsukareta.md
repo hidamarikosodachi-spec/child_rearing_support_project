@@ -6,7 +6,7 @@ search_intent: イヤイヤ期 疲れた / イヤイヤ期 いつまで つら�
 category: kodomo
 tags: age-2-3, iraira, tsukare
 status: published
-date: 2026-10-01
+date: 2026-09-24
 theory: 自我の芽生え（自分で決めたい時期）
 ---
 

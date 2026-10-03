@@ -6,7 +6,7 @@ search_intent: ママがいい パパ 拒否 / 父親 イヤがられる 育児
 category: kodomo
 tags: papa, kyodai, age-0-1
 status: published
-date: 2026-10-01
+date: 2026-09-27
 theory: 愛着（対象の順位は変わる）
 ---
 

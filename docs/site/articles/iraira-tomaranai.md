@@ -6,7 +6,7 @@ search_intent: 子育て イライラ 止まらない / 育児 イライラ 自�
 category: kimochi
 tags: iraira, tsukare, age-any
 status: published
-date: 2026-10-01
+date: 2026-10-02
 theory: 自己調整（親の状態が先）
 ---
 

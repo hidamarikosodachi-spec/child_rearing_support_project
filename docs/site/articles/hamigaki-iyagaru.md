@@ -6,7 +6,7 @@ search_intent: 歯磨き 嫌がる 2歳 / 仕上げ磨き 泣く 押さえつけ
 category: seikatsu
 tags: bedtime, age-2-3
 status: published
-date: 2026-10-01
+date: 2026-09-16
 theory: 見通しを渡す（終わりが分かると耐えられる）
 ---
 

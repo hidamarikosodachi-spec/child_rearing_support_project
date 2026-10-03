@@ -6,7 +6,7 @@ search_intent: 生活リズム 崩れた 子供 戻し方 / 子供 早寝早起�
 category: seikatsu
 tags: morning, bedtime, age-any
 status: published
-date: 2026-10-01
+date: 2026-09-20
 theory: 体内時計（光と起床時刻が起点）
 ---
 

@@ -6,7 +6,7 @@ search_intent: 朝 支度 進まない 子供 / 朝 イライラ 保育園 準�
 category: seikatsu
 tags: morning, hoikuen, iraira, age-any
 status: published
-date: 2026-10-01
+date: 2026-09-28
 theory: 選択肢を絞る（決定の負荷を減らす）
 ---
 

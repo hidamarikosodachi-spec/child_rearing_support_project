@@ -6,7 +6,7 @@ search_intent: 赤ちゃん返り 上の子 対応 / 上の子 かわいくな�
 category: kodomo
 tags: age-2-3, kyodai, fuan
 status: published
-date: 2026-10-01
+date: 2026-09-23
 theory: 愛着（安全基地の確認行動）
 ---
 
