@@ -179,10 +179,10 @@ matcher_url: https://hidamari-kosodachi.com/matcher/
 
 ---
 
-> **出典・参考**
-> - Marshall, C. (2017). Montessori education: a review of the evidence base. *npj Science of Learning*.
-> - Lillard, A. & Else-Quest, N. (2006). Evaluating Montessori Education. *Science*.
-> - docs/knowledge/education_theories/tier_s/montessori/
+**この記事のもとになった考え方**
+- Marshall, C. (2017). Montessori education: a review of the evidence base. *npj Science of Learning*.
+- Lillard, A. & Else-Quest, N. (2006). Evaluating Montessori Education. *Science*.
+- docs/knowledge/education_theories/tier_s/montessori/
 
 ## ドラフトメモ（note 入稿前チェック・本文には含めない）
 

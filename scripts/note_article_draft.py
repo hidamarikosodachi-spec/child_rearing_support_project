@@ -17,7 +17,7 @@ ProseMirror に paste するので、見出し・太字・箇条書き・リン�
 注意:
   - User-Agent を Mac Chrome にしないと editor.note.com → note.com の API が CORS で落ちる（実測）。
   - 本文は「## 記事本文（ここから下を note へ）」直後の `# タイトル` をタイトル欄へ、
-    「> **出典」ブロックの手前（=「おわりに」まで）で切る（公開済 06/07 と同じ体裁）。
+    「## ドラフトメモ」の手前で切る（出典ブロックは読者に見せる・ポジショニング v2）。
   - タグは front-matter の `note_tags:`（無ければ `tags:`）の先頭9個。
   - 新マシンでは Chromium の共有ライブラリがユーザー領域にあるため LD_LIBRARY_PATH が必要（.bashrc 参照）。
 """
@@ -35,7 +35,9 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 EDITOR = "div.ProseMirror[contenteditable='true']"
 BODY_MARKER = "## 記事本文（ここから下を note へ）"
-BODY_END = "\n---\n\n> **出典"
+# 2026-10-04 ポジショニング v2: 学術で戦うと決めたので、**出典は読者に見せる**。
+# 本文は「## ドラフトメモ」の手前まで（＝出典ブロックを含む）を入稿する。
+BODY_END = "\n## ドラフトメモ"
 
 
 def inline(s: str) -> str:
