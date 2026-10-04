@@ -1,5 +1,5 @@
 ---
-title: "子どもは楽しそうなのに、自分だけ疲れている日に — 小川タイプの子育て"
+title: "子どもは楽しそうなのに、自分だけ疲れている日に"
 slug: 14_series12_stream
 type: note_article
 article_no: 14
@@ -29,7 +29,9 @@ matcher_url: https://hidamari-kosodachi.com/matcher/
 
 ## 記事本文（ここから下を note へ）
 
-# 子どもは楽しそうなのに、自分だけ疲れている日に — 小川タイプの子育て
+# 子どもは楽しそうなのに、自分だけ疲れている日に
+
+> この記事は、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.com/matcher/)（18問・約3分）の8つのタイプのうち、ひとつについて書いたものです。
 
 > 今日もよく遊んだ。
 > 子どもは満足そうに寝ている。

@@ -1,5 +1,5 @@
 ---
-title: "「放っておいてる」と思われたくない日に — 野原タイプの子育て"
+title: "「放っておいてる」と思われたくない日に"
 slug: 15_series13_meadow
 type: note_article
 article_no: 15
@@ -29,7 +29,9 @@ matcher_url: https://hidamari-kosodachi.com/matcher/
 
 ## 記事本文（ここから下を note へ）
 
-# 「放っておいてる」と思われたくない日に — 野原タイプの子育て
+# 「放っておいてる」と思われたくない日に
+
+> この記事は、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.com/matcher/)（18問・約3分）の8つのタイプのうち、ひとつについて書いたものです。
 
 > 口も手も出さずに見ている。
 > 子どもは自分で遊んで、自分で解決している。

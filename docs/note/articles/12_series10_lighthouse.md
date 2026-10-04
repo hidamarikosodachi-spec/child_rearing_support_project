@@ -1,5 +1,5 @@
 ---
-title: "「先回りしすぎかな」と思った日に — 灯台タイプの子育て"
+title: "「先回りしすぎかな」と思った日に"
 slug: 12_series10_lighthouse
 type: note_article
 article_no: 12
@@ -30,7 +30,9 @@ matcher_url: https://hidamari-kosodachi.pages.dev/matcher/
 
 ## 記事本文（ここから下を note へ）
 
-# 「先回りしすぎかな」と思った日に — 灯台タイプの子育て
+# 「先回りしすぎかな」と思った日に
+
+> この記事は、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.com/matcher/)（18問・約3分）の8つのタイプのうち、ひとつについて書いたものです。
 
 > 転ぶ前に手が出る。
 > 困る前に声をかける。

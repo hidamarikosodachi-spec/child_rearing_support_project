@@ -1,5 +1,5 @@
 ---
-title: "「何も教えてあげてない」と思う日に — 畑タイプの子育て"
+title: "「何も教えてあげてない」と思う日に"
 slug: 16_series14_field
 type: note_article
 article_no: 16
@@ -27,7 +27,9 @@ matcher_url: https://hidamari-kosodachi.com/matcher/
 
 ## 記事本文（ここから下を note へ）
 
-# 「何も教えてあげてない」と思う日に — 畑タイプの子育て
+# 「何も教えてあげてない」と思う日に
+
+> この記事は、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.com/matcher/)（18問・約3分）の8つのタイプのうち、ひとつについて書いたものです。
 
 > 棚の高さを変えて、箱にラベルを貼って、朝の流れを決めて。
 > そこまでやったら、あとは子どもにまかせている。

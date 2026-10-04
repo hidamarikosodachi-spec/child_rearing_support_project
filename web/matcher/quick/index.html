@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3問でわかる — わが家のこそだちタイプ（かんたん版）｜ひだまりこそだち</title>
+<meta name="description" content="3つの質問に答えるだけで、わが家の子育てが8つのタイプのどれに近いかが分かります。30秒で終わります。">
+<link rel="canonical" href="https://hidamari-kosodachi.com/matcher/quick/">
+<link rel="icon" href="../logo.svg">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .qwrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 64px; }
+  .step { font-size: 0.85rem; letter-spacing: .08em; opacity: .7; }
+  .q { font-size: 1.25rem; font-weight: 700; line-height: 1.7; margin: 12px 0 20px; word-break: keep-all; }
+  .opt { display: block; background: #fff; border: 1px solid rgba(180,83,9,.25); color: inherit; width: 100%; text-align: left; margin: 12px 0; padding: 18px 20px;
+         font-size: 1rem; line-height: 1.7; border-radius: 14px; cursor: pointer; }
+  .result h2 { margin-top: 8px; }
+  .lead { font-size: 1.05rem; font-weight: 700; }
+  .cta { display: inline-block; background: #c2410c; color: #fff; margin-top: 20px; padding: 14px 24px; border-radius: 999px;
+         font-weight: 700; text-decoration: none; }
+  .sub { font-size: .9rem; opacity: .8; margin-top: 14px; line-height: 1.8; }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="site">
+  <img src="../logo.svg" alt="">
+  <span class="name">ひだまりこそだち</span>
+</header>
+<main class="qwrap">
+  <section id="quiz">
+    <p class="step"><span id="no">1</span> / 3</p>
+    <p class="q" id="q"></p>
+    <div id="opts"></div>
+    <p class="sub">どちらとも言えないときは、<strong>最近の自分</strong>に近いほうで大丈夫です。</p>
+  </section>
+
+  <section id="result" class="result" hidden>
+    <p class="step">いまの、わが家に近いのは</p>
+    <h2 id="tname"></h2>
+    <p class="lead" id="tlead"></p>
+    <p id="tintro"></p>
+    <a class="cta" id="full" href="/matcher/">18問で、もう少し詳しく見る（約3分）</a>
+    <p class="sub">
+      3問は、いちばん大きな3つの傾向だけを見たものです。<br>
+      18問版では、きょうだいや年齢を含めて、もう少し細かく出ます。<br>
+      <a id="tpage" href="#">このタイプの詳しい話を読む</a>
+    </p>
+    <p class="sub" id="disc"></p>
+  </section>
+</main>
+</div>
+
+<script type="module">
+import { TYPES, TYPE_MAP, DISCLAIMER } from "../types.js";
+
+// 18問版の各軸から、いちばん日常に出る1問ずつを選んでいる（I1 / S1 / R1 相当）
+const Q = [
+  { axis: "I",
+    q: "休日の午前中、子どもとの過ごし方として近いのはどちらですか？",
+    a: "「今日は◯◯しよう」と、こちらから提案して一緒にやる",
+    b: "「何がしたい？」と聞いて、子どもが選んだことに付き合う" },
+  { axis: "S",
+    q: "平日の生活リズム（食事・お風呂・寝る時間）は、どちらに近いですか？",
+    a: "だいたい決まった時間に動く。崩れると落ち着かない",
+    b: "その日その日で動く。多少ずれても気にならない" },
+  { axis: "R",
+    q: "子どもが、理由のはっきりしないぐずぐずを始めました。最初の反応は？",
+    a: "すぐ近くに行って、抱きしめたり声をかけたりする",
+    b: "少し離れて、自分で立て直すのを待つ" },
+];
+
+const S = { i: 0, ans: [] };
+const $ = (id) => document.getElementById(id);
+
+function render() {
+  const st = Q[S.i];
+  $("no").textContent = S.i + 1;
+  $("q").textContent = st.q;
+  const box = $("opts");
+  box.innerHTML = "";
+  [["+", st.a], ["-", st.b]].forEach(([sign, text]) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.textContent = text;
+    b.onclick = () => { S.ans.push(sign); S.i++; S.i >= Q.length ? finish() : render(); };
+    box.appendChild(b);
+  });
+}
+
+function finish() {
+  const key = TYPE_MAP[S.ans.join("")];
+  const t = TYPES[key];
+  $("quiz").hidden = true;
+  $("result").hidden = false;
+  $("tname").textContent = t.label;
+  $("tlead").textContent = t.lead || "";
+  $("tintro").textContent = t.intro || "";
+  $("tpage").href = `/matcher/t/${key}`;
+  $("disc").textContent = DISCLAIMER;
+  history.replaceState(null, "", `?t=${key}`);
+}
+
+render();
+</script>
+</body>
+</html>

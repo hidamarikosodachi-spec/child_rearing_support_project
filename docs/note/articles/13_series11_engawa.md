@@ -1,5 +1,5 @@
 ---
-title: "抱っこをせがまなくなった日に — 縁側タイプの子育て"
+title: "抱っこをせがまなくなった日に"
 slug: 13_series11_engawa
 type: note_article
 article_no: 13
@@ -29,7 +29,9 @@ matcher_url: https://hidamari-kosodachi.pages.dev/matcher/
 
 ## 記事本文（ここから下を note へ）
 
-# 抱っこをせがまなくなった日に — 縁側タイプの子育て
+# 抱っこをせがまなくなった日に
+
+> この記事は、[わが家のこそだちタイプ診断](https://hidamari-kosodachi.com/matcher/)（18問・約3分）の8つのタイプのうち、ひとつについて書いたものです。
 
 > 手がかからなくなった。
 > ひとりで遊べるようになった。
