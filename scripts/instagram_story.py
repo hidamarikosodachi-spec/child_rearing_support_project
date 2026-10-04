@@ -34,15 +34,19 @@ def title_font_px(title: str) -> int:
     return 50
 
 
-def build_html(title: str, series: str, hook: str, cta: str) -> str:
+def build_html(title: str, series: str, hook: str, cta: str, cta_sub: str) -> str:
     logo = load_logo_inline()
     tfs = title_font_px(title)
+    title_html = esc(title).replace("｜", "<br>")
     series_html = f'<div class="series">{esc(series)}</div>' if series.strip() else ""
     hook_html = f'<div class="hook">{esc(hook)}</div>' if hook.strip() else ""
     return f"""<!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8"><style>
 @page {{ size: {W}px {H}px; margin: 0; }}
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+/* 日本語を文節の途中で折り返さない（オーナー指示 2026-09-27）。
+   改行位置は原稿側で決める: --title に「｜」を入れるとそこで改行する。 */
+* {{ word-break: keep-all; overflow-wrap: normal; line-break: strict; }}
 html, body {{ width: {W}px; height: {H}px; }}
 body {{ font-family: 'Noto Sans CJK JP', sans-serif; background: {C_BG}; position: relative; overflow: hidden; }}
 .sun  {{ position: absolute; top: -260px; right: -260px; width: 760px; height: 760px; border-radius: 50%; background: {C_SUN}; opacity: 0.18; }}
@@ -65,10 +69,10 @@ body {{ font-family: 'Noto Sans CJK JP', sans-serif; background: {C_BG}; positio
   <div class="wordmark">ひだまりこそだち</div>
   <div class="label">note 新しい記事</div>
   {series_html}
-  <div class="title">{esc(title)}</div>
+  <div class="title">{title_html}</div>
   {hook_html}
   <div class="cta">{esc(cta)}</div>
-  <div class="cta-sub">（この下のリンクから読めます）</div>
+  <div class="cta-sub">{esc(cta_sub)}</div>
   <div class="rule"></div>
   <div class="tag">子育ての考え方を、親のことばに</div>
 </body></html>"""
@@ -120,6 +124,11 @@ def main():
     ap.add_argument("--title"); ap.add_argument("--series", default="")
     ap.add_argument("--hook", default=""); ap.add_argument("--out")
     ap.add_argument("--cta", default="note で公開しました")
+    # API からストーリーを出すとリンクスタンプが貼れないため、受け皿はプロフィールのリンク。
+    # スマホから手で投稿してリンクスタンプを貼る回だけ --link-sticker を付ける。
+    ap.add_argument("--cta-sub", default="（プロフィールのリンクから読めます）")
+    ap.add_argument("--link-sticker", action="store_true",
+                    help="リンクスタンプを手で貼る回（文言を『この下のリンクから』にする）")
     a = ap.parse_args()
     if a.article:
         d = from_article(a.article)
@@ -128,7 +137,8 @@ def main():
         if not (a.title and a.out):
             ap.error("--article か --title/--out が必要")
         title, series, hook, out = a.title, a.series, a.hook, a.out
-    render(build_html(title, series, hook, a.cta), out)
+    sub = "（この下のリンクから読めます）" if a.link_sticker else a.cta_sub
+    render(build_html(title, series, hook, a.cta, sub), out)
 
 
 if __name__ == "__main__":

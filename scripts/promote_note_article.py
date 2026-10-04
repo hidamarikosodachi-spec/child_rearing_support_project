@@ -24,6 +24,8 @@ import sys
 from pathlib import Path
 
 import click
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parent.parent
 ARTICLES = ROOT / "docs/note/articles"
@@ -66,7 +68,8 @@ def build(path: Path) -> dict | None:
 @click.command(help="公開済みの note 記事から Instagram ストーリー用の素材を作る。")
 @click.argument("article", type=click.Path(exists=True, path_type=Path), required=False)
 @click.option("--all-recent", type=int, default=0, help="直近N本の公開記事をまとめて処理")
-def main(article: Path | None, all_recent: int) -> None:
+@click.option("--post", is_flag=True, help="生成した画像を Instagram ストーリーへ実際に投稿する")
+def main(article: Path | None, all_recent: int, post: bool) -> None:
     targets: list[Path] = []
     if article:
         targets = [article]
@@ -80,6 +83,15 @@ def main(article: Path | None, all_recent: int) -> None:
     made = [x for x in (build(p) for p in targets) if x]
     if not made:
         return
+    if post:
+        # 2026-10-04 検証: Instagram ログイン方式でもストーリーを公開できる（Facebookページ不要）。
+        # ただしリンクスタンプは API では貼れないので、画像の案内＋プロフィールのリンクで受ける。
+        import post_instagram_story as story
+        for x in made:
+            info = story.publish_story(x["image"])
+            click.echo(f"[OK] ストーリー投稿: {x['title']}\n  {info.get('permalink')}")
+        return
+
     click.echo(f"\n=== Instagram ストーリー素材 {len(made)}件 ===")
     for x in made:
         click.echo(f"\n■ {x['title']}")
