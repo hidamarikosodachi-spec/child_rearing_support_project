@@ -8,7 +8,7 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-10-04 10:09 JST／前回比は 2026-10-02 集計との差。
+> 集計 2026-10-04 11:36 JST／前回比は 2026-10-02 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
