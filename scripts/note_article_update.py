@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from note_article_draft import AUTH, EDITOR, UA, load  # noqa: E402
 
 
-def main() -> None:
+def main() -> None:  # noqa: C901
     ap = argparse.ArgumentParser(description="公開済み note 記事のタイトル・本文を更新する")
     ap.add_argument("article", type=Path)
     ap.add_argument("--key", required=True)
@@ -72,6 +72,16 @@ def main() -> None:
                 )
                 pg.wait_for_timeout(2500)
 
+            # ⚠️ 下書きの記事にこの流れを使うと**公開されてしまう**（2026-10-04 に実際に起こした）。
+            #    下書きのままにしたいときは「下書き保存」で止める。
+            st = ctx.request.get(f"https://note.com/api/v3/notes/{a.key}").json()["data"].get("status")
+            if st != "published":
+                print(f"この記事は {st} です。公開せず下書き保存で止めます。")
+                pg.get_by_role("button", name="下書き保存").first.click()
+                pg.wait_for_timeout(5000)
+                d = ctx.request.get(f"https://note.com/api/v3/notes/{a.key}").json()["data"]
+                print(f"status: {d.get('status')} | title: {d.get('name')}")
+                return
             pg.get_by_role("button", name="公開に進む").first.click()
             pg.wait_for_timeout(4000)
             btn = pg.get_by_role("button", name=re.compile("更新する|投稿する")).first
