@@ -7,13 +7,15 @@ series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 13
 category: series
 matcher_type: meadow
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-01
 created: 2026-10-01
-note_draft_key: n6c7cdb10ada1  # 下書き入稿済（本文+見出し画像+診断リンク）。公開 10/3 予定
+note_draft_key: n6c7cdb10ada1
+published: 2026-10-04
+published_url: https://note.com/hidamari_sodachi/n/n6c7cdb10ada1
 author: メインClaude（CEO・タイプ別連載の第4弾）
-note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, 育児の悩み, 見守る子育て, 自主性, 子育て診断, 育児日記]
+note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, 育児の悩み, 見守る子育て, 自主性, 子育て診断]  # お題タグは2個まで（note 仕様）
 source:
   - docs/matcher/type_results_v1.md（野原タイプ）
   - docs/knowledge/education_theories/tier_s/pikler/

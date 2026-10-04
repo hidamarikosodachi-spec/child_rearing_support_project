@@ -1,25 +1,25 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-10-02
+updated: 2026-10-04
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-10-02 10:44 JST／前回比は 2026-10-01 集計との差。
+> 集計 2026-10-04 10:09 JST／前回比は 2026-10-02 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 265（+5） | 41（+0） | 8（+0） | — | **0** | — |
-| Threads | views 2040（+0） | 5（+0） | 2（+0） | 2（+0） | — | 0（+0） |
+| note | PV 272（+7） | 41（+0） | 8（+0） | — | **0** | — |
+| Threads | views 2180（+140） | 5（+0） | 2（+0） | 2（+0） | — | 0（+0） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **265**（目標下限まで残り 115）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **272**（目標下限まで残り 108）
 
 ## note 記事別
 
@@ -27,17 +27,17 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 |---|---|---|---|---|
 | 76 | 16 | 0 | 0 | [ひだまりこそだち をはじめます — 親子が並んで座る、ちいさな縁側のよ…](https://note.com/hidamari_sodachi/n/nafa8104b6f1f) |
 | 51 | 4 | 1 | 0 | [「抱っこしすぎ」と言われた夜に — 愛着理論から考える](https://note.com/hidamari_sodachi/n/n8ea1a555c23a) |
-| 42 | 6 | 0 | 0 | [つくる前に、声を聞かせてください — アンケートのお願い](https://note.com/hidamari_sodachi/n/n0e6db37bd948) |
+| 43 | 6 | 0 | 0 | [つくる前に、声を聞かせてください — アンケートのお願い](https://note.com/hidamari_sodachi/n/n0e6db37bd948) |
 | 23 | 2 | 1 | 0 | [「甘やかしすぎ」と言われた日に — 過保護と過干渉のあいだ](https://note.com/hidamari_sodachi/n/ncce6a2e0fc40) |
 | 20 | 3 | 1 | 0 | [「ちゃんと叱らないと」と言われたとき — ほめる・叱るのその先へ](https://note.com/hidamari_sodachi/n/n9a114e4ed4cd) |
 | 18 | 1 | 1 | 0 | [「早くしなさい」ばかり言っている気がして — 待つことと、放っておくこ…](https://note.com/hidamari_sodachi/n/nb3b6456a1085) |
-| 10 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
-| 8 | 2 | 0 | 0 | [「先回りしすぎかな」と思った日に — 灯台タイプの子育て](https://note.com/hidamari_sodachi/n/nb2aa26393f6d) |
+| 11 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
+| 10 | 2 | 0 | 0 | [「先回りしすぎかな」と思った日に — 灯台タイプの子育て](https://note.com/hidamari_sodachi/n/nb2aa26393f6d) |
+| 5 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
 | 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
-| 4 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
+| 4 | 3 | 0 | 0 | [抱っこをせがまなくなった日に — 縁側タイプの子育て](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
+| 4 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に — 小川タイプの子育て](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
 | 3 | 2 | 0 | 0 | [「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
-| 3 | 3 | 0 | 0 | [抱っこをせがまなくなった日に — 縁側タイプの子育て](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
-| 3 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に — 小川タイプの子育て](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
 
 ## Threads 投稿別
 
@@ -58,10 +58,11 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-09-20 | 85 | 0 | 0 | 0 | 0 | 0 | 朝の支度が進まない（痛みテーマ test⑩） |
 | 2026-09-22 | 80 | 0 | 0 | 0 | 0 | 0 | 下の子が生まれてから上の子が変わった（痛みテーマ test… |
 | 2026-09-24 | 239 | 0 | 0 | 0 | 0 | 0 | 動画をやめられない（痛みテーマ test⑫） |
-| 2026-09-25 | 16 | 0 | 0 | 0 | 0 | 0 | 診断リリース告知（8つのこそだちタイプ・T114） |
+| 2026-09-25 | 17 | 0 | 0 | 0 | 0 | 0 | 診断リリース告知（8つのこそだちタイプ・T114） |
 | 2026-09-26 | 20 | 0 | 0 | 0 | 0 | 0 | 抱っこをせがまなくなった日（物語⑥・背景=安全基地からの探… |
 | 2026-09-28 | 55 | 0 | 0 | 0 | 0 | 0 | 「ママがいい」でパパが拒否される（痛みテーマ test⑬） |
 | 2026-09-30 | 263 | 0 | 0 | 0 | 0 | 0 | 保育園の送りで泣く（痛みテーマ test⑭） |
+| 2026-10-02 | 139 | 0 | 0 | 0 | 0 | 0 | 言い方がきつくなる（痛みテーマ test⑨・背景=叱り方④… |
 
 ## コメント・返信（他者分・新しい順）
 
@@ -88,3 +89,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-09-30 | 246 | 41 | 8 | 2040 | 2 | 0 |
 | 2026-10-01 | 260 | 41 | 8 | 2040 | 2 | 0 |
 | 2026-10-02 | 265 | 41 | 8 | 2040 | 2 | 0 |
+| 2026-10-04 | 272 | 41 | 8 | 2180 | 2 | 0 |
