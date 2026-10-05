@@ -132,6 +132,29 @@ def _verify_posted(ctx, url: str, comment: str) -> bool:
     return False
 
 
+def _dismiss_modals(page) -> None:
+    """note の達成バッジ等のモーダルを閉じる。
+
+    スキを押すと「30回目のスキをしました！」のようなモーダルが出て、
+    コメント欄の上に重なり、送信ボタンが押せなくなる（2026-10-05 に3件連続で失敗）。
+    """
+    for _ in range(3):
+        if not page.locator("div[data-name='modal']").count():
+            return
+        for name in ("閉じる", "とじる", "OK"):
+            btn = page.get_by_role("button", name=name)
+            if btn.count():
+                try:
+                    btn.first.click(timeout=3000)
+                    page.wait_for_timeout(800)
+                    break
+                except Exception:  # noqa: BLE001
+                    pass
+        else:
+            page.keyboard.press("Escape")
+            page.wait_for_timeout(800)
+
+
 def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any]:
     """1記事にコメント（＋スキ）を実際に投稿する。--commit 時のみ呼ぶ。"""
     url, comment = entry["url"], entry["comment"]
@@ -139,6 +162,7 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
     for _ in range(8):  # コメント欄を描画させる
         page.mouse.wheel(0, 2200)
         page.wait_for_timeout(900)
+    _dismiss_modals(page)
 
     # reply_to があれば「特定コメントへのスレッド返信」（自分の記事での返信用・2026-09-13）。
     # 該当コメント本文の一部（reply_to）でコメントブロックを特定 → その「返信」ボタン →
@@ -164,10 +188,12 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
 
     # 送信ボタン（入力後に出現・テキスト無しの aria-label='送信' アイコンボタン）。
     # note UI 変更時は要追従＝初回 --headed 推奨。
-    # 送信ボタンは aria-label='送信' のアイコンボタンだけを対象にする。
+    # 送信ボタンは aria-label='送信' のアイコンだけを対象にする。
+    # 2026-10-05: note の改修で aria-label が button → 内側の svg へ移ったため、両方を見る。
     # 以前は :has-text('投稿する') を OR で並べていたため、DOM 上で先に現れる
     # note ヘッダーの「投稿」ボタンを .first が掴み、コメントが送信されていなかった（2026-09-26）。
-    submit = scope.locator("button[aria-label='送信']").first
+    _dismiss_modals(page)
+    submit = scope.locator("button:has(svg[aria-label='送信']), button[aria-label='送信']").first
     submit.wait_for(state="visible", timeout=10000)
     submit.click()
     page.wait_for_timeout(3500)
@@ -182,7 +208,7 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
         ta.click()
         ta.fill(comment)
         page.wait_for_timeout(1500)
-        page.locator("button[aria-label='送信']").first.click()
+        page.locator("button:has(svg[aria-label='送信']), button[aria-label='送信']").first.click()
         page.wait_for_timeout(4000)
         verified = _verify_posted(ctx, url, comment)
     if verified is False:
