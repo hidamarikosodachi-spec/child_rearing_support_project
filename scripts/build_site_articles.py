@@ -14,6 +14,14 @@ from __future__ import annotations
 
 import datetime as _dt
 
+# GitHub Actions のランナーは UTC。朝6時台に走ると UTC ではまだ前日で、
+# その日の予約記事が出ない（2026-10-05 に実際に取りこぼした）。日本時間で判定する。
+_JST = _dt.timezone(_dt.timedelta(hours=9))
+
+
+def _today() -> str:
+    return _dt.datetime.now(_JST).date().isoformat()
+
 import html
 import re
 import sys
@@ -231,7 +239,7 @@ def main() -> None:
         if meta.get("status") != "published" and not show_draft:
             print(f"  skip（{meta.get('status')}）: {f.name}")
             continue
-        if not show_draft and meta.get("date", "") > _dt.date.today().isoformat():
+        if not show_draft and meta.get("date", "") > _today():
             print(f"  skip（予約 {meta.get('date')}）: {f.name}")
             continue
         slug = meta["slug"]

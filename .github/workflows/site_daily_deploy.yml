@@ -14,6 +14,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo   # ランナーは既定で UTC。朝6時台に前日扱いになるのを防ぐ
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
