@@ -75,7 +75,8 @@ def esc(s: str) -> str:
 
 def build_html(title: str, series: str, subtitle: str) -> str:
     logo = load_logo_inline()
-    tfs = title_font_px(title)
+    tfs = title_font_px(title.replace('｜', ''))
+    title_html = esc(title).replace('｜', '<br>')
     series_html = (
         f'<div class="series">{esc(series)}</div>' if series.strip() else ""
     )
@@ -89,6 +90,8 @@ def build_html(title: str, series: str, subtitle: str) -> str:
 <html lang="ja"><head><meta charset="utf-8"><style>
 @page {{ size: {W}px {H}px; margin: 0; }}
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+/* 改行は原稿側で決める（--title に「｜」で指定）。文節の途中で折り返さない */
+* {{ word-break: keep-all; overflow-wrap: normal; line-break: strict; }}
 html, body {{ width: {W}px; height: {H}px; }}
 body {{
   font-family: 'Noto Sans CJK JP', sans-serif;
@@ -145,7 +148,7 @@ body {{
   <div class="logo">{logo}</div>
   <div class="wordmark">ひだまりこそだち</div>
   {series_html}
-  <div class="title">{esc(title)}</div>
+  <div class="title">{title_html}</div>
   {subtitle_html}
   <div class="rule"></div>
   <div class="tag">子育ての考え方を、親のことばに</div>
