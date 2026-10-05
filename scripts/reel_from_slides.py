@@ -37,7 +37,8 @@ REPO = cz.REPO
 W, H = 1080, 1920          # リール（9:16）
 FPS = 30
 FADE = 0.4                 # 切替のフェード（秒）
-MIN_SEC, MAX_SEC = 1.8, 4.0
+MIN_SEC, MAX_SEC = 1.4, 2.6   # 2026-10-06 調査: 静止4秒は冒頭離脱の原因（[[reel_research_v1]]）
+# 全体 20〜30秒・8〜14カットが目安。足りなければ**原稿のスライドを増やす**（尺を伸ばさない）。
 BGM = os.path.join(REPO, "scripts", "reel_node", "bgm.wav")
 
 
@@ -97,9 +98,9 @@ body {{ font-family: 'Noto Sans CJK JP', sans-serif; background: {cz.C_BG};
 def duration_of(slide: dict) -> float:
     """読む時間に合わせて1枚の表示時間を決める（短い行は1秒あたり13字くらいで読める）。"""
     chars = sum(len(l) for l in slide["lines"])
-    sec = 1.0 + chars / 13.0
+    sec = 0.9 + chars / 18.0
     if "表紙" in slide["label"]:
-        sec += 0.6          # 表紙は一拍おく（離脱の判断に必要な時間）
+        sec = min(sec, 1.6)  # 表紙で止めない。0.5秒で「自分向けか」を判断されるため
     return round(min(max(sec, MIN_SEC), MAX_SEC), 2)
 
 
@@ -112,7 +113,15 @@ def encode(pngs: list[str], durs: list[float], out: str) -> None:
     cmd += ["-stream_loop", "-1", "-i", BGM]
 
     # 各入力を同じ規格に揃え、xfade を連ねる（offset は累積・重なり分だけ短くなる）
-    parts = [f"[{i}:v]fps={FPS},format=yuv420p,setsar=1[v{i}]" for i in range(len(pngs))]
+    # 静止画のままだと視聴維持率が落ちるので、全カットに **ゆっくりしたズーム** を入れる。
+    # zoompan は出力フレーム数で動くので、各カットの尺 × fps ぶんを指定する。
+    parts = []
+    for i, d in enumerate(durs):
+        frames = max(int(d * FPS), 1)
+        zoom = "min(zoom+0.0015,1.12)" if i % 2 == 0 else "if(lte(zoom,1.0),1.12,max(1.0,zoom-0.0015))"
+        parts.append(
+            f"[{i}:v]scale=2160:-2,zoompan=z='{zoom}':d={frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+            f":s={W}x{H}:fps={FPS},format=yuv420p,setsar=1[v{i}]")
     cur, offset = "[v0]", durs[0] - FADE
     for i in range(1, len(pngs)):
         nxt = f"[x{i}]"
@@ -160,7 +169,9 @@ def main() -> None:
         durs.append(d)
 
     total = sum(durs) - FADE * (len(pngs) - 1)
-    print(f"\n合計 {total:.1f}秒（リールは3〜90秒・15秒以上が目安）")
+    print(f"\n合計 {total:.1f}秒 / {len(pngs)}カット（目安 20〜30秒・8〜14カット）")
+    if total < 18 or len(pngs) < 8:
+        print("  [warn] 短すぎます。スライドを増やしてください（尺を伸ばすのではなく枚数で稼ぐ）")
     if a.frames_only:
         return
     if not os.path.exists(BGM):
