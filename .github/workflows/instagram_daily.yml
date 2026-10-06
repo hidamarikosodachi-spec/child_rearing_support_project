@@ -1,0 +1,55 @@
+# Instagram リールを毎日1本だけ投稿する（オーナー指示 2026-10-06）。
+#
+# 仕組み: docs/instagram/reels/*.md の `publish_on` が当日のものを1本だけ出す。
+#   動画は事前に web/ig/reels/<slug>.mp4 へ置いてデプロイしておく（公開URLが要る）。
+#   予約が無い日は何もしない。1日1本を超えない。
+#
+# 必要な Secret: META_INSTAGRAM_TOKEN / META_INSTAGRAM_USER_ID
+#   （トークンは60日で失効する。meta_token_refresh.py で更新したら Secret も更新する）
+name: instagram daily reel
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # 毎日 19:00 JST（帰宅後〜寝かしつけ前の時間帯）
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '対象日（YYYY-MM-DD・空なら今日）'
+        required: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install click
+      - name: .env を用意（スクリプトは .env から読む）
+        run: |
+          {
+            echo "META_INSTAGRAM_TOKEN=${{ secrets.META_INSTAGRAM_TOKEN }}"
+            echo "META_INSTAGRAM_USER_ID=${{ secrets.META_INSTAGRAM_USER_ID }}"
+          } > .env
+      - name: 今日の1本を投稿
+        run: |
+          DATE="${{ github.event.inputs.date }}"
+          python3 scripts/post_instagram_queue.py ${DATE:+--date "$DATE"} --commit
+      - name: 投稿ログを保存
+        if: always()
+        run: |
+          if [ -f .auth/instagram_post_log.jsonl ]; then
+            mkdir -p docs/posted_log
+            cat .auth/instagram_post_log.jsonl >> docs/posted_log/instagram.jsonl
+            git config user.name  "hidamarikosodachi-spec"
+            git config user.email "fuga.shiojiri.fa@gmail.com"
+            git add docs/posted_log/instagram.jsonl
+            git commit -m "chore(ig): 投稿ログ追記 [skip ci]" || true
+            git push || true
+          fi
+      - name: .env を消す
+        if: always()
+        run: rm -f .env

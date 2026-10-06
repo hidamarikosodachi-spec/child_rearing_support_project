@@ -29,6 +29,8 @@ def main() -> None:  # noqa: C901
     ap.add_argument("article", type=Path)
     ap.add_argument("--key", required=True)
     ap.add_argument("--title-only", action="store_true")
+    ap.add_argument("--publish", action="store_true",
+                    help="下書きを公開する（オーナーの了承がある時だけ付ける）")
     a = ap.parse_args()
 
     title, body_html, _tags, _thumb = load(a.article)
@@ -75,8 +77,8 @@ def main() -> None:  # noqa: C901
             # ⚠️ 下書きの記事にこの流れを使うと**公開されてしまう**（2026-10-04 に実際に起こした）。
             #    下書きのままにしたいときは「下書き保存」で止める。
             st = ctx.request.get(f"https://note.com/api/v3/notes/{a.key}").json()["data"].get("status")
-            if st != "published":
-                print(f"この記事は {st} です。公開せず下書き保存で止めます。")
+            if st != "published" and not a.publish:
+                print(f"この記事は {st} です。公開せず下書き保存で止めます（公開するなら --publish）。")
                 pg.get_by_role("button", name="下書き保存").first.click()
                 pg.wait_for_timeout(5000)
                 d = ctx.request.get(f"https://note.com/api/v3/notes/{a.key}").json()["data"]
