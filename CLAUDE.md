@@ -81,6 +81,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `build_matcher_types.py` / `build_matcher_pages.py` / `build_matcher_og.py` — 診断のタイプ文・タイプ別ページ・OGP を生成（正本は `docs/matcher/type_results_v1.md`）。
 - `matcher_insights.py` — D1 の回答を集計 → `docs/insights/matcher.md`。
 - `web_analytics.py` — Cloudflare Web Analytics（サイト訪問・流入元）を read-only 取得。
+- **`note_outreach_replies.py`** — **接触先からの返信を確認する**（read-only）。`note_comments_read.py` は自分の記事しか見ないため、他人の記事に付けたコメントへの返信が丸ごと抜けていた（2026-10-07 にオーナー指摘で発覚・17件中13件が未返信のまま放置されていた）。返信本文は `?parent_key=<コメントkey>` を付けないと取れない。**接触バッチの前に必ず回す**。
 - **`insights_all.py`** — note＋Threads＋Instagram を1回で集計し `docs/insights/dashboard.md` と `history.jsonl` を再生成。**セッション開始時と週次レビュー前に必ず回す**。
 
 **秘匿（gitignore 済）**: `.env`（API キー・Cloudflare トークン）、`.auth/`（note の storage_state／操作ログ／kill-switch `STOP_COMMENTS`）。
