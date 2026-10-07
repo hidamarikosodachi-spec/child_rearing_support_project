@@ -67,19 +67,40 @@ def _posted_today(day: str) -> bool:
 @click.option("--date", "day", default="", help="対象日（既定: 今日・JST）")
 @click.option("--commit", is_flag=True, help="付けると実投稿")
 def main(day: str, commit: bool) -> None:
-    day = day or dt.datetime.now(JST).date().isoformat()
+    day_override = bool(day)
+    now = dt.datetime.now(JST)
+    day = day or now.date().isoformat()
+
+    # GitHub の定時実行は数時間ずれることがある（2026-10-07 に深夜1時半へずれて投稿された）。
+    # 人が見ない時間帯には出さない。翌日の実行が取りこぼしを拾う。
+    if not day_override and not (7 <= now.hour <= 22):
+        click.echo(f"[skip] いまは {now:%H:%M} JST（7〜22時のみ投稿します）")
+        return
+
+    # 予約日が来ているもののうち、**まだ出していない最も古い1本**を選ぶ（取りこぼしを翌日拾う）。
     targets = []
     for f in sorted(QUEUE.glob("*.md")):
         meta, _ = _fm(f)
-        if meta.get("publish_on") == day:
-            targets.append((f, meta))
+        on = meta.get("publish_on", "")
+        if on and on <= day:
+            targets.append((on, f, meta))
+    targets.sort()
     if not targets:
         click.echo(f"{day}: 予約されたリールはありません（何もしません）")
         return
-    if len(targets) > 1:
-        raise click.ClickException(f"{day} に {len(targets)} 本が予約されています。1日1本にしてください")
 
-    path, meta = targets[0]
+    import post_instagram_reel as reel
+    picked = None
+    for on, f, meta in targets:
+        slug = meta.get("slug") or f.stem
+        if reel.check_duplicate(reel.caption_from(f), f"{SITE}/ig/reels/{slug}.mp4"):
+            continue              # すでに出している
+        picked = (f, meta)
+        break
+    if not picked:
+        click.echo(f"{day}: 予約ぶんはすべて投稿済みです")
+        return
+    path, meta = picked
     slug = meta.get("slug") or path.stem
     video = f"{SITE}/ig/reels/{slug}.mp4"
     click.echo(f"{day} の1本: {meta.get('title', path.stem)}\n  {video}")
@@ -99,13 +120,7 @@ def main(day: str, commit: bool) -> None:
     except Exception as e:  # noqa: BLE001
         raise click.ClickException(f"動画URLを確認できません: {e}")
 
-    import post_instagram_reel as reel
     caption = reel.caption_from(path)
-    for w in (dups := reel.check_duplicate(caption, video)):
-        click.echo(f"[重複の疑い] {w}")
-    if dups:
-        raise click.ClickException("過去の投稿と重なります。中身を変えてください。")
-
     click.echo(f"キャプション（{len(caption)}字）:\n---\n{caption[:300]}\n---")
     if not commit:
         click.echo("[dry-run] 投稿していません。--commit で実行します。")

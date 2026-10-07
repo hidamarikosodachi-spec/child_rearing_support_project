@@ -8,8 +8,13 @@ name: site daily deploy
 
 on:
   schedule:
-    - cron: '21 21 * * *'   # 毎日 06:21 JST
+    # GitHub の schedule は遅延・欠落がある（2026-10-07 に実際に飛んだ）。1日2回に分散する。
+    - cron: '21 21 * * *'   # 06:21 JST
+    - cron: '21 3 * * *'    # 12:21 JST
   workflow_dispatch:
+
+permissions:
+  contents: write   # 生成物・ログのコミットに必要（無いと最後の手順で落ちる）
 
 jobs:
   deploy:

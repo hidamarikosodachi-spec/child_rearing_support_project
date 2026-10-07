@@ -17,6 +17,9 @@ on:
         description: '対象日（YYYY-MM-DD・空なら今日）'
         required: false
 
+permissions:
+  contents: write   # 生成物・ログのコミットに必要（無いと最後の手順で落ちる）
+
 jobs:
   post:
     runs-on: ubuntu-latest
