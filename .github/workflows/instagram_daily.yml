@@ -10,7 +10,11 @@ name: instagram daily reel
 
 on:
   schedule:
-    - cron: '0 10 * * *'   # 毎日 19:00 JST（帰宅後〜寝かしつけ前の時間帯）
+    # GitHub の schedule は実測で6〜7時間遅れる（10/6・10/7 とも深夜に起動した）。
+    # 1日3回に分散し、投稿は 7〜22時 JST の回だけが実行する（スクリプト側で判定）。
+    - cron: '0 22 * * *'   # 07:00 JST 予定
+    - cron: '0 2 * * *'    # 11:00 JST 予定
+    - cron: '0 7 * * *'    # 16:00 JST 予定
   workflow_dispatch:
     inputs:
       date:

@@ -11,6 +11,7 @@ on:
     # GitHub の schedule は遅延・欠落がある（2026-10-07 に実際に飛んだ）。1日2回に分散する。
     - cron: '21 21 * * *'   # 06:21 JST
     - cron: '21 3 * * *'    # 12:21 JST
+    - cron: '21 8 * * *'    # 17:21 JST（遅延対策・処理は冪等）
   workflow_dispatch:
 
 permissions:

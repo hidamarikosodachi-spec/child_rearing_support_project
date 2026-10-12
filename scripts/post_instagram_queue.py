@@ -49,6 +49,32 @@ def _fm(path: Path) -> tuple[dict, str]:
     return meta, body
 
 
+def _posted_today_api(day: str) -> bool:
+    """今日すでにリールを出していないか、Instagram 側の実績で確かめる。
+
+    取りこぼしを拾う仕組みを入れたので、1日に2本出てしまう可能性がある。
+    ログではなく**実際の投稿**を見るのが確実（2026-10-08）。
+    """
+    import post_instagram_reel as reel
+    try:
+        tok, uid = reel._env()
+        import urllib.parse
+        q = urllib.parse.urlencode({"fields": "media_product_type,timestamp",
+                                    "limit": 5, "access_token": tok})
+        with urllib.request.urlopen(f"{reel.HOST}/{reel.VER}/{uid}/media?{q}", timeout=30) as r:
+            data = json.loads(r.read().decode()).get("data", [])
+    except Exception:  # noqa: BLE001
+        return False
+    for m in data:
+        ts = m.get("timestamp", "")
+        if not ts:
+            continue
+        jst = dt.datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S%z").astimezone(JST).date().isoformat()
+        if jst == day and m.get("media_product_type") in ("REELS", "CLIPS"):
+            return True
+    return False
+
+
 def _posted_today(day: str) -> bool:
     if not LOG.exists():
         return False
@@ -105,7 +131,7 @@ def main(day: str, commit: bool) -> None:
     video = f"{SITE}/ig/reels/{slug}.mp4"
     click.echo(f"{day} の1本: {meta.get('title', path.stem)}\n  {video}")
 
-    if _posted_today(day):
+    if _posted_today(day) or _posted_today_api(day):
         click.echo("[skip] 本日はすでにリールを投稿しています（1日1本）")
         return
     # HEAD は Cloudflare に 403 で弾かれるため、先頭1バイトだけ GET して存在を確かめる。

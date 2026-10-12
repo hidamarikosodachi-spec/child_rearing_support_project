@@ -110,11 +110,15 @@ def _comment_text(node: Any) -> str:
     return ""
 
 
-def _verify_posted(ctx, url: str, comment: str) -> bool:
+def _verify_posted(ctx, url: str, comment: str, reply_to: bool = False) -> bool:
     """投稿が実際に反映されたかを API で確認する。
 
     送信ボタンを押せても POST が失敗していることがあり（2026-09-26 に実際に発生し、
     2件が「成功」と記録されたまま未投稿だった）、クリックの成否を成功とみなしてはいけない。
+
+    **返信はトップレベルの一覧に出てこない**（`parent_key` を付けないと取れない）。
+    そのため返信のときは、各コメントのスレッドまで見に行く（2026-10-09 に、ここを見ておらず
+    「未反映」と誤判定して再送し、ルート欄に重複コメントを作った）。
     """
     key = url.rstrip("/").split("/")[-1]
     head = comment.strip().split("\n")[0][:12]
@@ -122,11 +126,23 @@ def _verify_posted(ctx, url: str, comment: str) -> bool:
         r = ctx.request.get(
             f"https://note.com/api/v3/notes/{key}/note_comments?per_page=20&order=newest"
         )
-        for c in r.json().get("data", []):
-            if (c.get("user") or {}).get("urlname") != SELF_URLNAME:
-                continue
-            if head and head in _comment_text(c.get("comment")):
-                return True
+        rows = r.json().get("data", [])
+        for c in rows:
+            if (c.get("user") or {}).get("urlname") == SELF_URLNAME:
+                if head and head in _comment_text(c.get("comment")):
+                    return True
+        if reply_to:
+            for c in rows:
+                if not c.get("reply_count"):
+                    continue
+                rr = ctx.request.get(
+                    f"https://note.com/api/v3/notes/{key}/note_comments"
+                    f"?page=1&per_page=20&order=oldest&parent_key={c.get('key')}")
+                for rep in rr.json().get("data", []):
+                    if (rep.get("user") or {}).get("urlname") != SELF_URLNAME:
+                        continue
+                    if head and head in _comment_text(rep.get("comment")):
+                        return True
     except Exception:  # noqa: BLE001
         return False
     return False
@@ -174,11 +190,14 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
             "xpath=ancestor::div[contains(@class,'min-w-0')][1]"
         )
         block.wait_for(state="visible", timeout=20000)
-        block.locator("button[aria-label='返信']").first.click()
+        block.locator("button:has(svg[aria-label='返信']), button[aria-label='返信']").first.click()
         page.wait_for_timeout(1500)
-        scope = block
+        # 2026-10-09: 返信欄はコメントブロックの**外側**に開く（ブロック内を探すと見つからない）。
+        # 新しく現れた入力欄＝ページ内で最後の textarea を使う。
+        scope = page
 
-    ta = scope.locator(COMMENT_TEXTAREA).last if reply_to else page.locator(COMMENT_TEXTAREA).first
+    # 返信のときは、新しく開いた入力欄（ページ内で最後の textarea）を使う。
+    ta = page.locator(COMMENT_TEXTAREA).last if reply_to else page.locator(COMMENT_TEXTAREA).first
     ta.wait_for(state="visible", timeout=20000)
     ta.scroll_into_view_if_needed()
     page.wait_for_timeout(500)
@@ -193,14 +212,15 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
     # 以前は :has-text('投稿する') を OR で並べていたため、DOM 上で先に現れる
     # note ヘッダーの「投稿」ボタンを .first が掴み、コメントが送信されていなかった（2026-09-26）。
     _dismiss_modals(page)
-    submit = scope.locator("button:has(svg[aria-label='送信']), button[aria-label='送信']").first
+    sel = "button:has(svg[aria-label='送信']), button[aria-label='送信']"
+    submit = page.locator(sel).last if reply_to else scope.locator(sel).first
     submit.wait_for(state="visible", timeout=10000)
     submit.click()
     page.wait_for_timeout(3500)
 
     # 反映確認（クリックできた＝投稿できた、ではない）。1度だけ再送を試す。
-    verified = _verify_posted(ctx, url, comment) if ctx is not None else None
-    if verified is False:
+    verified = _verify_posted(ctx, url, comment, reply_to=bool(reply_to)) if ctx is not None else None
+    if verified is False and not reply_to:   # 返信は再送しない（ルート欄に二重投稿になるため）
         click.echo("   [warn] 反映を確認できず。1度だけ再送します。")
         ta = page.locator(COMMENT_TEXTAREA).first
         ta.scroll_into_view_if_needed()
@@ -217,7 +237,8 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
     liked = False
     if entry.get("like"):
         try:
-            like_btn = page.locator("button[aria-label='スキ']").first
+            like_btn = page.locator(
+                "button:has(svg[aria-label='スキ']), button[aria-label='スキ']").first
             like_btn.click()
             page.wait_for_timeout(1500)
             liked = True
