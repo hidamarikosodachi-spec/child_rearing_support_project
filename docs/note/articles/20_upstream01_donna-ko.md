@@ -11,6 +11,7 @@ status: ceo_approved
 ceo_review_required: false
 ceo_reviewed: 2026-10-14
 created: 2026-10-14
+note_draft_key: n729e7568b503  # 下書き入稿済（本文+見出し画像）。公開 10/17 予定（--publish --tags）
 author: メインClaude（CEO・ポジショニング v2 の新連載 第1回）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, 子育て方針, 自己決定理論, 教育, 心理学, 子育て診断]
 source:
