@@ -39,7 +39,7 @@ def build_html(title: str, series: str, hook: str, cta: str, cta_sub: str) -> st
     tfs = title_font_px(title)
     title_html = esc(title).replace("｜", "<br>")
     series_html = f'<div class="series">{esc(series)}</div>' if series.strip() else ""
-    hook_html = f'<div class="hook">{esc(hook)}</div>' if hook.strip() else ""
+    hook_html = f'<div class="hook">{esc(hook).replace("｜", "<br>")}</div>' if hook.strip() else ""
     return f"""<!DOCTYPE html>
 <html lang="ja"><head><meta charset="utf-8"><style>
 @page {{ size: {W}px {H}px; margin: 0; }}
@@ -106,11 +106,17 @@ def from_article(path: str) -> dict:
     fm = txt.split("---", 2)[1]
     g = lambda k: (re.search(rf'^{k}: "?(.+?)"?$', fm, re.M) or [None, ""])[1]  # noqa: E731
     body = txt.split("## 記事本文（ここから下を note へ）", 1)[1]
-    title = re.search(r"^# (.+)$", body, re.M).group(1).strip()
-    lead = re.search(r"^> (.+)$", body, re.M)
-    hook = lead.group(1).strip() if lead else ""
-    # 文字数を抑える（冒頭2文まで）
-    hook = "".join(re.findall(r"[^。]*。", hook)[:2]) or hook
+    # 改行位置は story_title（「｜」で改行）で指定できる。無ければ本文の # タイトル
+    title = g("story_title") or re.search(r"^# (.+)$", body, re.M).group(1).strip()
+    # 冒頭の引用ブロックのうち、診断への導線（リンク入りの定型文）は飛ばす
+    # （2026-10-14 たき火回で「この記事は、[わが家の…](https://…)」がそのまま画像に出た）
+    hook = ""
+    for block in re.findall(r"(?:^> .*\n?)+", body, re.M):
+        lines = [x[2:].strip() for x in block.strip().splitlines()]
+        if any("](" in x or "この記事は" in x for x in lines):
+            continue
+        hook = "｜".join(lines[:2])  # 原稿の改行を保ったまま冒頭2行
+        break
     series_no = g("series_no")
     series = f"連載「となりの考え方」 第{series_no}回" if series_no else ""
     slug = g("slug")

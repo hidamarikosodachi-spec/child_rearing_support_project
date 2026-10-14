@@ -141,6 +141,11 @@ def main(path):
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(out))
     print(f"{path}: {len(lines)} -> {len(out)} 行")
+    # note の変換は **太字** を1行の中でしか拾わない。行をまたぐと記号がそのまま出る
+    # （2026-10-14 たき火回で公開後に発覚）。開閉が1行で閉じていない行を知らせる。
+    for no, l in enumerate(out, 1):
+        if l.count("**") % 2:
+            print(f"  ⚠️ {no}行目: ** が行内で閉じていません → 行ごとに **…** で囲む: {l[:40]}")
 
 
 if __name__ == "__main__":

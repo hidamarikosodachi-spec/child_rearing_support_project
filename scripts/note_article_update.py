@@ -31,9 +31,11 @@ def main() -> None:  # noqa: C901
     ap.add_argument("--title-only", action="store_true")
     ap.add_argument("--publish", action="store_true",
                     help="下書きを公開する（オーナーの了承がある時だけ付ける）")
+    ap.add_argument("--tags", action="store_true",
+                    help="front-matter の note_tags を公開設定のハッシュタグ欄に入れる（既存タグに無いものだけ）")
     a = ap.parse_args()
 
-    title, body_html, _tags, _thumb = load(a.article)
+    title, body_html, tags, _thumb = load(a.article)
     print(f"title: {title}")
 
     from playwright.sync_api import sync_playwright
@@ -62,10 +64,22 @@ def main() -> None:  # noqa: C901
 
             if not a.title_only:
                 ed = pg.locator(EDITOR).first
+                ed_len = lambda: pg.evaluate("s => document.querySelector(s).innerText.length", EDITOR)  # noqa: E731
+                before = ed_len()
                 ed.click()
-                pg.keyboard.press("Control+A")
-                pg.keyboard.press("Delete")
                 pg.wait_for_timeout(500)
+                for _ in range(3):   # Ctrl+A が本文全体を選ばないことがある（公開済み記事で発生）
+                    pg.evaluate("""s => { const el = document.querySelector(s); el.focus();
+                        const r = document.createRange(); r.selectNodeContents(el);
+                        const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); }""", EDITOR)
+                    pg.keyboard.press("Delete")
+                    pg.wait_for_timeout(800)
+                    if ed_len() <= 50:
+                        break
+                # ⚠️ 2026-10-14: 本文が消えないまま貼り足され、公開記事が3重になった。
+                #    消えたことを確かめてから貼る。貼ったあとも長さを確かめ、異常なら保存せず止める。
+                if ed_len() > 50:
+                    sys.exit(f"本文を消せませんでした（{before}→{ed_len()}字）。保存せずに止めます")
                 pg.evaluate(
                     """([sel, h]) => { const el = document.querySelector(sel); const dt = new DataTransfer();
                     dt.setData('text/html', h); dt.setData('text/plain', h.replace(/<[^>]+>/g, ''));
@@ -73,6 +87,11 @@ def main() -> None:  # noqa: C901
                     [EDITOR, body_html],
                 )
                 pg.wait_for_timeout(2500)
+                plain = len(re.sub(r"<[^>]+>", "", body_html))
+                after = ed_len()
+                print(f"本文: 貼る前 {before}字 → 貼った後 {after}字（原稿 約{plain}字）")
+                if after > plain * 1.3:
+                    sys.exit("本文が原稿より明らかに長い（重複の疑い）。保存せずに止めます")
 
             # ⚠️ 下書きの記事にこの流れを使うと**公開されてしまう**（2026-10-04 に実際に起こした）。
             #    下書きのままにしたいときは「下書き保存」で止める。
@@ -86,6 +105,19 @@ def main() -> None:  # noqa: C901
                 return
             pg.get_by_role("button", name="公開に進む").first.click()
             pg.wait_for_timeout(4000)
+            # ⚠️ 下書き作成（note_article_draft.py）ではタグが入らない。新規公開では --tags を付ける
+            #    （2026-10-14 たき火回がタグ0件で公開された）。お題タグは2個まで（3個目で 422）。
+            if a.tags:
+                cur = ctx.request.get(f"https://note.com/api/v3/notes/{a.key}").json()["data"]
+                have = {h.get("hashtag", {}).get("name", "").lstrip("#") for h in (cur.get("hashtag_notes") or [])}
+                box_in = pg.locator("input[placeholder='ハッシュタグを追加する']").first
+                for tg in tags:
+                    if tg.lstrip("#") in have:
+                        continue
+                    box_in.click()
+                    box_in.fill(tg.lstrip("#"))
+                    pg.keyboard.press("Enter")
+                    pg.wait_for_timeout(700)
             btn = pg.get_by_role("button", name=re.compile("更新する|投稿する")).first
             box = btn.bounding_box()
             pg.mouse.click(box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)

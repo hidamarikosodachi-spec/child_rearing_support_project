@@ -7,11 +7,13 @@ series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 14
 category: series
 matcher_type: field
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-02
 created: 2026-10-02
-note_draft_key: ne5af2727034c  # 下書き入稿済（本文+見出し画像+診断リンク）。公開 10/6 予定
+note_draft_key: ne5af2727034c
+published: 2026-10-04  # 10/6 予定がスクリプト不具合で早期公開
+published_url: https://note.com/hidamari_sodachi/n/ne5af2727034c
 author: メインClaude（CEO・タイプ別連載の第5弾）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, モンテッソーリ, おうちモンテ, 自主性, 育児の悩み, 子育て診断]
 source:
@@ -120,9 +122,8 @@ matcher_url: https://hidamari-kosodachi.com/matcher/
 中心でした。
   整えることは、お金の話ではありません。
 
-- **何もしていない気がする日も、
-  その部屋の形はあなたが作ったものです。
-**
+- **何もしていない気がする日も、**
+  **その部屋の形はあなたが作ったものです。**
   棚の高さも、箱の位置も、誰かが決めています。
 
 - **崩れた日があっても、やり直せます。**
