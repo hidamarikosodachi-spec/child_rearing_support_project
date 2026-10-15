@@ -100,24 +100,31 @@ def main(show_all: bool) -> None:
                  and (c.get("user") or {}).get("urlname") != ME]
         liked = bool(my.get("is_creator_liked"))
         if replied or to_me:
-            need += 1
-            click.echo(f"\n🔴 返信あり（{ts} 接触） {url}")
+            # スレッドの最後の発言が自分なら返信済み。相手で終わっていれば要返信
+            # （2026-10-15: 自分の返信を表示していなかったため、返したかどうか判別できなかった）
+            thread = []
+            if replied:
+                try:
+                    thread = _replies(m.group(1), my.get("key", ""))
+                except Exception as e:  # noqa: BLE001
+                    click.echo(f"   （返信の取得に失敗: {e}）")
+            last = sorted(thread + to_me, key=lambda c: c.get("created_at", ""))
+            done = bool(last) and (last[-1].get("user") or {}).get("urlname") == ME
+            if done and not show_all:
+                continue
+            need += 0 if done else 1
+            click.echo(f"\n{'✅ 返信済' if done else '🔴 要返信'}（{ts} 接触） {url}")
             click.echo(f"   自分: {_text(my)[:70]}")
             for c in (to_me or []):
                 u = (c.get("user") or {}).get("urlname")
                 click.echo(f"   @{u}: {_text(c)[:140]}")
-            if replied:
-                try:
-                    for rep in _replies(m.group(1), my.get("key", "")):
-                        u = (rep.get("user") or {}).get("urlname")
-                        if u != ME:
-                            click.echo(f"   ↩ @{u}: {_text(rep)[:160]}")
-                except Exception as e:  # noqa: BLE001
-                    click.echo(f"   （返信の取得に失敗: {e}）")
+            for rep in thread:
+                u = (rep.get("user") or {}).get("urlname")
+                click.echo(f"   ↩ @{u}{'（自分）' if u == ME else ''}: {_text(rep)[:160]} [key={rep.get('key')}]")
         elif show_all:
             mark = "♥作者がスキ" if liked else "—"
             click.echo(f"・返信なし {mark}（{ts}） {url}")
-    click.echo(f"\n接触 {len(targets)}件 / 返信が来ているもの {need}件")
+    click.echo(f"\n接触 {len(targets)}件 / 要返信 {need}件（返信済みは --all で表示）")
 
 
 if __name__ == "__main__":
