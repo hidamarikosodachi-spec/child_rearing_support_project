@@ -46,7 +46,7 @@ related: [[this_week]] [[backlog]]
 | ~~10/6(火)~~ | note | ~~畑タイプ~~ | 🤖Claude | ✅ **10/4 に誤って早期公開**（スクリプトの不具合・そのまま公開継続）https://note.com/hidamari_sodachi/n/ne5af2727034c |
 | **10/6(火)** | note | **本棚タイプ**（連載15・出典を見せる1本目） | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n2d6032ff76d9 |
 | ~~10/8(木)~~ → **10/14(水)** | note | **たき火タイプ**（連載16） | 🤖Claude | ✅ 10/14 公開（**6日遅れ**＝管理漏れ）https://note.com/hidamari_sodachi/n/n1368a4aa4ac2 |
-| ~~10/10(土)~~ → **10/15(木)** | note | **山道タイプ**（8タイプ出し切り） | 🤖Claude | ✍️ 10/14 執筆→10/15 公開 |
+| ~~10/10(土)~~ → **10/15(木)** | note | **山道タイプ**（8タイプ出し切り） | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n45c1efca3fdb |
 | ~~10/13(火)~~ → **10/17(土)** | note | **新連載①「どんな子に育ってほしいか」**（ポジショニング v2） | 🤖Claude | ✍️ 執筆予定 |
 | 10/20(火) | note | ¥100 相性記事（paid_ladder_v2 商品A） | 🤖Claude | ✍️ 執筆予定（10/17目安から後ろへ） |
 | 未定 | note | 連載（成長マインドセット）※在庫 | 🤖Claude | 🟡在庫（公開可） |

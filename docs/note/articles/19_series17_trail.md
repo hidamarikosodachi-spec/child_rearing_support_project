@@ -8,11 +8,13 @@ series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 17
 category: series
 matcher_type: trail
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-14
 created: 2026-10-14
-note_draft_key: n45c1efca3fdb  # 下書き入稿済（本文+見出し画像）。公開 10/15 予定（--publish --tags）
+note_draft_key: n45c1efca3fdb
+published: 2026-10-15
+published_url: https://note.com/hidamari_sodachi/n/n45c1efca3fdb
 author: メインClaude（CEO・タイプ別連載の第8弾＝8タイプ完結）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, 子どもの成長, 見守る子育て, 声かけ, ヴィゴツキー, 子育て診断]
 source:
