@@ -7,6 +7,8 @@ article_no: 20
 series: "どんな子に、どう関わる — 子育ての上流の問い"
 series_no: 1
 category: upstream
+genre: G5
+tone: T1
 status: ceo_approved
 ceo_review_required: false
 ceo_reviewed: 2026-10-14

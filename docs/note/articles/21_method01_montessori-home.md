@@ -7,6 +7,8 @@ article_no: 21
 series: "教育方法を、家庭のことばで"
 series_no: 1
 category: method
+genre: G1
+tone: T1
 status: ceo_approved
 ceo_review_required: false
 ceo_reviewed: 2026-10-15
