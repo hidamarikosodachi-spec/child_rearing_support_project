@@ -12,7 +12,7 @@ status: ceo_approved
 ceo_review_required: false
 ceo_reviewed: 2026-10-15
 created: 2026-10-15
-note_draft_key: n2c6475079cfc  # 下書き入稿済
+note_draft_key: n2c6475079cfc  # 下書き入稿済。公開 10/17 予定（オーナー指示で19日から移動）
 author: メインClaude（CEO・探索期 G4 研究を読む）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, スマホ, かんしゃく, 研究, 心理学, 育児の悩み]
 source:
