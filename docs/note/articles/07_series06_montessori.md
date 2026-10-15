@@ -1,5 +1,5 @@
 ---
-title: "「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ"
+title: "モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に"
 slug: 07_series06_montessori
 type: note_article
 article_no: 7
@@ -9,6 +9,7 @@ category: series
 status: published
 published: 2026-06-19
 published_url: "https://note.com/hidamari_sodachi/n/nebe3fdd73488"
+title_changed: 2026-10-15  # 旧「「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ」。教育法の名前を前に出す検証（education_method_series_v1）
 ceo_review_required: false
 ceo_reviewed: 2026-06-02
 created: 2026-06-02
@@ -17,6 +18,7 @@ source:
   - docs/note/series_plan_v0.md §3 §4.2（配信順第6回=モンテッソーリ）
   - docs/knowledge/education_theories/tier_s/montessori/（montessori.md / practical_scenes.md / controversies.md）
 target_chars: 1800-2400
+note_tags: [育児, 教育, 子供, 育児日記, 赤ちゃん, 育児の悩み, モンテッソーリ, 育児ママ, 育児パパ]  # note 上の実際のタグ（2026-10-15 #モンテッソーリ を追加）
 tags: [子育て, 育児, ひだまりこそだち, となりの考え方, モンテッソーリ, 敏感期, 自分でできる, おうちモンテ, 見守る子育て]
 ---
 
@@ -29,7 +31,7 @@ tags: [子育て, 育児, ひだまりこそだち, となりの考え方, モ�
 
 ## 記事本文（ここから下を note へ）
 
-# 「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ
+# モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に
 
 > 子どもの「自分でやりたい」を待てずに手伝ってしまう。
 > 教具を揃えなきゃ、教室に通わせなきゃと焦って、なんだか疲れていた。
