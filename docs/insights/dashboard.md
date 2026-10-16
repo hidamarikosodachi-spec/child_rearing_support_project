@@ -1,22 +1,22 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-10-15
+updated: 2026-10-16
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-10-15 11:26 JST／前回比は 2026-10-14 集計との差。
+> 集計 2026-10-16 11:33 JST／前回比は 2026-10-15 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 332（+8） | 46（+0） | 8（+0） | — | **0** | — |
-| Threads | views 2705（+36） | 7（+0） | 2（+0） | 2（+0） | — | 0（+0） |
+| note | PV 332（+0） | 47（+1） | 8（+0） | — | **0** | — |
+| Threads | views 2705（+0） | 7（+0） | 2（+0） | 2（+0） | — | 0（+0） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
 **KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **332**（目標下限まで残り 48）
@@ -39,9 +39,10 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 8 | 2 | 0 | 0 | [「放っておいてる」と思われたくない日に](https://note.com/hidamari_sodachi/n/n6c7cdb10ada1) |
 | 7 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
 | 6 | 1 | 0 | 0 | [「どっちにする？」に、子どもが答えない日](https://note.com/hidamari_sodachi/n/n2d6032ff76d9) |
-| 4 | 2 | 0 | 0 | [「教具を買わなきゃ」と思って疲れた日に — 子どもが自分で育つということ](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
+| 4 | 2 | 0 | 0 | [モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
 | 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
 | 3 | 0 | 0 | 0 | [「昨日はいいって言ったのに」と言われた日に](https://note.com/hidamari_sodachi/n/n1368a4aa4ac2) |
+| 0 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
 
 ## Threads 投稿別
 
@@ -92,7 +93,6 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 
 | 集計日 | note PV | note スキ | note コメ | Threads views | Threads 能動 | フォロワー |
 |---|---|---|---|---|---|---|
-| 2026-09-22 | 230 | 34 | 8 | 1367 | 2 | 0 |
 | 2026-09-24 | 230 | 34 | 8 | 1685 | 2 | 0 |
 | 2026-09-27 | 238 | 36 | 8 | 1718 | 2 | 0 |
 | 2026-09-30 | 246 | 41 | 8 | 2040 | 2 | 0 |
@@ -104,3 +104,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-10-13 | 324 | 46 | 8 | 2669 | 2 | 0 |
 | 2026-10-14 | 324 | 46 | 8 | 2669 | 2 | 0 |
 | 2026-10-15 | 332 | 46 | 8 | 2705 | 2 | 0 |
+| 2026-10-16 | 332 | 47 | 8 | 2705 | 2 | 0 |

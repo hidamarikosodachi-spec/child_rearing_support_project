@@ -8,11 +8,13 @@ series: "探索期（ジャンル検証）"
 category: trouble
 genre: G2
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-15
 created: 2026-10-15
-note_draft_key: ne847661234d5  # 下書き入稿済
+note_draft_key: ne847661234d5
+published: 2026-10-16
+published_url: https://note.com/hidamari_sodachi/n/ne847661234d5
 author: メインClaude（CEO・探索期 G2 困りごと）
 note_tags: [子育て, 育児, 子育ての悩み, 育児日記, イヤイヤ期, 2歳, 魔の2歳児, エリクソン, 育児の悩み]
 source:
