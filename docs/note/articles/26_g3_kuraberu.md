@@ -17,7 +17,7 @@ author: メインClaude（CEO・探索期 G3 親の自責 2本目）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, 比べてしまう, 発達, 個人差, 育児の悩み, ママの気持ち]
 source:
   - docs/note/exploration_v1.md（G3 親の自責）
-  - WHO Multicentre Growth Reference Study Group (2006) WHO Motor Development Study（知識ベース未収録・一般に確立した数値）
+  - docs/knowledge/research/D4_cognitive/who-2006-motor-development-windows-of-achievement.md
 target_chars: 1800-2200
 ---
 
@@ -141,8 +141,7 @@ SNSの写真。
 - WHO の「ひとり歩き」の達成時期の幅は
    8.2〜17.6か月（上記論文）。
   本文は「8か月ごろ〜1歳半ごろ・10か月近い幅」と丸めた。
-  知識ベースに未収録なので、次の knowledge 整備で
-   research/ に追加する。
+  知識ベース追加・原著抄録で数値照合済み（2026-10-17・一致）。
 - 発達の判断をしない: 相談の目安（1歳半で
   歩かない・退行・社会的サイン）を置いた。
   「幅＝様子見でよい」ではないと明記。
