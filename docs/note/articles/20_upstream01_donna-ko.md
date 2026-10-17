@@ -1,7 +1,7 @@
 ---
 title: "「どんな子に育ってほしい？」に、すぐ答えられなかった日に"
 slug: 20_upstream01_donna-ko
-story_title: "「どんな子に育ってほしい？」に｜すぐ答えられなかった日に"
+story_title: "「どんな子に｜育ってほしい？」に｜すぐ答えられなかった日に"
 type: note_article
 article_no: 20
 series: "どんな子に、どう関わる — 子育ての上流の問い"

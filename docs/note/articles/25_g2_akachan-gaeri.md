@@ -1,7 +1,7 @@
 ---
 title: "赤ちゃん返りはいつまで？ — 2〜4歳の上の子に渡せる3つの時間"
 slug: 25_g2_akachan-gaeri
-story_title: "赤ちゃん返りはいつまで？｜2〜4歳の上の子に渡せる3つの時間"
+story_title: "赤ちゃん返りはいつまで？｜2〜4歳の上の子に｜渡せる3つの時間"
 type: note_article
 article_no: 25
 series: "探索期（ジャンル検証）"

@@ -1,7 +1,7 @@
 ---
 title: "ほかの子と比べてしまった日に — 「できる時期」には、これだけ幅がある"
 slug: 26_g3_kuraberu
-story_title: "ほかの子と比べてしまった日に｜「できる時期」には、これだけ幅がある"
+story_title: "ほかの子と｜比べてしまった日に"
 type: note_article
 article_no: 26
 series: "探索期（ジャンル検証）"

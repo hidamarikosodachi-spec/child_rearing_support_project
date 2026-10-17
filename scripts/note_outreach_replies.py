@@ -110,10 +110,14 @@ def main(show_all: bool) -> None:
                     click.echo(f"   （返信の取得に失敗: {e}）")
             last = sorted(thread + to_me, key=lambda c: c.get("created_at", ""))
             done = bool(last) and (last[-1].get("user") or {}).get("urlname") == ME
-            if done and not show_all:
+            # 相手の最後の発言が短いお礼だけなら、会話は閉じている（2026-10-17・返し続けると不自然）
+            tail = _text(last[-1]) if last and not done else ""
+            closing = bool(tail) and len(tail) <= 60 and any(w in tail for w in ("ありがとう", "嬉しい", "うれしい"))
+            if (done or closing) and not show_all:
                 continue
-            need += 0 if done else 1
-            click.echo(f"\n{'✅ 返信済' if done else '🔴 要返信'}（{ts} 接触） {url}")
+            need += 0 if (done or closing) else 1
+            mark = "✅ 返信済" if done else ("💬 締めのお礼（返信不要）" if closing else "🔴 要返信")
+            click.echo(f"\n{mark}（{ts} 接触） {url}")
             click.echo(f"   自分: {_text(my)[:70]}")
             for c in (to_me or []):
                 u = (c.get("user") or {}).get("urlname")

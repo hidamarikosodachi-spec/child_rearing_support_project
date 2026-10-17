@@ -1,7 +1,7 @@
 ---
 title: "モンテッソーリを家でやるなら — 2〜3歳、教具を買わずにできる5つ"
 slug: 21_method01_montessori-home
-story_title: "モンテッソーリを家でやるなら｜2〜3歳、教具を買わずにできる5つ"
+story_title: "モンテッソーリを｜家でやるなら｜2〜3歳、教具を買わずに｜できる5つ"
 type: note_article
 article_no: 21
 series: "教育方法を、家庭のことばで"

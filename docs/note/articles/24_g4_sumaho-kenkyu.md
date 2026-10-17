@@ -1,18 +1,20 @@
 ---
 title: "親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む"
 slug: 24_g4_sumaho-kenkyu
-story_title: "親のスマホと、子どもの「かんしゃく」｜170組を調べた研究を読む"
+story_title: "親のスマホと、｜子どもの「かんしゃく」｜170組を調べた研究を読む"
 type: note_article
 article_no: 24
 series: "探索期（ジャンル検証）"
 category: research
 genre: G4
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-15
 created: 2026-10-15
-note_draft_key: n2c6475079cfc  # 下書き入稿済。公開 10/17 予定（オーナー指示で19日から移動）
+note_draft_key: n2c6475079cfc
+published: 2026-10-17
+published_url: https://note.com/hidamari_sodachi/n/n2c6475079cfc
 author: メインClaude（CEO・探索期 G4 研究を読む）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, スマホ, かんしゃく, 研究, 心理学, 育児の悩み]
 source:

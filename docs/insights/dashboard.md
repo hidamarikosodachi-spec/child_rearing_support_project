@@ -1,25 +1,25 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-10-16
+updated: 2026-10-17
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-10-16 11:33 JST／前回比は 2026-10-15 集計との差。
+> 集計 2026-10-17 09:11 JST／前回比は 2026-10-16 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 332（+0） | 47（+1） | 8（+0） | — | **0** | — |
-| Threads | views 2705（+0） | 7（+0） | 2（+0） | 2（+0） | — | 0（+0） |
+| note | PV 372（+40） | 49（+2） | 8（+0） | — | **0** | — |
+| Threads | views 2913（+208） | 12（+5） | 2（+0） | 2（+0） | — | 1（+1） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **332**（目標下限まで残り 48）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **372**（目標下限まで残り 8）
 
 ## note 記事別
 
@@ -32,17 +32,18 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 20 | 3 | 1 | 0 | [「ちゃんと叱らないと」と言われたとき — ほめる・叱るのその先へ](https://note.com/hidamari_sodachi/n/n9a114e4ed4cd) |
 | 18 | 1 | 1 | 0 | [「早くしなさい」ばかり言っている気がして — 待つことと、放っておくこ…](https://note.com/hidamari_sodachi/n/nb3b6456a1085) |
 | 18 | 2 | 0 | 0 | [「先回りしすぎかな」と思った日に](https://note.com/hidamari_sodachi/n/nb2aa26393f6d) |
+| 18 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
 | 15 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
+| 15 | 2 | 0 | 0 | [「何も教えてあげてない」と思う日に](https://note.com/hidamari_sodachi/n/ne5af2727034c) |
 | 13 | 3 | 0 | 0 | [抱っこをせがまなくなった日に](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
-| 13 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
-| 10 | 2 | 0 | 0 | [「何も教えてあげてない」と思う日に](https://note.com/hidamari_sodachi/n/ne5af2727034c) |
-| 8 | 2 | 0 | 0 | [「放っておいてる」と思われたくない日に](https://note.com/hidamari_sodachi/n/n6c7cdb10ada1) |
+| 13 | 2 | 0 | 0 | [「放っておいてる」と思われたくない日に](https://note.com/hidamari_sodachi/n/n6c7cdb10ada1) |
+| 11 | 1 | 0 | 0 | [「どっちにする？」に、子どもが答えない日](https://note.com/hidamari_sodachi/n/n2d6032ff76d9) |
+| 10 | 2 | 0 | 0 | [「イヤ」が1日に何十回も — 2歳の親が先に決めておく3つのこと](https://note.com/hidamari_sodachi/n/ne847661234d5) |
+| 8 | 0 | 0 | 0 | [「昨日はいいって言ったのに」と言われた日に](https://note.com/hidamari_sodachi/n/n1368a4aa4ac2) |
 | 7 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
-| 6 | 1 | 0 | 0 | [「どっちにする？」に、子どもが答えない日](https://note.com/hidamari_sodachi/n/n2d6032ff76d9) |
+| 5 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
 | 4 | 2 | 0 | 0 | [モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
 | 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
-| 3 | 0 | 0 | 0 | [「昨日はいいって言ったのに」と言われた日に](https://note.com/hidamari_sodachi/n/n1368a4aa4ac2) |
-| 0 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
 
 ## Threads 投稿別
 
@@ -63,7 +64,7 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-09-20 | 85 | 0 | 0 | 0 | 0 | 0 | 朝の支度が進まない（痛みテーマ test⑩） |
 | 2026-09-22 | 80 | 0 | 0 | 0 | 0 | 0 | 下の子が生まれてから上の子が変わった（痛みテーマ test… |
 | 2026-09-24 | 239 | 0 | 0 | 0 | 0 | 0 | 動画をやめられない（痛みテーマ test⑫） |
-| 2026-09-25 | 17 | 0 | 0 | 0 | 0 | 0 | 診断リリース告知（8つのこそだちタイプ・T114） |
+| 2026-09-25 | 18 | 0 | 0 | 0 | 0 | 0 | 診断リリース告知（8つのこそだちタイプ・T114） |
 | 2026-09-26 | 20 | 0 | 0 | 0 | 0 | 0 | 抱っこをせがまなくなった日（物語⑥・背景=安全基地からの探… |
 | 2026-09-28 | 55 | 0 | 0 | 0 | 0 | 0 | 「ママがいい」でパパが拒否される（痛みテーマ test⑬） |
 | 2026-09-30 | 263 | 0 | 0 | 0 | 0 | 0 | 保育園の送りで泣く（痛みテーマ test⑭） |
@@ -75,6 +76,7 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-10-10 | 101 | 0 | 0 | 0 | 0 | 0 | 動画に子守をさせた罪悪感（自責軸・自分が熱を出した日） |
 | 2026-10-12 | 12 | 0 | 0 | 0 | 0 | 0 | 上の子を待たせてしまう（自責軸・下の子優先） |
 | 2026-10-14 | 36 | 0 | 0 | 0 | 0 | 0 | ごはんが手抜きになった日（自責軸・冷凍と白米） |
+| 2026-10-16 | 207 | 5 | 0 | 0 | 0 | 0 | うまくいった接し方①（しゃがんで目線を合わせた朝） |
 
 ## コメント・返信（他者分・新しい順）
 
@@ -93,7 +95,6 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 
 | 集計日 | note PV | note スキ | note コメ | Threads views | Threads 能動 | フォロワー |
 |---|---|---|---|---|---|---|
-| 2026-09-24 | 230 | 34 | 8 | 1685 | 2 | 0 |
 | 2026-09-27 | 238 | 36 | 8 | 1718 | 2 | 0 |
 | 2026-09-30 | 246 | 41 | 8 | 2040 | 2 | 0 |
 | 2026-10-01 | 260 | 41 | 8 | 2040 | 2 | 0 |
@@ -105,3 +106,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-10-14 | 324 | 46 | 8 | 2669 | 2 | 0 |
 | 2026-10-15 | 332 | 46 | 8 | 2705 | 2 | 0 |
 | 2026-10-16 | 332 | 47 | 8 | 2705 | 2 | 0 |
+| 2026-10-17 | 372 | 49 | 8 | 2913 | 2 | 1 |
