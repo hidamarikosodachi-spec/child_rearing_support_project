@@ -113,15 +113,12 @@ def encode(pngs: list[str], durs: list[float], out: str) -> None:
     cmd += ["-stream_loop", "-1", "-i", BGM]
 
     # 各入力を同じ規格に揃え、xfade を連ねる（offset は累積・重なり分だけ短くなる）
-    # 静止画のままだと視聴維持率が落ちるので、全カットに **ゆっくりしたズーム** を入れる。
-    # zoompan は出力フレーム数で動くので、各カットの尺 × fps ぶんを指定する。
+    # ⚠️ ズーム（zoompan）は使わない。文字が揺れてにじみ、とても読みにくい（オーナー指摘 2026-10-18）。
+    #    10/6 に「静止画だと視聴維持率が落ちる」としてゆっくりズームを入れたが、読めない文字は維持率以前の問題。
+    #    文字は止めたまま、カットの切り替え（フェード）だけで動きを出す。
     parts = []
     for i, d in enumerate(durs):
-        frames = max(int(d * FPS), 1)
-        zoom = "min(zoom+0.0015,1.12)" if i % 2 == 0 else "if(lte(zoom,1.0),1.12,max(1.0,zoom-0.0015))"
-        parts.append(
-            f"[{i}:v]scale=2160:-2,zoompan=z='{zoom}':d={frames}:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
-            f":s={W}x{H}:fps={FPS},format=yuv420p,setsar=1[v{i}]")
+        parts.append(f"[{i}:v]scale={W}:{H}:flags=lanczos,fps={FPS},format=yuv420p,setsar=1[v{i}]")
     cur, offset = "[v0]", durs[0] - FADE
     for i in range(1, len(pngs)):
         nxt = f"[x{i}]"
@@ -134,6 +131,7 @@ def encode(pngs: list[str], durs: list[float], out: str) -> None:
     cmd += ["-filter_complex", ";".join(parts),
             "-map", cur, "-map", "[a]",
             "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(FPS),
+            "-tune", "stillimage", "-crf", "16", "-preset", "slow",   # 文字をにじませない
             "-profile:v", "high", "-level", "4.0",
             "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
             "-t", f"{total:.2f}", "-movflags", "+faststart", out]

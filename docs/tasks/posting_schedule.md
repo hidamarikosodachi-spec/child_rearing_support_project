@@ -49,7 +49,7 @@ related: [[this_week]] [[backlog]]
 | ~~10/10(土)~~ → **10/15(木)** | note | **山道タイプ**（8タイプ出し切り） | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n45c1efca3fdb |
 | ~~10/13(火)~~ → ~~10/17~~ → **10/19(日)** | note | **新連載①「どんな子に育ってほしいか」**（ポジショニング v2） | 🤖Claude | ✍️ 執筆予定 |
 | **10/16(木)** | note | 探索期 G2「「イヤ」が1日に何十回も — 2歳の親が先に決めておく3つのこと」（[[exploration_v1]]） | 🤖Claude | ✅ 公開＋IGストーリー https://note.com/hidamari_sodachi/n/ne847661234d5 |
-| **10/18(土)** | note | 探索期 G3「怒鳴ってしまった夜に、寝顔を見ている人へ」 | 🤖Claude | 🟡 下書き入稿済 |
+| **10/18(土)** | note | 探索期 G3「怒鳴ってしまった夜に、寝顔を見ている人へ」 | 🤖Claude | ✅ 公開＋IGストーリー https://note.com/hidamari_sodachi/n/necca0bdda3e0 |
 | **10/17(金)** | note | 探索期 G4「親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む」 | 🤖Claude | ✅ 公開＋IGストーリー https://note.com/hidamari_sodachi/n/n2c6475079cfc |
 | 10/20(月) | note | 探索期 G2「赤ちゃん返りはいつまで？」（検索候補に合わせて改題） | 🤖Claude | 🟡 下書き入稿済 |
 | 10/22(水) | note | 探索期 G3「ほかの子と比べてしまった日に」 | 🤖Claude | 🟡 下書き入稿済 |
