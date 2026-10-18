@@ -22,3 +22,15 @@ CREATE TABLE IF NOT EXISTS responses (
 
 CREATE INDEX IF NOT EXISTS idx_responses_created ON responses (created_at);
 CREATE INDEX IF NOT EXISTS idx_responses_type    ON responses (type);
+
+-- Instagram（プロフィールのリンク）→ note 記事へのクリック（2026-10-18）
+-- /note/ の一覧ページから /go/<noteキー> を経由して note へ転送する。そのときに1行記録する。
+-- 個人を特定できる項目は保存しない（IP・Cookie は取らない）。
+CREATE TABLE IF NOT EXISTS clicks (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  created_at  TEXT    NOT NULL DEFAULT (datetime('now')),
+  note_key    TEXT    NOT NULL,   -- note 記事のキー（n + 12桁）
+  src         TEXT,               -- 経由元（ig / threads など・?s= で指定）
+  ua_mobile   INTEGER
+);
+CREATE INDEX IF NOT EXISTS idx_clicks_created ON clicks (created_at);

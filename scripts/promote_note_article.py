@@ -70,6 +70,8 @@ def build(path: Path) -> dict | None:
 @click.option("--all-recent", type=int, default=0, help="直近N本の公開記事をまとめて処理")
 @click.option("--post", is_flag=True, help="生成した画像を Instagram ストーリーへ実際に投稿する")
 def main(article: Path | None, all_recent: int, post: bool) -> None:
+    # Instagram のプロフィールのリンク先（/note/ の一覧）も、公開のたびに最新へ（2026-10-18）
+    subprocess.run([str(ROOT / ".venv/bin/python"), str(ROOT / "scripts/build_note_links.py")], check=False)
     targets: list[Path] = []
     if article:
         targets = [article]
