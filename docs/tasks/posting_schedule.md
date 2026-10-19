@@ -47,7 +47,7 @@ related: [[this_week]] [[backlog]]
 | **10/6(火)** | note | **本棚タイプ**（連載15・出典を見せる1本目） | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n2d6032ff76d9 |
 | ~~10/8(木)~~ → **10/14(水)** | note | **たき火タイプ**（連載16） | 🤖Claude | ✅ 10/14 公開（**6日遅れ**＝管理漏れ）https://note.com/hidamari_sodachi/n/n1368a4aa4ac2 |
 | ~~10/10(土)~~ → **10/15(木)** | note | **山道タイプ**（8タイプ出し切り） | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n45c1efca3fdb |
-| ~~10/13(火)~~ → ~~10/17~~ → **10/19(日)** | note | **新連載①「どんな子に育ってほしいか」**（ポジショニング v2） | 🤖Claude | ✍️ 執筆予定 |
+| ~~10/13(火)~~ → ~~10/17~~ → **10/19(日)** | note | **新連載①「どんな子に育ってほしいか」**（ポジショニング v2） | 🤖Claude | ✅ 公開 https://note.com/hidamari_sodachi/n/n729e7568b503 |
 | **10/16(木)** | note | 探索期 G2「「イヤ」が1日に何十回も — 2歳の親が先に決めておく3つのこと」（[[exploration_v1]]） | 🤖Claude | ✅ 公開＋IGストーリー https://note.com/hidamari_sodachi/n/ne847661234d5 |
 | **10/18(土)** | note | 探索期 G3「怒鳴ってしまった夜に、寝顔を見ている人へ」 | 🤖Claude | ✅ 公開＋IGストーリー https://note.com/hidamari_sodachi/n/necca0bdda3e0 |
 | **10/17(金)** | note | 探索期 G4「親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む」 | 🤖Claude | ✅ 公開＋IGストーリー https://note.com/hidamari_sodachi/n/n2c6475079cfc |

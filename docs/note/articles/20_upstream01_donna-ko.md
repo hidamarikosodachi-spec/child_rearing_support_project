@@ -9,11 +9,13 @@ series_no: 1
 category: upstream
 genre: G5
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-14
 created: 2026-10-14
-note_draft_key: n729e7568b503  # 下書き入稿済（本文+見出し画像）。公開 10/19 予定（10/15 オーナー指示で入れ替え）（--publish --tags）
+note_draft_key: n729e7568b503
+published: 2026-10-19
+published_url: https://note.com/hidamari_sodachi/n/n729e7568b503
 author: メインClaude（CEO・ポジショニング v2 の新連載 第1回）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, 子育て方針, 自己決定理論, 教育, 心理学, 子育て診断]
 source:

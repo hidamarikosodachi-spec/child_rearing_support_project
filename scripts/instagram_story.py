@@ -117,8 +117,10 @@ def from_article(path: str) -> dict:
             continue
         hook = "｜".join(lines[:2])  # 原稿の改行を保ったまま冒頭2行
         break
+    # 連載名は記事の front-matter から取る（2026-10-19 新連載が「となりの考え方」と表示された）
     series_no = g("series_no")
-    series = f"連載「となりの考え方」 第{series_no}回" if series_no else ""
+    name = g("series").split(" — ")[0].strip()
+    series = f"連載「{name}」 第{series_no}回" if (series_no and name and "探索期" not in name) else ""
     slug = g("slug")
     return {"title": title, "series": series, "hook": hook,
             "out": os.path.join(REPO, "assets", "stories", f"{slug}.png")}
