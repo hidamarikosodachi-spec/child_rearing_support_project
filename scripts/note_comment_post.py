@@ -184,6 +184,9 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
     # 該当コメント本文の一部（reply_to）でコメントブロックを特定 → その「返信」ボタン →
     # ブロック内に開く textarea / 送信ボタンを使う（ルート投稿欄とは別物）。
     scope = page
+    # ⚠️ reply_to は**コメント欄にしか出てこない文言**にする。記事本文にも同じ文言があると、
+    #    本文のほうを掴んで返信ボタンが見つからない（2026-10-20）。相手の返信が折りたたまれて
+    #    見えないこともあるので（2026-10-17）、自分の親コメントの一文を使うのが確実。
     reply_to = (entry.get("reply_to") or "").strip()
     if reply_to:
         block = page.get_by_text(reply_to, exact=False).first.locator(

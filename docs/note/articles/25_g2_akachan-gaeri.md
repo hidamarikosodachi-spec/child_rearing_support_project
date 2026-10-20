@@ -8,11 +8,13 @@ series: "探索期（ジャンル検証）"
 category: trouble
 genre: G2
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-16
 created: 2026-10-16
-note_draft_key: n73cfc4e40e60  # 下書き入稿済（改題で作り直し・旧 nb0772f0d8f58 は不要）
+note_draft_key: n73cfc4e40e60
+published: 2026-10-20
+published_url: https://note.com/hidamari_sodachi/n/n73cfc4e40e60
 author: メインClaude（CEO・探索期 G2 困りごと 2本目）
 note_tags: [子育て, 育児, 子育ての悩み, 育児日記, 赤ちゃん返り, きょうだい, 二人育児, 上の子, 育児の悩み]
 source:

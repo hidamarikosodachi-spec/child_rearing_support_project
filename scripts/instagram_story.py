@@ -115,7 +115,15 @@ def from_article(path: str) -> dict:
         lines = [x[2:].strip() for x in block.strip().splitlines()]
         if any("](" in x or "この記事は" in x for x in lines):
             continue
-        hook = "｜".join(lines[:2])  # 原稿の改行を保ったまま冒頭2行
+        # 原稿の改行を保ったまま冒頭2行。1行が長いと画像の幅で単語の途中から折り返すので、
+        # 24字を超える行は読点の後ろで切る（2026-10-20「腕を引／く」と折り返した）
+        out = []
+        for ln in lines[:2]:
+            while len(ln) > 24 and "、" in ln[:25]:
+                cut = ln[:25].rfind("、") + 1
+                out.append(ln[:cut]); ln = ln[cut:]
+            out.append(ln)
+        hook = "｜".join(out)
         break
     # 連載名は記事の front-matter から取る（2026-10-19 新連載が「となりの考え方」と表示された）
     series_no = g("series_no")
