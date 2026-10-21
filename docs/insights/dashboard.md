@@ -1,25 +1,25 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-10-20
+updated: 2026-10-21
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-10-20 09:59 JST／前回比は 2026-10-19 集計との差。
+> 集計 2026-10-21 09:14 JST／前回比は 2026-10-20 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 395（+1） | 56（+1） | 8（+0） | — | **0** | — |
-| Threads | views 2995 | 12 | 2 | 2 | — | 1 |
+| note | PV 412（+17） | 58（+2） | 8（+0） | — | **0** | — |
+| Threads | views 3013（+18） | 12（+0） | 2（+0） | 2（+0） | — | 1（+0） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **395**（目標下限まで残り 0）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **412**（目標下限まで残り 0）
 
 ## note 記事別
 
@@ -35,18 +35,19 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 18 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
 | 17 | 2 | 0 | 0 | [「何も教えてあげてない」と思う日に](https://note.com/hidamari_sodachi/n/ne5af2727034c) |
 | 15 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
+| 15 | 1 | 0 | 0 | [「どっちにする？」に、子どもが答えない日](https://note.com/hidamari_sodachi/n/n2d6032ff76d9) |
 | 14 | 2 | 0 | 0 | [「放っておいてる」と思われたくない日に](https://note.com/hidamari_sodachi/n/n6c7cdb10ada1) |
+| 14 | 2 | 0 | 0 | [「イヤ」が1日に何十回も — 2歳の親が先に決めておく3つのこと](https://note.com/hidamari_sodachi/n/ne847661234d5) |
 | 13 | 3 | 0 | 0 | [抱っこをせがまなくなった日に](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
-| 13 | 1 | 0 | 0 | [「どっちにする？」に、子どもが答えない日](https://note.com/hidamari_sodachi/n/n2d6032ff76d9) |
-| 12 | 2 | 0 | 0 | [「イヤ」が1日に何十回も — 2歳の親が先に決めておく3つのこと](https://note.com/hidamari_sodachi/n/ne847661234d5) |
-| 10 | 0 | 0 | 0 | [「昨日はいいって言ったのに」と言われた日に](https://note.com/hidamari_sodachi/n/n1368a4aa4ac2) |
+| 12 | 0 | 0 | 0 | [「昨日はいいって言ったのに」と言われた日に](https://note.com/hidamari_sodachi/n/n1368a4aa4ac2) |
+| 9 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
+| 8 | 3 | 0 | 0 | [親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む](https://note.com/hidamari_sodachi/n/n2c6475079cfc) |
 | 7 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
-| 7 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
-| 6 | 3 | 0 | 0 | [親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む](https://note.com/hidamari_sodachi/n/n2c6475079cfc) |
-| 5 | 3 | 0 | 0 | [怒鳴ってしまった夜に、寝顔を見ている人へ — 「ずれて、戻る」という考…](https://note.com/hidamari_sodachi/n/necca0bdda3e0) |
+| 7 | 3 | 0 | 0 | [怒鳴ってしまった夜に、寝顔を見ている人へ — 「ずれて、戻る」という考…](https://note.com/hidamari_sodachi/n/necca0bdda3e0) |
 | 4 | 2 | 0 | 0 | [モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
 | 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
-| 1 | 1 | 0 | 0 | [「どんな子に育ってほしい？」に、すぐ答えられなかった日に](https://note.com/hidamari_sodachi/n/n729e7568b503) |
+| 3 | 1 | 0 | 0 | [「どんな子に育ってほしい？」に、すぐ答えられなかった日に](https://note.com/hidamari_sodachi/n/n729e7568b503) |
+| 3 | 2 | 0 | 0 | [赤ちゃん返りはいつまで？ — 2〜4歳の上の子に渡せる3つの時間](https://note.com/hidamari_sodachi/n/n73cfc4e40e60) |
 
 ## Threads 投稿別
 
@@ -81,6 +82,7 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-10-14 | 36 | 0 | 0 | 0 | 0 | 0 | ごはんが手抜きになった日（自責軸・冷凍と白米） |
 | 2026-10-16 | 208 | 5 | 0 | 0 | 0 | 0 | うまくいった接し方①（しゃがんで目線を合わせた朝） |
 | 2026-10-18 | 80 | 0 | 0 | 0 | 0 | 0 | 子どもより仕事を優先した電話（自責軸） |
+| 2026-10-20 | 18 | 0 | 0 | 0 | 0 | 0 | うまくいった接し方②（先に終わりを決めた夜） |
 
 ## コメント・返信（他者分・新しい順）
 
@@ -99,7 +101,6 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 
 | 集計日 | note PV | note スキ | note コメ | Threads views | Threads 能動 | フォロワー |
 |---|---|---|---|---|---|---|
-| 2026-10-02 | 265 | 41 | 8 | 2040 | 2 | 0 |
 | 2026-10-04 | 272 | 41 | 8 | 2180 | 2 | 0 |
 | 2026-10-09 | 324 | 46 | 8 | 2466 | 2 | 0 |
 | 2026-10-12 | 324 | 46 | 8 | 2657 | 2 | 0 |
@@ -111,3 +112,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-10-18 | 375 | 52 | 8 | 2914 | 2 | 1 |
 | 2026-10-19 | 394 | 55 | 8 | — | — | — |
 | 2026-10-20 | 395 | 56 | 8 | 2995 | 2 | 1 |
+| 2026-10-21 | 412 | 58 | 8 | 3013 | 2 | 1 |

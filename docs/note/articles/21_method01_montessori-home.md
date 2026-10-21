@@ -9,11 +9,13 @@ series_no: 1
 category: method
 genre: G1
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-15
 created: 2026-10-15
-note_draft_key: n43c5f88c80a7  # 下書き入稿済（本文+見出し画像）。公開 10/21 予定（--publish --tags）
+note_draft_key: n43c5f88c80a7
+published: 2026-10-21
+published_url: https://note.com/hidamari_sodachi/n/n43c5f88c80a7
 author: メインClaude（CEO・教育方法シリーズ第1回）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, モンテッソーリ, おうちモンテ, モンテッソーリ教育, 2歳, 3歳]
 source:
