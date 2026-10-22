@@ -189,9 +189,18 @@ def _post_one(page, entry: dict[str, Any], own: bool, ctx=None) -> dict[str, Any
     #    見えないこともあるので（2026-10-17）、自分の親コメントの一文を使うのが確実。
     reply_to = (entry.get("reply_to") or "").strip()
     if reply_to:
-        block = page.get_by_text(reply_to, exact=False).first.locator(
-            "xpath=ancestor::div[contains(@class,'min-w-0')][1]"
-        )
+        # 本文にも同じ文言があると .first が本文を掴む（2026-10-20・10-22）。
+        # 一致したもののうち、コメントブロック（min-w-0）の中にあるものだけを使う。
+        hits = page.get_by_text(reply_to, exact=False)
+        hits.first.wait_for(state="attached", timeout=20000)
+        block = None
+        for i in range(hits.count()):
+            cand = hits.nth(i).locator("xpath=ancestor::div[contains(@class,'min-w-0')][1]")
+            if cand.count() and cand.first.locator("button[aria-label='返信'], button:has(svg[aria-label='返信'])").count():
+                block = cand.first
+                break
+        if block is None:
+            raise RuntimeError(f"返信先のコメントが見つかりません（本文にしか無い文言の可能性）: {reply_to}")
         block.wait_for(state="visible", timeout=20000)
         block.locator("button:has(svg[aria-label='返信']), button[aria-label='返信']").first.click()
         page.wait_for_timeout(1500)
