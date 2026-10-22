@@ -4,7 +4,7 @@ slug: 01_manifesto
 type: note_article
 article_no: 1
 category: manifesto
-status: published
+status: retired  # 2026-10-22 オーナー判断で note から削除（今のスタイルと違うため）
 published: 2026-05-27
 published_url: https://note.com/hidamari_sodachi/n/nafa8104b6f1f
 ceo_review_required: false

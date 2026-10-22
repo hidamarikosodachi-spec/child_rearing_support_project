@@ -6,7 +6,7 @@ article_no: 4
 series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 3
 category: series
-status: published
+status: retired  # 2026-10-22 オーナー判断で note から削除（今のスタイルと違うため）
 ceo_review_required: false
 ceo_reviewed: 2026-06-02
 published: 2026-06-10

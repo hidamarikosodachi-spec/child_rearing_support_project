@@ -6,7 +6,7 @@ article_no: 5
 series: "となりの考え方 — 子育ての理論を、親のことばに"
 series_no: 4
 category: series
-status: published
+status: retired  # 2026-10-22 オーナー判断で note から削除（今のスタイルと違うため）
 published: 2026-09-19
 published_url: https://note.com/hidamari_sodachi/n/n14b031f094b9
 ceo_review_required: false

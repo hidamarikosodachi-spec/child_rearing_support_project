@@ -8,7 +8,7 @@ tags: iraira, jiko, bedtime, age-any
 status: published
 date: 2026-09-30
 theory: ボウルビィ（愛着の修復）
-related_note: https://note.com/hidamari_sodachi/n/n14b031f094b9
+related_note: https://note.com/hidamari_sodachi/n/necca0bdda3e0
 ---
 
 # 「怒鳴ってしまった」と後悔する夜に

@@ -12,12 +12,12 @@ export const TYPES = {
       {
         "t": "ボウルビィの愛着理論",
         "d": "安心の土台がある子ほど、遠くまで探索しにいく",
-        "url": "https://note.com/hidamari_sodachi/n/n8ea1a555c23a"
+        "url": null
       },
       {
         "t": "佐々木正美",
         "d": "過保護と過干渉は別もの、という整理",
-        "url": "https://note.com/hidamari_sodachi/n/ncce6a2e0fc40"
+        "url": null
       }
     ],
     "axes": "導く・整える・寄り添う",
@@ -42,7 +42,7 @@ export const TYPES = {
       {
         "t": "モンテッソーリ",
         "d": "整えられた環境と、子どもが自分で選ぶこと",
-        "url": "https://note.com/hidamari_sodachi/n/nebe3fdd73488"
+        "url": "https://note.com/hidamari_sodachi/n/n43c5f88c80a7"
       },
       {
         "t": "ピクラー",
@@ -72,12 +72,12 @@ export const TYPES = {
       {
         "t": "NVC",
         "d": "感情を、責めることばでなく事実と気持ちで伝える",
-        "url": "https://note.com/hidamari_sodachi/n/n14b031f094b9"
+        "url": null
       },
       {
         "t": "アドラー",
         "d": "ほめる・叱るのその先にある、対等な関わり",
-        "url": "https://note.com/hidamari_sodachi/n/n9a114e4ed4cd"
+        "url": null
       }
     ],
     "axes": "導く・流れる・寄り添う",
@@ -132,12 +132,12 @@ export const TYPES = {
       {
         "t": "ボウルビィの安全基地",
         "d": "安心があるから、探索できる",
-        "url": "https://note.com/hidamari_sodachi/n/n8ea1a555c23a"
+        "url": null
       },
       {
         "t": "汐見稔幸",
         "d": "子ども主体、社会で支えるという視点",
-        "url": "https://note.com/hidamari_sodachi/n/nb3b6456a1085"
+        "url": null
       }
     ],
     "axes": "委ねる・整える・寄り添う",
@@ -162,7 +162,7 @@ export const TYPES = {
       {
         "t": "モンテッソーリ",
         "d": "選べるように整えられた環境",
-        "url": "https://note.com/hidamari_sodachi/n/nebe3fdd73488"
+        "url": "https://note.com/hidamari_sodachi/n/n43c5f88c80a7"
       },
       {
         "t": "倉橋惣三",
@@ -192,7 +192,7 @@ export const TYPES = {
       {
         "t": "汐見稔幸",
         "d": "遊びのなかで育つ、待つことと放っておくことの違い",
-        "url": "https://note.com/hidamari_sodachi/n/nb3b6456a1085"
+        "url": null
       },
       {
         "t": "倉橋惣三",
