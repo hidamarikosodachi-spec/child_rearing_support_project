@@ -1,7 +1,7 @@
 ---
 tags: [insights, matcher, diagnosis]
 status: auto-generated
-date: 2026-10-15
+date: 2026-10-26
 related: [[type_system_v1]] [[dashboard]] [[backlog]]
 ---
 
@@ -10,7 +10,7 @@ related: [[type_system_v1]] [[dashboard]] [[backlog]]
 > **自動生成（`scripts/matcher_insights.py`）。手で編集しない。**
 > 自由記述の原文は載せない（プライバシーポリシーの約束）。頻出語と件数のみ。
 
-集計 2026-10-15 21:06 JST ／ 診断URL https://hidamari-kosodachi.com/matcher/
+集計 2026-10-26 09:14 JST ／ 診断URL https://hidamari-kosodachi.com/matcher/
 
 ## サマリ
 
