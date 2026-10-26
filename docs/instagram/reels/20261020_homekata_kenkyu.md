@@ -4,7 +4,7 @@ slug: 20261020_homekata_kenkyu
 publish_on: 2026-10-20
 source: docs/knowledge/education_theories/tier_s/nvc/related_evidence.md（Gunderson et al. 2013）
 genre: 研究紹介
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

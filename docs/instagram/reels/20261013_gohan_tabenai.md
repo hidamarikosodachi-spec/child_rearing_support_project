@@ -3,7 +3,7 @@ title: ごはんを食べない日が続くとき
 slug: 20261013_gohan_tabenai
 publish_on: 2026-10-13
 source: docs/site/articles/gohan-tabenai.md
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

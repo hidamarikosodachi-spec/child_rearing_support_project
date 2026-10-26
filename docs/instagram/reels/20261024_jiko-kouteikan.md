@@ -1,7 +1,7 @@
 ---
 title: 自己肯定感、研究から学ぶ3つ（note連動）
 slug: 20261024_jiko-kouteikan
-publish_on: 2026-10-24
+publish_on: 2026-10-27  # 2026-10-26 組み直し（10/23〜26 は旧リールの再投稿事故で出られなかった）
 source: docs/note/articles/28_upstream02_jiko-kouteikan.md
 note_key: n10dc305f2aa1
 genre: note連動・学び型

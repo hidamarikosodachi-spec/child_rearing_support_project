@@ -1,7 +1,7 @@
 ---
 title: 「ママといたい」保育園の朝、親ができる3つ（note連動）
 slug: 20261025_hoikuen-mama
-publish_on: 2026-10-25
+publish_on: 2026-10-28  # 2026-10-26 組み直し（10/23〜26 は旧リールの再投稿事故で出られなかった）
 source: docs/note/articles/29_g2_hoikuen-mama-to-itai.md
 note_key: n86ed7e737d79
 genre: note連動・行動型

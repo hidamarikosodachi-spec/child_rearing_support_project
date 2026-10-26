@@ -3,7 +3,7 @@ title: 朝の支度が進まない日
 slug: 20261010_asa_no_shitaku
 publish_on: 2026-10-10
 source: docs/site/articles/asa-no-shitaku.md
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

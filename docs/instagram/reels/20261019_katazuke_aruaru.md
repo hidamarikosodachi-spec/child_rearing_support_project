@@ -4,7 +4,7 @@ slug: 20261019_katazuke_aruaru
 publish_on: 2026-10-19
 source: docs/site/articles/katazuke-shinai.md
 genre: あるある共感
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

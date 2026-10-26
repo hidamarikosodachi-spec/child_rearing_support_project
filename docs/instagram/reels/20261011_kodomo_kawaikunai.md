@@ -3,7 +3,7 @@ title: かわいいと思えない時間がある
 slug: 20261011_kodomo_kawaikunai
 publish_on: 2026-10-11
 source: docs/site/articles/kodomo-kawaikunai.md
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

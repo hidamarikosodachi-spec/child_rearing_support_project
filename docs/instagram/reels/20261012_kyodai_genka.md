@@ -3,7 +3,7 @@ title: きょうだいげんかが続く日
 slug: 20261012_kyodai_genka
 publish_on: 2026-10-12
 source: docs/site/articles/kyodai-genka.md
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

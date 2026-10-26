@@ -3,7 +3,7 @@ title: 寝かしつけに1時間かかる夜
 slug: 20261007_nekashitsuke
 publish_on: 2026-10-07
 source: docs/site/articles/nekashitsuke-jikan.md
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 # リール（10/7）寝かしつけに1時間かかる夜

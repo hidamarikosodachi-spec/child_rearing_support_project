@@ -108,7 +108,12 @@ def main(day: str, commit: bool) -> None:
     for f in sorted(QUEUE.glob("*.md")):
         meta, _ = _fm(f)
         on = meta.get("publish_on", "")
-        if on and on <= day:
+        # ⚠️ 2026-10-26 事故: オーナーが古いリールを削除したら、重複チェック（Instagram 上の既存投稿との照合）を
+        #    すり抜けて、削除済みの古いリールが毎日1本ずつ再投稿された（10/23〜26 の4本）。
+        #    → status: ready のものだけを対象にし、取りこぼしの拾い直しは3日前までに限る。
+        if meta.get("status", "").split()[0:1] != ["ready"]:
+            continue
+        if on and on <= day and on >= (dt.date.fromisoformat(day) - dt.timedelta(days=3)).isoformat():
             targets.append((on, f, meta))
     targets.sort()
     if not targets:

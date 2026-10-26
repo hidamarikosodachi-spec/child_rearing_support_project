@@ -4,7 +4,7 @@ slug: 20261017_hamigaki_iikae
 publish_on: 2026-10-17
 source: docs/site/articles/hamigaki-iyagaru.md
 genre: 言い換え1枚・短尺
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文

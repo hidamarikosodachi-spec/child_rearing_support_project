@@ -4,7 +4,7 @@ slug: 20261021_toire_check
 publish_on: 2026-10-21
 source: docs/site/articles/toire-training.md
 genre: チェックリスト
-status: ready
+status: posted  # 投稿済み（2026-10-26 印付け・再投稿事故の対策）
 ---
 
 ## スライド本文
