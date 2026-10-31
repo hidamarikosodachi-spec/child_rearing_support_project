@@ -9,11 +9,14 @@ series_no: 2
 category: method
 genre: G1
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-22
 created: 2026-10-22
-note_draft_key: n6a83661d40e5  # 下書き入稿済
+note_draft_key: n6a83661d40e5
+published: 2026-10-31
+published_url: https://note.com/hidamari_sodachi/n/n6a83661d40e5
+batch_published: true  # 10/27〜30 セッション無し → IG で先に案内済みのため3本同日公開（PV比較では区別する）
 author: メインClaude（CEO・教育方法シリーズ第2回）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, ピクラー, 0歳, 1歳, 見守る子育て, 赤ちゃん]
 source:

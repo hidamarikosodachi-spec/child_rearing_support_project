@@ -9,11 +9,14 @@ series_no: 2
 category: upstream
 genre: G5
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-19
 created: 2026-10-19
-note_draft_key: n10dc305f2aa1  # 下書き入稿済
+note_draft_key: n10dc305f2aa1
+published: 2026-10-31
+published_url: https://note.com/hidamari_sodachi/n/n10dc305f2aa1
+batch_published: true  # 10/27〜30 セッション無し → IG で先に案内済みのため3本同日公開（PV比較では区別する）
 author: メインClaude（CEO・上流の問い 第2回）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, 自己肯定感, ほめ方, 声かけ, 心理学, 子育て方針]
 demand: "自己肯定感（子育ての大きな検索語）／褒め方 → 子供（demand_scan 2026-10-16）"

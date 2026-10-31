@@ -49,6 +49,18 @@ def _fm(path: Path) -> tuple[dict, str]:
     return meta, body
 
 
+def _note_published(key: str) -> bool:
+    """note 記事が公開済みか（Mac Chrome の UA でないと API が通らない）。確認できなければ出さない側に倒す。"""
+    try:
+        req = urllib.request.Request(f"https://note.com/api/v3/notes/{key}", headers={
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return json.loads(r.read())["data"].get("status") == "published"
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def _posted_today_api(day: str) -> bool:
     """今日すでにリールを出していないか、Instagram 側の実績で確かめる。
 
@@ -124,6 +136,13 @@ def main(day: str, commit: bool) -> None:
     picked = None
     for on, f, meta in targets:
         slug = meta.get("slug") or f.stem
+        # 2026-10-31 事故: note 連動リールが「note に書きました」と案内したのに、
+        #   セッションが開かれず note 側が下書きのまま（10/27〜29 の3本）。
+        #   → 案内先の note 記事が公開されていなければ、このリールは出さない（翌日以降に回る）。
+        nk = (meta.get("note_key") or "").strip()
+        if nk and not _note_published(nk):
+            click.echo(f"[skip] {slug}: 案内先の note（{nk}）がまだ公開されていません")
+            continue
         if reel.check_duplicate(reel.caption_from(f), f"{SITE}/ig/reels/{slug}.mp4"):
             continue              # すでに出している
         picked = (f, meta)

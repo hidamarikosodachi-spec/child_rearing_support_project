@@ -8,11 +8,14 @@ series: "探索期（ジャンル検証）"
 category: trouble
 genre: G2
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-21
 created: 2026-10-21
-note_draft_key: n86ed7e737d79  # 下書き入稿済
+note_draft_key: n86ed7e737d79
+published: 2026-10-31
+published_url: https://note.com/hidamari_sodachi/n/n86ed7e737d79
+batch_published: true  # 10/27〜30 セッション無し → IG で先に案内済みのため3本同日公開（PV比較では区別する）
 author: メインClaude（CEO・探索期 G2 困りごと 3本目・需要起点）
 note_tags: [子育て, 育児, 子育ての悩み, 育児日記, 保育園, 行きしぶり, ワーママ, 愛着, 育児の悩み]
 demand: "保育園 行きたくない → ママといたい（13）・泣く・休ませる（demand_scan 2026-10-16）"
