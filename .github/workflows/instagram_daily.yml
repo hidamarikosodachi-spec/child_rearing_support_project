@@ -53,7 +53,7 @@ jobs:
             cat .auth/instagram_post_log.jsonl >> docs/posted_log/instagram.jsonl
             git config user.name  "hidamarikosodachi-spec"
             git config user.email "fuga.shiojiri.fa@gmail.com"
-            git add docs/posted_log/instagram.jsonl
+            git add docs/posted_log/instagram.jsonl docs/instagram/reels/
             git commit -m "chore(ig): 投稿ログ追記 [skip ci]" || true
             git push || true
           fi

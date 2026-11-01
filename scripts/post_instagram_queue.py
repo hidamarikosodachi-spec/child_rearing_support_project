@@ -182,6 +182,9 @@ def main(day: str, commit: bool) -> None:
                        text=True)
     if r.returncode != 0:
         raise click.ClickException("投稿に失敗しました")
+    # 出したものは ready から外す（手で書き換えると忘れる）。
+    text = path.read_text(encoding="utf-8")
+    path.write_text(text.replace("\nstatus: ready", "\nstatus: posted", 1), encoding="utf-8")
 
 
 if __name__ == "__main__":

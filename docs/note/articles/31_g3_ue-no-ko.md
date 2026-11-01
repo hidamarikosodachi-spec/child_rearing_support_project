@@ -8,11 +8,13 @@ series: "探索期（ジャンル検証）"
 category: self-blame
 genre: G3
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-10-31
 created: 2026-10-31
-note_draft_key: nbb14deda8f78  # 下書き入稿済
+note_draft_key: nbb14deda8f78
+published: 2026-11-01
+published_url: https://note.com/hidamari_sodachi/n/nbb14deda8f78
 author: メインClaude（CEO・探索期 G3 親の自責 3本目）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, きょうだい, 上の子, 二人育児, 育児の悩み, ママの気持ち]
 source:

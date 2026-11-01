@@ -22,7 +22,7 @@ related_research: ["tsuchiya-2022-jecs-short-sleep-newborn-bruxism", "nakahara-2
 matcher_axes: ["late_bedtime_japan", "night_waking_4month", "urban_japan_sleep_baseline"]
 note_potential: high  # 日本の都市部で「乳児の就寝が 22 時過ぎ」という実態データ
 
-evidence_source: abstract_only
+evidence_source: abstract_verified  # 2026-11-01 PubMed抄録で数値照合済み（本文は未入手）
 collected_via: openalex
 collected_date: 2026-05-15
 review_status: collected
@@ -70,3 +70,9 @@ batch: PhaseC_sprint11
 ## 出典
 - Hayama, J., Adachi, Y., Nishino, N., & Ohryoji, F. (2007). 生後4か月乳児の睡眠：就寝時刻・夜泣き・睡眠問題. *日本公衆衛生雑誌*, 54(7), 440-446. PMID: 17763709
 - OpenAlex ID: W34590038
+
+## 照合ログ（2026-11-01 原典照合）
+PubMed 抄録（PMID 17763709）で照合。
+- **確認済み**: 福岡市の4か月児健診受診の母子194組。平均就寝 22:28、22時以降就寝 69.4%、就寝時刻が不規則 16.5%、睡眠問題あり 28.6%。「夜泣き群」= **0〜6時に1回以上起きる**児 111人（57.2%）、連続睡眠群 83人。夜泣き群は睡眠問題・寝つきの悪さ・就寝不規則が多い。身長・体重に群間差なし。著者は夜泣きを「概日リズム発達の遅れ」の可能性として言及。
+- **注意**: ここでの「夜泣き」は **夜間に1回でも目を覚ます**という広い定義。「4か月児の約6割が夜中に1回以上起きる」と言えるが、泣いて困る頻度とは別。1地域・健診受診層・2007年。
+- 回数別の分布（2回以上など）は抄録に無く未確認。

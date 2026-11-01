@@ -12,7 +12,7 @@ sub_topics: ["sleep_development", "longitudinal_cohort", "infant_normative_data"
 target_age: ["0-2"]
 study_type: "longitudinal-cohort"
 evidence_level: "high"  # 2大規模出生コホート連結
-sample_size: 5700  # おおよそ（2コホート合算）
+sample_size: null  # 抄録: CHILD-SLEEP 3か月1427/8か月1301/18か月1163/24か月950、FinnBrain 6か月2002/12か月1693（時点ごとに別コホート、合算人数は不明）
 sample_region: "フィンランド（CHILD-SLEEP コホート + FinnBrain コホート）"
 
 related_theories: ["[[harvard-cdc-framework]]", "[[bowlby-attachment]]"]
@@ -20,7 +20,7 @@ related_research: ["galland-2012-normal-sleep-patterns-infants-children", "minde
 matcher_axes: ["normative_sleep_development", "sleep_consolidation", "longitudinal_baseline"]
 note_potential: medium  # 規範データ的な使い方
 
-evidence_source: abstract_only
+evidence_source: abstract_verified_fulltext_unavailable  # 2026-11-01 PubMed抄録のみ照合。本文表は取得不可（ScienceDirect 403／大学リポジトリ bot 防御）。夜間覚醒の数値は未確認
 collected_via: openalex
 collected_date: 2026-05-15
 review_status: collected
@@ -36,6 +36,8 @@ cultural_caveat: "フィンランドの2コホート。北欧の家庭環境・�
 
 batch: PhaseC_sprint11
 ---
+
+> [!warning] 2026-11-01 照合: 以下の要約中「夜間覚醒は8か月までに大きく減る」「trait-like」等は抄録・本文で未確認のため記事では使用不可。末尾「照合ログ」を優先。
 
 # 乳児期の正常睡眠発達：2 つの大規模出生コホートからの知見
 
@@ -68,3 +70,11 @@ batch: PhaseC_sprint11
 ## 出典
 - Paavonen, E. J., Saarenpää-Heikkilä, O., Morales-Muñoz, I., et al. (2020). Normal sleep development in infants: findings from two large birth cohorts. *Sleep Medicine*, 69, 145-154. DOI: 10.1016/j.sleep.2020.01.009
 - OpenAlex ID: W3001933877
+
+## 照合ログ（2026-11-01 原典照合）
+照合できた範囲: PubMed 抄録（PMID 32087408）。本文・表は取得できず。
+- **確認済み**: 対象時点は **3・6・8・12・18・24か月**（旧記載の「3/8/18/24か月」は一部のみ）。人数は CHILD-SLEEP: 3か月1427・8か月1301・18か月1163・24か月950／FinnBrain: 6か月2002・12か月1693。尺度は Brief Infant Sleep Questionnaire（両コホート）＋Infant Sleep Questionnaire（CHILD-SLEEP）。親報告。
+- **確認済み（抄録の表現）**: 睡眠の質は特に生後2年間でばらつきが大きく、そのばらつきは2年目に向けて顕著に小さくなる。寝つきまでの時間は6か月までに短縮、夜間睡眠のまとまりは**2年目**にかけて進む。親が報告する睡眠の悩みは全期間を通して多い。
+- **確認できず（使用不可）**: 「夜間覚醒は8か月までに大きく減り、その後は緩やか」「就寝時刻・総睡眠時間の児ごとの安定性（trait-like）」は抄録に無く、本文未確認。旧要約の記述は**撤回**。各時点の夜間覚醒回数（平均・割合）も未確認。Reuters報道の「2歳でも平均1晩に1回ほど起きる」は二次情報で、使用しない。
+- 旧記載の人数「約5700（合算）」は根拠なし。
+- 記事での使い方: 「2年目にかけてまとまっていくが、悩みの報告は全期間で多い」までは言える。数字は Galland 2012 を使う。本文を入手できれば Table を再照合すること（オーナー側のブラウザで ScienceDirect OA 版 https://www.sciencedirect.com/science/article/pii/S1389945720300381 を開ければ取得可能）。
