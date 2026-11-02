@@ -48,15 +48,16 @@ jobs:
       - name: 投稿ログを保存
         if: always()
         run: |
+          # ログが無くても、リールの status: posted は残す（2026-11-02 まで一度も保存されていなかった）
           if [ -f .auth/instagram_post_log.jsonl ]; then
             mkdir -p docs/posted_log
             cat .auth/instagram_post_log.jsonl >> docs/posted_log/instagram.jsonl
-            git config user.name  "hidamarikosodachi-spec"
-            git config user.email "fuga.shiojiri.fa@gmail.com"
-            git add docs/posted_log/instagram.jsonl docs/instagram/reels/
-            git commit -m "chore(ig): 投稿ログ追記 [skip ci]" || true
-            git push || true
+            git add docs/posted_log/instagram.jsonl
           fi
+          git config user.name  "hidamarikosodachi-spec"
+          git config user.email "fuga.shiojiri.fa@gmail.com"
+          git add docs/instagram/reels/
+          git diff --cached --quiet || { git commit -m "chore(ig): 投稿ログ・リール状態を記録 [skip ci]" && git pull --rebase && git push; } || true
       - name: .env を消す
         if: always()
         run: rm -f .env
