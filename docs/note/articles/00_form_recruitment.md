@@ -4,7 +4,7 @@ slug: 00_form_recruitment
 type: note_article
 article_no: 0
 category: recruitment
-status: ceo_approved
+status: retired  # 2026-11-02 オーナー判断で note から削除（今のスタイルと違うため）
 ceo_review_required: false
 ceo_reviewed: 2026-06-02
 created: 2026-05-15
