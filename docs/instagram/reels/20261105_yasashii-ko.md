@@ -1,11 +1,11 @@
 ---
 title: 「やさしい子に」と願うなら（note連動・漫画リール試作1）
 slug: 20261105_yasashii-ko-manga
-publish_on: 2026-11-05
+publish_on: 2026-11-04
 source: docs/note/articles/34_upstream03_yasashii-ko.md
 note_key: n20d7c820bb5b
 genre: note連動・漫画
-status: hold  # 2026-11-04 漫画型の試作1本目。オーナー確認後に ready
+status: ready
 image_dir: assets/reels/manga_yasashii-ko   # 絵は ChatGPT（docs/instagram/manga_prompts_v1.md）
 frames:
   - image: src_2.png

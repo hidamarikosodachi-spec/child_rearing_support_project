@@ -9,10 +9,12 @@ series_no: 3
 category: upstream
 genre: G5
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-04
-note_draft_key: n20d7c820bb5b  # 下書き入稿済
+note_draft_key: n20d7c820bb5b
+published: 2026-11-04
+published_url: https://note.com/hidamari_sodachi/n/n20d7c820bb5b
 created: 2026-11-04
 author: メインClaude（CEO・探索期 G5 上流の問い 3本目）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもに教えられたこと, 思いやり, ごほうび, 1歳, 2歳, 子育て方針]
