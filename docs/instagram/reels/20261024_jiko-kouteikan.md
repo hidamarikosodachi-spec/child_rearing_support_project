@@ -5,7 +5,7 @@ publish_on: 2026-10-27  # 2026-10-26 組み直し（10/23〜26 は旧リール�
 source: docs/note/articles/28_upstream02_jiko-kouteikan.md
 note_key: n10dc305f2aa1
 genre: note連動・学び型
-status: ready
+status: posted  # 10/27〜30 に投稿済（11/4 台帳修正）
 ---
 
 ## スライド本文

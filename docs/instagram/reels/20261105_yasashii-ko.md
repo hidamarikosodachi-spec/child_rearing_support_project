@@ -5,7 +5,7 @@ publish_on: 2026-11-05
 source: docs/note/articles/34_upstream03_yasashii-ko.md
 note_key: n20d7c820bb5b
 genre: note連動・学び型
-status: ready
+status: hold  # 2026-11-04 リールの型を見直すまで停止（平均視聴0.8〜3秒）
 ---
 
 ## スライド本文

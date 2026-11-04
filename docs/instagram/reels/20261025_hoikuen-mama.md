@@ -5,7 +5,7 @@ publish_on: 2026-10-28  # 2026-10-26 組み直し（10/23〜26 は旧リール�
 source: docs/note/articles/29_g2_hoikuen-mama-to-itai.md
 note_key: n86ed7e737d79
 genre: note連動・行動型
-status: ready
+status: posted  # 10/27〜30 に投稿済（11/4 台帳修正）
 ---
 
 ## スライド本文
