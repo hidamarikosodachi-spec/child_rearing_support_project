@@ -5,7 +5,7 @@ publish_on: 2026-11-04
 source: docs/note/articles/34_upstream03_yasashii-ko.md
 note_key: n20d7c820bb5b
 genre: note連動・漫画
-status: ready
+status: posted  # 2026-11-04 20:03 直接投稿（キューの1日1本で止まったため）
 image_dir: assets/reels/manga_yasashii-ko   # 絵は ChatGPT（docs/instagram/manga_prompts_v1.md）
 frames:
   - image: src_2.png
