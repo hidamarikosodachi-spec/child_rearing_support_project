@@ -9,10 +9,12 @@ series_no: 3
 category: method
 genre: G1
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-02
-note_draft_key: n28140a057ff3  # 下書き入稿済
+note_draft_key: n28140a057ff3
+published: 2026-11-04
+published_url: https://note.com/hidamari_sodachi/n/n28140a057ff3
 created: 2026-11-02
 author: メインClaude（CEO・教育方法シリーズ第3回・探索期 G1 の3本目）
 note_tags: [子育て, 育児, 子育ての悩み, 子どもの成長記録, レッジョエミリア, 幼児教育, 3歳, 4歳, おうち遊び]
