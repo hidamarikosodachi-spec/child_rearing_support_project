@@ -8,12 +8,12 @@ series: "探索期（ジャンル検証）"
 category: research
 genre: G2
 tone: T2
-status: draft
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-08
 note_draft_key: na91c5b17c903
-published: ""
-published_url: ""
+published: 2026-11-08
+published_url: https://note.com/hidamari_sodachi/n/na91c5b17c903
 created: 2026-11-08
 author: メインClaude（CEO・探索期 第2段階 G2×T2 物語体）
 note_tags: [子育て, 育児, 子育ての悩み, 動画, スマホ育児, 2歳, 3歳, 育児の悩み, 子育て方針]

@@ -3,9 +3,9 @@ title: 動画をやめられないとき（漫画リール試作2・G2 困りご
 slug: 20261108_douga-manga
 publish_on: 2026-11-08
 source: docs/site/articles/douga-yamerarenai.md
-note_key: na91c5b17c903  # 下書き（未公開）。公開されるまでリールは出さない
+note_key: na91c5b17c903
 genre: 困りごと・漫画
-status: draft  # コマ画像は受領済（assets/reels/manga_douga）。note 未公開のため投稿保留
+status: posted  # 2026-11-08 投稿 https://www.instagram.com/reel/Dfd6DvvuP5c/
 image_dir: assets/reels/manga_douga   # 絵は ChatGPT（docs/instagram/manga_prompts_02_douga.md）
 frames:
   - image: src_1.png
@@ -38,11 +38,13 @@ frames:
 
 ごはんの支度の最中に、動画が終わらない。「あと1回」が5回続いて、消すと泣く。
 
-やめられないのは、その子が弱いからではありません。動画は、次が自動で始まって、終わりの合図がない作りになっています。大人でも同じことが起きます。
+やめられないのは、その子が弱いからではありません。多くの動画アプリは、次が自動で始まって、終わりの合図がない作りになっています。大人でも同じことが起きます。
 
 今日、ひとつだけやるなら。渡す前に「2本ね」と終わりを先に言う。終わりの合図はタイマーに任せて、止める役を大人から外すと、ぶつかる回数が減ります。
 
 長く見せた日があっても大丈夫です。翌日戻せば、それで足ります。
+
+日本の5万8千組の親子を1〜3歳まで追った調査で分かったことと、分かっていないことは note に書きました。プロフィールのリンクから読めます。
 
 ※絵は AI で作成しています。
 
