@@ -37,14 +37,14 @@ def key() -> str:
     return k
 
 
-def generate(prompt: str, refs: list[Path], model: str = MODEL) -> Image.Image:
+def generate(prompt: str, refs: list[Path], model: str = MODEL, aspect: str = "9:16") -> Image.Image:
     parts: list[dict] = []
     for r in refs:
         parts.append({"inline_data": {"mime_type": "image/png", "data": base64.b64encode(r.read_bytes()).decode()}})
     parts.append({"text": prompt})
     body = {
         "contents": [{"parts": parts}],
-        "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": "9:16"}},
+        "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": aspect}},
     }
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
