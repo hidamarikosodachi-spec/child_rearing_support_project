@@ -31,21 +31,21 @@ def compose(art: Image.Image, lines: list[str], tag: str) -> Image.Image:
     l, t = (art.width - W) // 2, (art.height - H) // 2
     im = art.crop((l, t, l + W, t + H)).convert("RGBA")
 
-    f = ImageFont.truetype(FONT, 66, index=0)
-    ft = ImageFont.truetype(FONT, 30, index=0)
+    f = ImageFont.truetype(FONT, 54, index=0)
+    ft = ImageFont.truetype(FONT, 26, index=0)
     d0 = ImageDraw.Draw(im)
     tw = max(d0.textlength(x, font=f) for x in lines)
-    pad, lh = 44, 88
-    bw, bh = int(tw + pad * 2), int(len(lines) * lh + pad * 2 - 10 + 44)
+    pad, lh = 36, 74
+    bw, bh = int(tw + pad * 2), int(len(lines) * lh + pad * 2 - 10 + 36)
     x0, y0 = 56, H - bh - 48
     over = Image.new("RGBA", im.size, (0, 0, 0, 0))
     d = ImageDraw.Draw(over)
     d.rounded_rectangle((x0, y0, x0 + bw, y0 + bh), 28, fill=(255, 253, 246, 238), outline=(180, 80, 15, 255), width=3)
     im = Image.alpha_composite(im, over)
     d = ImageDraw.Draw(im)
-    d.text((x0 + pad, y0 + 22), tag, font=ft, fill=ACCENT)
+    d.text((x0 + pad, y0 + 18), tag, font=ft, fill=ACCENT)
     for i, ln in enumerate(lines):
-        d.text((x0 + pad, y0 + 22 + 44 + i * lh), ln, font=f, fill=INK)
+        d.text((x0 + pad, y0 + 18 + 36 + i * lh), ln, font=f, fill=INK)
     return im.convert("RGB")
 
 
