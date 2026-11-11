@@ -1,25 +1,25 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-11-09
+updated: 2026-11-11
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-11-09 09:08 JST／前回比は 2026-11-08 集計との差。
+> 集計 2026-11-11 10:30 JST／前回比は 2026-11-09 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 500（+8） | 79（+1） | 10（+0） | — | **0** | — |
-| Threads | views 3357（+0） | 15（+0） | 2（+0） | 2（+0） | — | 1（+0） |
+| note | PV 524（+24） | 80（+1） | 10（+0） | — | **0** | — |
+| Threads | views 3376（+19） | 15（+0） | 2（+0） | 2（+0） | — | 1（+0） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **500**（目標下限まで残り 0）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **524**（目標下限まで残り 0）
 
 ## note 記事別
 
@@ -42,23 +42,25 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 13 | 3 | 0 | 0 | [抱っこをせがまなくなった日に](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
 | 12 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
 | 12 | 4 | 0 | 0 | [赤ちゃん返りはいつまで？ — 2〜4歳の上の子に渡せる3つの時間](https://note.com/hidamari_sodachi/n/n73cfc4e40e60) |
+| 12 | 2 | 0 | 0 | [レッジョ・エミリアを家でやるなら — 2〜5歳、「なんで？」を急いで答…](https://note.com/hidamari_sodachi/n/n28140a057ff3) |
 | 11 | 3 | 0 | 0 | [親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む](https://note.com/hidamari_sodachi/n/n2c6475079cfc) |
 | 11 | 3 | 0 | 0 | [「ママといたい」と泣く保育園の朝 — 1〜4歳の行きしぶりに、親ができ…](https://note.com/hidamari_sodachi/n/n86ed7e737d79) |
 | 10 | 4 | 0 | 0 | [怒鳴ってしまった夜に、寝顔を見ている人へ — 「ずれて、戻る」という考…](https://note.com/hidamari_sodachi/n/necca0bdda3e0) |
-| 8 | 2 | 0 | 0 | [レッジョ・エミリアを家でやるなら — 2〜5歳、「なんで？」を急いで答…](https://note.com/hidamari_sodachi/n/n28140a057ff3) |
+| 8 | 3 | 0 | 0 | [「やさしい子に育ってほしい」と願うなら — 1歳半の「手伝いたい」を、…](https://note.com/hidamari_sodachi/n/n20d7c820bb5b) |
 | 7 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
+| 7 | 1 | 0 | 0 | [ピクラーを家でやるなら — 0〜2歳、世話の時間を「対話」にする3つ](https://note.com/hidamari_sodachi/n/n6a83661d40e5) |
+| 7 | 0 | 0 | 0 | [上の子にだけ、きつく当たってしまう日に — きょうだいへの「差」につい…](https://note.com/hidamari_sodachi/n/nbb14deda8f78) |
 | 6 | 1 | 0 | 0 | [「どんな子に育ってほしい？」に、すぐ答えられなかった日に](https://note.com/hidamari_sodachi/n/n729e7568b503) |
 | 6 | 1 | 0 | 0 | [モンテッソーリを家でやるなら — 2〜3歳、教具を買わずにできる5つ](https://note.com/hidamari_sodachi/n/n43c5f88c80a7) |
+| 6 | 2 | 0 | 0 | [夜泣きはいつまで？ — 34,000人の睡眠データを読むと、「ふつう」…](https://note.com/hidamari_sodachi/n/n26a4831625f6) |
+| 6 | 1 | 0 | 0 | [動画をやめられない夕方に — 5万8千人の日本の子どもを追った調査と、…](https://note.com/hidamari_sodachi/n/na91c5b17c903) |
 | 5 | 0 | 0 | 0 | [3歳の癇癪はいつまで？ — 研究で見る「よくある癇癪」と「相談していい…](https://note.com/hidamari_sodachi/n/n38a6639c3c61) |
-| 5 | 1 | 0 | 0 | [ピクラーを家でやるなら — 0〜2歳、世話の時間を「対話」にする3つ](https://note.com/hidamari_sodachi/n/n6a83661d40e5) |
-| 5 | 3 | 0 | 0 | [「やさしい子に育ってほしい」と願うなら — 1歳半の「手伝いたい」を、…](https://note.com/hidamari_sodachi/n/n20d7c820bb5b) |
 | 4 | 2 | 0 | 0 | [モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
 | 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
 | 4 | 3 | 1 | 0 | [ほかの子と比べてしまった日に — 「できる時期」には、これだけ幅がある](https://note.com/hidamari_sodachi/n/ne44dd1617288) |
 | 4 | 1 | 0 | 0 | [「自己肯定感の高い子に」って、どういうこと？ — ほめることと、受け止…](https://note.com/hidamari_sodachi/n/n10dc305f2aa1) |
-| 4 | 0 | 0 | 0 | [上の子にだけ、きつく当たってしまう日に — きょうだいへの「差」につい…](https://note.com/hidamari_sodachi/n/nbb14deda8f78) |
-| 3 | 2 | 0 | 0 | [夜泣きはいつまで？ — 34,000人の睡眠データを読むと、「ふつう」…](https://note.com/hidamari_sodachi/n/n26a4831625f6) |
-| 2 | 1 | 0 | 0 | [動画をやめられない夕方に — 5万8千人の日本の子どもを追った調査と、…](https://note.com/hidamari_sodachi/n/na91c5b17c903) |
+| 3 | 0 | 0 | 0 | [「ちょっと待って」と言いながらスマホを見ている日に — 747人の子ど…](https://note.com/hidamari_sodachi/n/n7cc99925bdcd) |
+| 2 | 1 | 0 | 0 | [「早くしなさい」を7回言った朝に — 言い方を変える前に、先にやること](https://note.com/hidamari_sodachi/n/n811be616e503) |
 
 ## Threads 投稿別
 
@@ -103,6 +105,7 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-11-03 | 26 | 0 | 0 | 0 | 0 | 0 | うまくいった接し方⑦（きょうだいげんかに口を出さずに待った） |
 | 2026-11-05 | 16 | 0 | 0 | 0 | 0 | 0 | 子どもの話を半分しか聞いていなかった（自責軸・夕食の会話） |
 | 2026-11-07 | 47 | 0 | 0 | 0 | 0 | 0 | ママだと寝ない（困りごとの場面・寝かしつけ） |
+| 2026-11-09 | 19 | 0 | 0 | 0 | 0 | 0 | きょうだいげんか（困りごとの場面・おもちゃの取り合い） |
 
 ## コメント・返信（他者分・新しい順）
 
@@ -115,7 +118,6 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 
 | 集計日 | note PV | note スキ | note コメ | Threads views | Threads 能動 | フォロワー |
 |---|---|---|---|---|---|---|
-| 2026-10-19 | 394 | 55 | 8 | — | — | — |
 | 2026-10-20 | 395 | 56 | 8 | 2995 | 2 | 1 |
 | 2026-10-21 | 412 | 58 | 8 | 3013 | 2 | 1 |
 | 2026-10-22 | 421 | 62 | 8 | 3013 | 2 | 1 |
@@ -127,3 +129,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-11-05 | 472 | 77 | 10 | 3293 | 2 | 3 |
 | 2026-11-08 | 492 | 78 | 10 | 3357 | 2 | 1 |
 | 2026-11-09 | 500 | 79 | 10 | 3357 | 2 | 1 |
+| 2026-11-11 | 524 | 80 | 10 | 3376 | 2 | 1 |
