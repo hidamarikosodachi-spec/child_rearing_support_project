@@ -91,9 +91,9 @@ def last(spec: dict, n: int, total: int) -> Image.Image:
     im, d = base(n, total)
     y = 380
     for i, ln in enumerate(spec["lines"]):
-        font = f(54) if i < 2 else f(36)
+        font = f(50) if i < 1 else f(34)
         for w in wrap(d, ln, font, W - 140):
-            d.text((W // 2, y), w, font=font, fill=INK if i < 2 else SUB, anchor="ma")
+            d.text((W // 2, y), w, font=font, fill=INK if i < 1 else SUB, anchor="ma")
             y += int(font.size * 1.5)
         y += 20
     return im
