@@ -18,10 +18,10 @@ related: [[this_week]] [[backlog]] [[reach_goal_v1]]
 |---|---|---|---|
 | 11/9 | ✅ [36 スマホ](https://note.com/hidamari_sodachi/n/n7cc99925bdcd) | ✅ [リール3](https://www.instagram.com/reel/DfgPTWYhpK1/)＋ストーリー | ✅ |
 | 11/10 | ✅ [37 早くしなさい](https://note.com/hidamari_sodachi/n/n811be616e503) | ✅ [リール4](https://www.instagram.com/reel/DfiltEghz0p/)＋ストーリー | 🤖 12:00 |
-| 11/11 | ⬜ 38 | ⬜ 速報確認 | 🤖 |
-| 11/12 | ⬜ 39 | ⬜ リール5 | 🤖 |
+| 11/11 | ✅ 38 ひと口だけ | ✅ [情報カルーセル①](https://www.instagram.com/p/DfmWfELgR1D/)（東京・大阪おでかけ） | 🤖 |
+| 11/12 | ⬜ 39 | ⬜ 情報カルーセル② | 🤖 |
 | 11/13 | ⬜ 40 | — | 🤖 |
-| 11/14 | ⬜ 41 | ⬜ リール6 | ⬜ 下書き |
+| 11/14 | ⬜ 41 | ⬜ 情報カルーセル③ | ⬜ 下書き |
 | 11/15 | 週次レビュー | 7日後判定 | ⬜ 下書き |
 
 ## 自前サイト（毎朝 06:21 JST の予約公開）
