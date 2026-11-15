@@ -8,12 +8,12 @@ series: "研究・実験ウィーク（11/12〜11/18）"
 category: research
 genre: G4
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-12
-note_draft_key:
-published:
-published_url:
+note_draft_key: ne5d3102dc12b
+published: 2026-11-15
+published_url: https://note.com/hidamari_sodachi/n/ne5d3102dc12b
 created: 2026-11-12
 author: メインClaude（CEO・研究・実験ウィーク 3/7）
 note_tags: [子育て, 育児, 言葉の発達, 語彙, 話しかけ, 2歳, 研究, 1歳, 育児の悩み]
