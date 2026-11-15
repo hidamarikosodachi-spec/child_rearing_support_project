@@ -141,7 +141,7 @@ related: [[ig_reels]] [[dashboard]] [[reel_research_v2]] [[theme_performance_v1]
 
 ## キャッチコピーの成功基準（2026-11-15 オーナー提案「開始6秒」を受けて）
 
-- 背景：オーナー指摘「IG のタイトルを見ても続きが気にならない」。要約型の題名が原因と判断し、専任エージェント `.claude/agents/catchcopy-writer.md` を作成。
+- 背景：オーナー指摘「IG のタイトルを見ても続きが気にならない」。要約型の題名が原因と判断し、専任エージェント `.claude/agents/ig-writer.md` を作成。
 - **6秒は API で直接取れない**ため、**リールは「平均視聴時間 ≥6秒」**を代用（補助：アプリ内スキップ率）。カルーセルは保存÷リーチ。Threads は閲覧数＋投稿後1時間の返信。note は PV÷インプレッション。
 - 判定は同媒体で旧題名と **A/B・3本以上の平均**。題名以外は変えない。
 
@@ -159,3 +159,8 @@ related: [[ig_reels]] [[dashboard]] [[reel_research_v2]] [[theme_performance_v1]
 
 - 第2周（11/20〜）：Romeo・Imai・Yang 再編などで型を入れ替え、研究と型を分離する。
 - 判定：11/22（TH-2 と同日）。3本平均が出るのは第2周後＝12/1 頃。
+
+### Threads のコメント返信（2026-11-15・オーナー「返信も自動で」）
+
+- **自分の投稿に付いたコメントへの返信**：`scripts/threads_replies.py`（list／reply）を作成。上限1日5件・売り込み語は拒否・他者スレッドには返信不可・ログ `.auth/threads_reply_log.jsonl`・停止 `.auth/STOP_THREADS_REPLIES`。セッション内で私が一括処理する（無人 cron にはしない）。
+- **他者の投稿への返信**：自動化しない。API は `threads_keyword_search` が審査制で他者投稿を探せず（2026-09-26 調査）、ブラウザ自動操作は Instagram と同一系列の連鎖停止リスクのため禁止（2026-09 決定）。→ 返信候補はこちらで用意し、オーナーが手で貼る方式。
