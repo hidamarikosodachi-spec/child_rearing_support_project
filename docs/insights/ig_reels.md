@@ -1,14 +1,14 @@
 ---
 tags: [insights, instagram, reel]
 status: auto-generated
-updated: 2026-11-15
+updated: 2026-11-16
 updated_by: scripts/ig_reel_insights.py（自動生成・手編集しない）
 related: [[reach_goal_v1]] [[dashboard]]
 ---
 
 # 📹 IG リール別の再生（目標: 1本 500 回）
 
-> 集計 2026-11-15／リール 15 本／**中央値 30／最大 151**／目標 500 到達 **0 本**
+> 集計 2026-11-16／リール 15 本／**中央値 30／最大 151**／目標 500 到達 **0 本**
 > 再生数は投稿からの累計。公開日が新しいものは伸びる途中。平均視聴は秒。
 
 | 公開日 | 再生 | リーチ | 平均視聴(秒) | 保存 | シェア | 冒頭 |
