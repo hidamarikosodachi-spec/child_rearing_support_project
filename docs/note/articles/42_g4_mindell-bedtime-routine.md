@@ -8,12 +8,12 @@ series: "研究・実験ウィーク（11/12〜11/18）"
 category: research
 genre: G4
 tone: T2
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-12
-note_draft_key:
-published:
-published_url:
+note_draft_key: n64e1ceee1e0a
+published: 2026-11-16
+published_url: https://note.com/hidamari_sodachi/n/n64e1ceee1e0a
 created: 2026-11-12
 author: メインClaude（CEO・研究・実験ウィーク 4/7）
 note_tags: [子育て, 育児, 寝かしつけ, 睡眠, 夜泣き, 0歳, 1歳, 2歳, 研究, 育児の悩み]
