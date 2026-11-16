@@ -21,7 +21,7 @@ related: [[this_week]] [[backlog]] [[reach_goal_v1]]
 | 11/12 | ✅ [39 寝る前の動画をやめたら](https://note.com/hidamari_sodachi/n/n2ab8af723dda) | Pickard 2024 RCT・105家族 | ✅ [研究カード①](https://www.instagram.com/p/DfmXH5JAf30/)（Yang 2026）＋ストーリー | 🤖 |
 | 11/13 | ✅ [40 10か月の赤ちゃんは攻撃された側を選んだ](https://note.com/hidamari_sodachi/n/nf48fd7432e57)（11/15 公開・遅れ） | Kanakogi 2013（日本） | ⬜ 研究カード② | 🤖 動画30分 |
 | 11/14 | ✅ [41 話しかけた言葉と聞こえていただけの言葉](https://note.com/hidamari_sodachi/n/ne5d3102dc12b)（11/15 公開・遅れ） | Weisleder 2013 | ⬜ 研究カード③ | 🤖 赤ちゃん返り |
-| 11/15 | ⬜ 42 寝る前の習慣は回数ぶん効く？ | Mindell 2015・1万人 | ⬜ | 🤖 怒鳴ったあと |
+| 11/15 | ✅ [42 寝る前の習慣は回数ぶん効く？](https://note.com/hidamari_sodachi/n/n64e1ceee1e0a)（11/16 公開・遅れ） | Mindell 2015・1万人 | ⬜ | 🤖 怒鳴ったあと |
 | 11/16 | ⬜ 43 会話が多い子は脳がよく働いた | Romeo 2018・fMRI | ⬜ | 🤖 動画（Yamamoto） |
 | 11/17 | ⬜ 44 1〜3歳の「がんばったね」は5年後を予測 | Gunderson 2013 | ⬜ | 🤖 親のスマホ（Yang） |
 | 11/18 | ⬜ 45 赤ちゃんは音と形の結びつきを知っている？ | Imai 2015（日本） | ⬜ | 🤖 偏食（Lumeng） |
