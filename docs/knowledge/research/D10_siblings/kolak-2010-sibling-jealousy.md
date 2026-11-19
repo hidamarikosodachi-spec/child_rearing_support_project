@@ -63,6 +63,6 @@ cultural_caveat: "米国・サンプル35家族と小規模、再現が必要"
 - 「父親場面の嫉妬」と「母親場面の嫉妬」を分けた解釈はメカニズム不明（父が普段関わらない場合の特殊性かもしれない）
 
 ## 出典
-- Kolak, A. M., & Volling, B. L. (2010). Sibling jealousy in early childhood: longitudinal links to sibling relationship quality. *Infant and Child Development*, 19(2), 213–226.
+- Kolak, A. M., & Volling, B. L. (2010). Sibling jealousy in early childhood: longitudinal links to sibling relationship quality. *Infant and Child Development*, 20(2), 213–226.
 - DOI: 10.1002/icd.690
 - OpenAlex ID: W2078884470
