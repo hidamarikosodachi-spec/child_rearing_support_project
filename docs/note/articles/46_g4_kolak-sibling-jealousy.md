@@ -8,12 +8,12 @@ series: "研究（毎日1本）"
 category: research
 genre: G4
 tone: T2
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-19
-note_draft_key:
-published:
-published_url:
+note_draft_key: ne2ec7f223e9c
+published: 2026-11-22
+published_url: https://note.com/hidamari_sodachi/n/ne2ec7f223e9c
 created: 2026-11-19
 author: メインClaude（CEO・研究（毎日1本））
 note_tags: [子育て, 育児, きょうだい, 嫉妬, 下の子, 兄弟げんか, 4歳, 研究, 育児の悩み]

@@ -8,12 +8,12 @@ series: "研究・実験ウィーク（11/12〜11/18）"
 category: research
 genre: G4
 tone: T1
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-12
-note_draft_key:
-published:
-published_url:
+note_draft_key: nd1c0e6649d85
+published: 2026-11-22
+published_url: https://note.com/hidamari_sodachi/n/nd1c0e6649d85
 created: 2026-11-12
 author: メインClaude（CEO・研究・実験ウィーク 7/7）
 note_tags: [子育て, 育児, 言葉の発達, 赤ちゃん, オノマトペ, 1歳, 研究, 実験, 育児の悩み]
