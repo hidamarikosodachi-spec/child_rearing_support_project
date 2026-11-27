@@ -8,12 +8,12 @@ series: "研究（毎日1本）"
 category: research
 genre: G4
 tone: T2
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-19
-note_draft_key:
-published:
-published_url:
+note_draft_key: nb56a1f9ccc70
+published: 2026-11-27
+published_url: https://note.com/hidamari_sodachi/n/nb56a1f9ccc70
 created: 2026-11-19
 author: メインClaude（CEO・研究（毎日1本））
 note_tags: [子育て, 育児, 褒め方, 自己肯定感, 声かけ, 挑戦, 研究, 育児の悩み, 幼児教育]

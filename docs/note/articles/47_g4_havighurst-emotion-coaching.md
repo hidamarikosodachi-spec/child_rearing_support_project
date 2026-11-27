@@ -8,12 +8,12 @@ series: "研究（毎日1本）"
 category: research
 genre: G4
 tone: T2
-status: ceo_approved
+status: published
 ceo_review_required: false
 ceo_reviewed: 2026-11-19
-note_draft_key:
-published:
-published_url:
+note_draft_key: nfb46a3125272
+published: 2026-11-27
+published_url: https://note.com/hidamari_sodachi/n/nfb46a3125272
 created: 2026-11-19
 author: メインClaude（CEO・研究（毎日1本））
 note_tags: [子育て, 育児, 感情, 癇癪, 声かけ, 4歳, 5歳, 研究, 育児の悩み]
