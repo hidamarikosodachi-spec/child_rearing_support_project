@@ -1,25 +1,25 @@
 ---
 tags: [insights, kpi, observation]
 status: active
-updated: 2026-11-22
+updated: 2026-11-28
 updated_by: scripts/insights_all.py（自動生成・手編集しない）
 related: [[this_week]] [[backlog]] [[posting_schedule]]
 ---
 
 # 📊 反応ダッシュボード（全サイト・read-only）
 
-> 集計 2026-11-22 09:25 JST／前回比は 2026-11-16 集計との差。
+> 集計 2026-11-28 09:32 JST／前回比は 2026-11-22 集計との差。
 > 再集計: `.venv/bin/python scripts/insights_all.py`。推移の真実源は `history.jsonl`。
 
 ## サイト別サマリ
 
 | サイト | 到達 | いいね | コメント/返信 | 能動反応 | 未返信 | フォロワー |
 |---|---|---|---|---|---|---|
-| note | PV 660（+87） | 95（+8） | 11（+0） | — | **1** | — |
-| Threads | views 3678（+136） | 15（+0） | 2（+0） | 2（+0） | — | 1（+0） |
+| note | PV 713（+53） | 102（+7） | 11（+0） | — | **1** | — |
+| Threads | views 3731（+53） | 16（+1） | 2（+0） | 2（+0） | — | 1（+0） |
 | Instagram（手入力 2026-09-29） | None | None | None | — | — | None |
 
-**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **660**（目標下限まで残り 0）
+**KPI（note 総PV）**: 基準 127 → 目標 380〜640／現在 **713**（目標下限まで残り 0）
 
 ## note 記事別
 
@@ -29,45 +29,49 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 51 | 4 | 0 | 0 | [「抱っこしすぎ」と言われた夜に — 愛着理論から考える](https://note.com/hidamari_sodachi/n/n8ea1a555c23a) |
 | 44 | 7 | 0 | 0 | [つくる前に、声を聞かせてください — アンケートのお願い](https://note.com/hidamari_sodachi/n/n0e6db37bd948) |
 | 23 | 2 | 0 | 0 | [「甘やかしすぎ」と言われた日に — 過保護と過干渉のあいだ](https://note.com/hidamari_sodachi/n/ncce6a2e0fc40) |
+| 22 | 2 | 0 | 0 | [寝る前の習慣は、続けた回数ぶん効くのか — 13の国と地域・1万人の親…](https://note.com/hidamari_sodachi/n/n64e1ceee1e0a) |
 | 20 | 3 | 0 | 0 | [「ちゃんと叱らないと」と言われたとき — ほめる・叱るのその先へ](https://note.com/hidamari_sodachi/n/n9a114e4ed4cd) |
 | 20 | 1 | 0 | 0 | [動画をやめられない夕方に — 5万8千人の日本の子どもを追った調査と、…](https://note.com/hidamari_sodachi/n/na91c5b17c903) |
 | 19 | 2 | 0 | 0 | [「イヤ」が1日に何十回も — 2歳の親が先に決めておく3つのこと](https://note.com/hidamari_sodachi/n/ne847661234d5) |
+| 19 | 2 | 0 | 0 | [レッジョ・エミリアを家でやるなら — 2〜5歳、「なんで？」を急いで答…](https://note.com/hidamari_sodachi/n/n28140a057ff3) |
+| 19 | 1 | 0 | 0 | [話しかけた言葉と、聞こえていただけの言葉 — 2歳の語彙を分けたのは、…](https://note.com/hidamari_sodachi/n/ne5d3102dc12b) |
 | 18 | 1 | 0 | 0 | [「早くしなさい」ばかり言っている気がして — 待つことと、放っておくこ…](https://note.com/hidamari_sodachi/n/nb3b6456a1085) |
 | 18 | 2 | 0 | 0 | [「先回りしすぎかな」と思った日に](https://note.com/hidamari_sodachi/n/nb2aa26393f6d) |
 | 18 | 0 | 0 | 0 | [子どもは楽しそうなのに、自分だけ疲れている日に](https://note.com/hidamari_sodachi/n/n3e7da1f53c4d) |
 | 17 | 2 | 0 | 0 | [「何も教えてあげてない」と思う日に](https://note.com/hidamari_sodachi/n/ne5af2727034c) |
-| 17 | 2 | 0 | 0 | [レッジョ・エミリアを家でやるなら — 2〜5歳、「なんで？」を急いで答…](https://note.com/hidamari_sodachi/n/n28140a057ff3) |
-| 17 | 2 | 0 | 0 | [寝る前の習慣は、続けた回数ぶん効くのか — 13の国と地域・1万人の親…](https://note.com/hidamari_sodachi/n/n64e1ceee1e0a) |
 | 16 | 1 | 0 | 0 | [「どっちにする？」に、子どもが答えない日](https://note.com/hidamari_sodachi/n/n2d6032ff76d9) |
+| 16 | 5 | 0 | 0 | [赤ちゃん返りはいつまで？ — 2〜4歳の上の子に渡せる3つの時間](https://note.com/hidamari_sodachi/n/n73cfc4e40e60) |
 | 15 | 2 | 0 | 0 | [「わが家の子育て、どの風景に近い？」 — 8つのこそだちタイプ診断をつ…](https://note.com/hidamari_sodachi/n/n61ce78856346) |
 | 15 | 0 | 0 | 0 | [「昨日はいいって言ったのに」と言われた日に](https://note.com/hidamari_sodachi/n/n1368a4aa4ac2) |
 | 14 | 2 | 0 | 0 | [「放っておいてる」と思われたくない日に](https://note.com/hidamari_sodachi/n/n6c7cdb10ada1) |
-| 14 | 5 | 0 | 0 | [赤ちゃん返りはいつまで？ — 2〜4歳の上の子に渡せる3つの時間](https://note.com/hidamari_sodachi/n/n73cfc4e40e60) |
 | 14 | 1 | 0 | 0 | [「ちょっと待って」と言いながらスマホを見ている日に — 747人の子ど…](https://note.com/hidamari_sodachi/n/n7cc99925bdcd) |
 | 14 | 1 | 0 | 0 | [「ひと口だけ食べて」と言い続けた夕飯に — 244組の幼児を追った研究](https://note.com/hidamari_sodachi/n/n8dd4c1ff0213) |
 | 14 | 1 | 0 | 0 | [10か月の赤ちゃんは、「攻撃された側」に目を向けた — やさしさの始ま…](https://note.com/hidamari_sodachi/n/nf48fd7432e57) |
-| 14 | 1 | 0 | 0 | [話しかけた言葉と、聞こえていただけの言葉 — 2歳の語彙を分けたのは、…](https://note.com/hidamari_sodachi/n/ne5d3102dc12b) |
 | 13 | 3 | 0 | 0 | [抱っこをせがまなくなった日に](https://note.com/hidamari_sodachi/n/n0de5a2163a03) |
 | 13 | 3 | 0 | 0 | [「やさしい子に育ってほしい」と願うなら — 1歳半の「手伝いたい」を、…](https://note.com/hidamari_sodachi/n/n20d7c820bb5b) |
+| 13 | 4 | 0 | 0 | [会話のやりとりが多い子は、脳の「ことばの場所」がよく働いていた — 3…](https://note.com/hidamari_sodachi/n/nc30569a2270b) |
 | 12 | 1 | 0 | 0 | [「もう次に行こうよ」と言いかけた日に](https://note.com/hidamari_sodachi/n/n45c1efca3fdb) |
 | 12 | 4 | 0 | 0 | [怒鳴ってしまった夜に、寝顔を見ている人へ — 「ずれて、戻る」という考…](https://note.com/hidamari_sodachi/n/necca0bdda3e0) |
+| 12 | 4 | 0 | 0 | [「ママといたい」と泣く保育園の朝 — 1〜4歳の行きしぶりに、親ができ…](https://note.com/hidamari_sodachi/n/n86ed7e737d79) |
+| 12 | 4 | 0 | 0 | [1〜3歳のときの「がんばったね」は、5年後の子どもの考え方を予測した …](https://note.com/hidamari_sodachi/n/n40be80c6f7b0) |
 | 11 | 3 | 0 | 0 | [親のスマホと、子どもの「かんしゃく」— 170組を調べた研究を読む](https://note.com/hidamari_sodachi/n/n2c6475079cfc) |
-| 11 | 3 | 0 | 0 | [「ママといたい」と泣く保育園の朝 — 1〜4歳の行きしぶりに、親ができ…](https://note.com/hidamari_sodachi/n/n86ed7e737d79) |
+| 11 | 2 | 0 | 0 | [4歳の上の子が、父親の前で見せた嫉妬は、2年半後のきょうだいの衝突と関…](https://note.com/hidamari_sodachi/n/ne2ec7f223e9c) |
 | 9 | 1 | 0 | 0 | [ピクラーを家でやるなら — 0〜2歳、世話の時間を「対話」にする3つ](https://note.com/hidamari_sodachi/n/n6a83661d40e5) |
 | 9 | 1 | 0 | 0 | [「早くしなさい」を7回言った朝に — 言い方を変える前に、先にやること](https://note.com/hidamari_sodachi/n/n811be616e503) |
 | 9 | 1 | 0 | 0 | [寝る前の動画をやめたら、2歳児の眠りは変わった？ — 105家族で試し…](https://note.com/hidamari_sodachi/n/n2ab8af723dda) |
 | 8 | 1 | 1 | **1** | [「自己肯定感の高い子に」って、どういうこと？ — ほめることと、受け止…](https://note.com/hidamari_sodachi/n/n10dc305f2aa1) |
 | 8 | 0 | 0 | 0 | [上の子にだけ、きつく当たってしまう日に — きょうだいへの「差」につい…](https://note.com/hidamari_sodachi/n/nbb14deda8f78) |
+| 8 | 3 | 0 | 0 | [夜泣きはいつまで？ — 34,000人の睡眠データを読むと、「ふつう」…](https://note.com/hidamari_sodachi/n/n26a4831625f6) |
+| 8 | 0 | 0 | 0 | [赤ちゃんは「音」と「形」の結びつきを知っている？ — 14か月の言葉の…](https://note.com/hidamari_sodachi/n/nd1c0e6649d85) |
 | 7 | 0 | 0 | 0 | [「まだ歩かないけど、大丈夫?」と気になる日に — 急かさない、でも妨げ…](https://note.com/hidamari_sodachi/n/nfceb954b7975) |
 | 7 | 1 | 0 | 0 | [モンテッソーリを家でやるなら — 2〜3歳、教具を買わずにできる5つ](https://note.com/hidamari_sodachi/n/n43c5f88c80a7) |
 | 7 | 0 | 0 | 0 | [3歳の癇癪はいつまで？ — 研究で見る「よくある癇癪」と「相談していい…](https://note.com/hidamari_sodachi/n/n38a6639c3c61) |
 | 6 | 1 | 0 | 0 | [「どんな子に育ってほしい？」に、すぐ答えられなかった日に](https://note.com/hidamari_sodachi/n/n729e7568b503) |
-| 6 | 2 | 0 | 0 | [夜泣きはいつまで？ — 34,000人の睡眠データを読むと、「ふつう」…](https://note.com/hidamari_sodachi/n/n26a4831625f6) |
-| 6 | 3 | 0 | 0 | [会話のやりとりが多い子は、脳の「ことばの場所」がよく働いていた — 3…](https://note.com/hidamari_sodachi/n/nc30569a2270b) |
 | 5 | 3 | 1 | 0 | [ほかの子と比べてしまった日に — 「できる時期」には、これだけ幅がある](https://note.com/hidamari_sodachi/n/ne44dd1617288) |
-| 5 | 4 | 0 | 0 | [1〜3歳のときの「がんばったね」は、5年後の子どもの考え方を予測した …](https://note.com/hidamari_sodachi/n/n40be80c6f7b0) |
 | 4 | 2 | 0 | 0 | [モンテッソーリは教具がなくてもできる — 「買わなきゃ」と疲れた日に](https://note.com/hidamari_sodachi/n/nebe3fdd73488) |
 | 4 | 0 | 0 | 0 | [「何回言ったらわかるの」が口ぐせになった日 — 「ダメ」をことばにし直す](https://note.com/hidamari_sodachi/n/n14b031f094b9) |
+| 2 | 0 | 0 | 0 | [「ものすごく上手！」は、自信の低い子の挑戦を減らした — 大人が自信の…](https://note.com/hidamari_sodachi/n/nb56a1f9ccc70) |
+| 1 | 2 | 0 | 0 | [子どもの気持ちに名前をつける親の練習は、行動の悩みの減少と並んで見えた…](https://note.com/hidamari_sodachi/n/nfb46a3125272) |
 
 ## Threads 投稿別
 
@@ -120,8 +124,10 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-11-17 | 12 | 0 | 0 | 0 | 0 | 0 | 研究（親のスマホ・Yang 2026・JAMA Pedia… |
 | 2026-11-18 | 10 | 0 | 0 | 0 | 0 | 0 | 研究（偏食・Lumeng 2018・Appetite・抄録… |
 | 2026-11-19 | 18 | 0 | 0 | 0 | 0 | 0 | 保育園の送りで泣く（自責・走って駅へ向かった朝・TH-1 … |
-| 2026-11-20 | 9 | 0 | 0 | 0 | 0 | 0 | 動画をやめられない（自責・30分見せたまま台所にいた・TH… |
+| 2026-11-20 | 11 | 0 | 0 | 0 | 0 | 0 | 動画をやめられない（自責・30分見せたまま台所にいた・TH… |
 | 2026-11-21 | 85 | 0 | 0 | 0 | 0 | 0 | 赤ちゃん返り（自責・「お姉ちゃんでしょ」と言った夜・TH-… |
+| 2026-11-24 | 30 | 0 | 0 | 0 | 0 | 0 | 寝かしつけ（自責・「もう寝て」と言ったら息子が息を止めた夜… |
+| 2026-11-26 | 21 | 1 | 0 | 0 | 0 | 0 | うまくいった接し方⑧（「あーん」をやめてスプーンを置いたら… |
 
 ## コメント・返信（他者分・新しい順）
 
@@ -136,7 +142,6 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 
 | 集計日 | note PV | note スキ | note コメ | Threads views | Threads 能動 | フォロワー |
 |---|---|---|---|---|---|---|
-| 2026-10-26 | 445 | 64 | 8 | 3070 | 2 | 1 |
 | 2026-10-31 | 452 | 65 | 9 | 3215 | 2 | 2 |
 | 2026-11-01 | 459 | 68 | 10 | 3215 | 2 | 3 |
 | 2026-11-02 | 466 | 70 | 10 | 3265 | 2 | 3 |
@@ -148,3 +153,4 @@ related: [[this_week]] [[backlog]] [[posting_schedule]]
 | 2026-11-15 | 567 | 83 | 10 | 3434 | 2 | 1 |
 | 2026-11-16 | 573 | 87 | 11 | 3542 | 2 | 1 |
 | 2026-11-22 | 660 | 95 | 11 | 3678 | 2 | 1 |
+| 2026-11-28 | 713 | 102 | 11 | 3731 | 2 | 1 |
